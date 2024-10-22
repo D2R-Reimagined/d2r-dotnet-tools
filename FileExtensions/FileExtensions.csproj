@@ -5,18 +5,28 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>D2RReimaginedTools.FileExtensions</PackageId>
-        <Version>0.0.2</Version>
+        <Version>0.0.3</Version>
         <Authors>ScottieKnowz</Authors>
         <Company>Reimagined</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RootNamespace>D2RReimaginedTools</RootNamespace>
+        <RepositoryUrl>https://github.com/D2R-Reimagined/dotnet-tools</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
         <None Include="../README.md" Pack="true" PackagePath="\"/>
         <None Include="../LICENSE.md" Pack="true" PackagePath="\"/>
+        <None Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="obj\**" />
     </ItemGroup>
     
 </Project>
