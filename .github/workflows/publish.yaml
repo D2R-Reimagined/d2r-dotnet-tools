@@ -29,12 +29,9 @@ jobs:
         uses: actions/setup-dotnet@v4
       - name: Run tests
         run: dotnet test --configuration Release
-
-      # Download the NuGet package created in the previous job
-      - uses: actions/download-artifact@v3
-        with:
-          name: nuget
-          path: ${{ env.NuGetDirectory }}
+      
+      # Create the NuGet package in the folder from the environment variable NuGetDirectory
+      - run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
 
       # Install the .NET SDK indicated in the global.json file
       - name: Setup .NET Core
