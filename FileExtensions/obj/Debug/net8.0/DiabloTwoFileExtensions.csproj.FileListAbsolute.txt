@@ -1,0 +1,11 @@
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\bin\Debug\net8.0\DiabloTwoFileExtensions.deps.json
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\bin\Debug\net8.0\DiabloTwoFileExtensions.dll
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\bin\Debug\net8.0\DiabloTwoFileExtensions.pdb
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\obj\Debug\net8.0\DiabloTwoFileExtensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\obj\Debug\net8.0\DiabloTwoFileExtensions.AssemblyInfoInputs.cache
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\obj\Debug\net8.0\DiabloTwoFileExtensions.AssemblyInfo.cs
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\obj\Debug\net8.0\DiabloTwoFileExtensions.csproj.CoreCompileInputs.cache
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\obj\Debug\net8.0\DiabloTwoFileExtensions.dll
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\obj\Debug\net8.0\refint\DiabloTwoFileExtensions.dll
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\obj\Debug\net8.0\DiabloTwoFileExtensions.pdb
+C:\dev\d2r\DiabloTwoFileExtensions\DiabloTwoFileExtensions\obj\Debug\net8.0\ref\DiabloTwoFileExtensions.dll

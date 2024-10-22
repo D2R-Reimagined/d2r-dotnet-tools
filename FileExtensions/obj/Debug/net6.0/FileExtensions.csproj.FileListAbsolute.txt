@@ -1,0 +1,11 @@
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\bin\Debug\net6.0\FileExtensions.deps.json
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\bin\Debug\net6.0\FileExtensions.dll
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\bin\Debug\net6.0\FileExtensions.pdb
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\obj\Debug\net6.0\FileExtensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\obj\Debug\net6.0\FileExtensions.AssemblyInfoInputs.cache
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\obj\Debug\net6.0\FileExtensions.AssemblyInfo.cs
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\obj\Debug\net6.0\FileExtensions.csproj.CoreCompileInputs.cache
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\obj\Debug\net6.0\FileExtensions.dll
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\obj\Debug\net6.0\refint\FileExtensions.dll
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\obj\Debug\net6.0\FileExtensions.pdb
+C:\dev\d2r\D2RReimaginedTools\FileExtensions\obj\Debug\net6.0\ref\FileExtensions.dll
