@@ -35,6 +35,21 @@ public class UniqueItemsParser
                 DropSfxFrame = columns[20].ToInt(),
                 UseSound = columns[21],
                 DiabloCloneWeight = columns[70].ToInt(),
+                Properties = new List<ItemProperty>
+                {
+                    new() { Property = columns[22], Parameter = columns[23], Min = columns[24].ToInt(), Max = columns[25].ToInt() },
+                    new() { Property = columns[26], Parameter = columns[27], Min = columns[28].ToInt(), Max = columns[29].ToInt() },
+                    new() { Property = columns[30], Parameter = columns[31], Min = columns[32].ToInt(), Max = columns[33].ToInt() },
+                    new() { Property = columns[34], Parameter = columns[35], Min = columns[36].ToInt(), Max = columns[37].ToInt() },
+                    new() { Property = columns[38], Parameter = columns[39], Min = columns[40].ToInt(), Max = columns[41].ToInt() },
+                    new() { Property = columns[42], Parameter = columns[43], Min = columns[44].ToInt(), Max = columns[45].ToInt() },
+                    new() { Property = columns[46], Parameter = columns[47], Min = columns[48].ToInt(), Max = columns[49].ToInt() },
+                    new() { Property = columns[50], Parameter = columns[51], Min = columns[52].ToInt(), Max = columns[53].ToInt() },
+                    new() { Property = columns[54], Parameter = columns[55], Min = columns[56].ToInt(), Max = columns[57].ToInt() },
+                    new() { Property = columns[58], Parameter = columns[59], Min = columns[60].ToInt(), Max = columns[61].ToInt() },
+                    new() { Property = columns[62], Parameter = columns[63], Min = columns[64].ToInt(), Max = columns[65].ToInt() },
+                    new() { Property = columns[66], Parameter = columns[67], Min = columns[68].ToInt(), Max = columns[69].ToInt() }
+                },
                 Eol = columns[71].ToInt()
             })
             .ToList();

@@ -25,5 +25,6 @@ public record UniqueItem
     public int DropSfxFrame { get; init; }
     public string? UseSound { get; init; }
     public int DiabloCloneWeight { get; init; }
+    public IList<ItemProperty>? Properties { get; init; }
     public int Eol { get; init; }
 }
