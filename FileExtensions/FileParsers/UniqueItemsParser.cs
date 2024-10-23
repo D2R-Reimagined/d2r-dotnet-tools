@@ -5,7 +5,7 @@ namespace D2RReimaginedTools.FileParsers;
 
 public class UniqueItemsParser
 {
-    public async Task<IList<UniqueItem>> GetUniqueItems(string path)
+    public static async Task<IList<UniqueItem>> GetEntries(string path)
     {
         var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
 

@@ -6,6 +6,11 @@ public static class TsvFileReaderExtensions
     {
         return string.IsNullOrEmpty(value) ? 0 : int.Parse(value);
     }
+    
+    public static int? ToNullableInt(this string value)
+    {
+        return string.IsNullOrEmpty(value) ? null : int.Parse(value);
+    }
 
     public static bool ToBool(this string value)
     {
