@@ -14,6 +14,6 @@ public static class TsvFileReaderExtensions
 
     public static bool ToBool(this string value)
     {
-        return value == "1";
+        return !string.IsNullOrEmpty(value) && value == "1";
     }
 }

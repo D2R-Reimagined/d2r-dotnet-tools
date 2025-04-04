@@ -33,6 +33,3 @@ jobs:
         
       - name: Run tests
         run: dotnet test --configuration Release
-      
-      # Create the NuGet package in the folder from the environment variable NuGetDirectory
-      - run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
