@@ -28,6 +28,8 @@ jobs:
         
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x' # Use the latest .NET 9 version
         
       - name: Run tests
         run: dotnet test --configuration Release
