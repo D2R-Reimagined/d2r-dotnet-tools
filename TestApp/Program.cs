@@ -5,18 +5,34 @@ using D2RReimaginedTools.TextFileParsers;
 
 
 
-var filePath = Path.Combine(AppContext.BaseDirectory, "Data/excel/armor.txt");
-var (gems, runes) = GemRuneParser.Parse(filePath);
-Console.WriteLine("📥 Parsing gems and runes from file...\n");
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+using D2RReimaginedTools.Models;
 
-Console.WriteLine($"💎 Gems ({gems.Count}):");
-foreach (var gem in gems)
+class Program
 {
-    Console.WriteLine($"  - {gem.Name} (Version: {gem.Version})");
+    static async Task Main()
+    {
+        string filePath = "Data/excel/gems.txt"; // Replace with the actual path to your file
+
+        if (!File.Exists(filePath))
+        {
+            Console.WriteLine("Error: The specified file does not exist.");
+            return;
+        }
+
+        var gems = await GemParser.GetEntries(filePath);
+
+        foreach (var gem in gems)
+        {
+            Console.WriteLine($"Name: {gem.Name}, Code: {gem.Code}, Transform: {gem.Transform}");
+            Console.WriteLine($"Weapon Mod: {gem.WeaponMod1Code} ({gem.WeaponMod1Min}-{gem.WeaponMod1Max})");
+            Console.WriteLine($"Helm Mod: {gem.HelmMod1Code} ({gem.HelmMod1Min}-{gem.HelmMod1Max})");
+            Console.WriteLine($"Shield Mod: {gem.ShieldMod1Code} ({gem.ShieldMod1Min}-{gem.ShieldMod1Max})");
+            Console.WriteLine("------------------------------------------------");
+        }
+    }
 }
 
-Console.WriteLine($"\n🪓 Runes ({runes.Count}):");
-foreach (var rune in runes)
-{
-    Console.WriteLine($"  - {rune.Name}: {rune.Description}");
-}

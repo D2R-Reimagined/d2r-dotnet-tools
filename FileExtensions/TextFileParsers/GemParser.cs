@@ -1,67 +1,59 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.IO;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
-namespace D2RReimaginedTools.TextFileParsers;
-
-
-public static class GemRuneParser
+public static class GemParser
 {
-    public static (List<Gem> Gems, List<Rune> Runes) Parse(string filePath)
+    public static async Task<IList<Gem>> GetEntries(string filePath)
+
     {
-        var gems = new List<Gem>();
-        var runes = new List<Rune>();
-
-        var lines = File.ReadAllLines(filePath);
-        string currentSection = null;
-
-        var gemPattern = new Regex(@"^(\S+)\s+\(([\d\.]+)\)");
-        var runePattern = new Regex(@"^([A-Za-z0-9\+\-]+)\s+\-\s+(.+)$");
-
-        foreach (var line in lines)
-        {
-            var trimmed = line.Trim();
-
-            if (trimmed.Equals("*** LOCAL GEMS ***", StringComparison.OrdinalIgnoreCase))
+        var lines = (await File.ReadAllLinesAsync(filePath)).Skip(1); // Skip header line
+        return lines.Select(line => line.Split('\t'))
+            .Select(columns => new Gem
             {
-                currentSection = "GEMS";
-                continue;
-            }
+            Name = columns[0],
+            Letter = columns[1],
+            Transform = columns[2],
+            Code = columns[3],
 
-            if (trimmed.Equals("*** RUNES ***", StringComparison.OrdinalIgnoreCase))
-            {
-                currentSection = "RUNES";
-                continue;
-            }
+            WeaponMod1Code = columns[4],
+            WeaponMod1Param = columns[5],
+            WeaponMod1Min = columns[6],
+            WeaponMod1Max = columns[7],
+            WeaponMod2Code = columns[8],
+            WeaponMod2Param = columns[9],
+            WeaponMod2Min = columns[10],
+            WeaponMod2Max = columns[11],
+            WeaponMod3Code = columns[12],
+            WeaponMod3Param = columns[13],
+            WeaponMod3Min = columns[14],
+            WeaponMod3Max = columns[15],
 
-            if (string.IsNullOrWhiteSpace(trimmed))
-                continue;
+            HelmMod1Code = columns[16],
+            HelmMod1Param = columns[17],
+            HelmMod1Min = columns[18],
+            HelmMod1Max = columns[19],
+            HelmMod2Code = columns[20],
+            HelmMod2Param = columns[21],
+            HelmMod2Min = columns[22],
+            HelmMod2Max = columns[23],
+            HelmMod3Code = columns[24],
+            HelmMod3Param = columns[25],
+            HelmMod3Min = columns[26],
+            HelmMod3Max = columns[27],
 
-            if (currentSection == "GEMS")
-            {
-                var match = gemPattern.Match(trimmed);
-                if (match.Success)
-                {
-                    gems.Add(new Gem
-                    {
-                        Name = match.Groups[1].Value,
-                        Version = match.Groups[2].Value
-                    });
-                }
-            }
-            else if (currentSection == "RUNES")
-            {
-                var match = runePattern.Match(trimmed);
-                if (match.Success)
-                {
-                    runes.Add(new Rune
-                    {
-                        Name = match.Groups[1].Value,
-                        Description = match.Groups[2].Value
-                    });
-                }
-            }
-        }
-
-        return (gems, runes);
+            ShieldMod1Code = columns[28],
+            ShieldMod1Param = columns[29],
+            ShieldMod1Min = columns[30],
+            ShieldMod1Max = columns[31],
+            ShieldMod2Code = columns[32],
+            ShieldMod2Param = columns[33],
+            ShieldMod2Min = columns[34],
+            ShieldMod2Max = columns[35],
+            ShieldMod3Code = columns[36],
+            ShieldMod3Param = columns[37],
+            ShieldMod3Min = columns[38],
+            ShieldMod3Max = columns[39],
+        }).ToList();
     }
 }
