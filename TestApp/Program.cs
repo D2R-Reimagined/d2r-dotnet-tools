@@ -1,14 +1,10 @@
 ﻿using D2RReimaginedTools.FileParsers;
-using D2RReimaginedTools.JsonFileParsers;
-using D2RReimaginedTools.Models;
+using D2RReimaginedTools.TextFileParsers;
 
-var filePath = Path.Combine(AppContext.BaseDirectory, "Data/excel/armor.txt");
-var armorEntries = await ArmorParser.GetEntries(filePath);
-Console.WriteLine($"Found {armorEntries.Count} armor entries.");
-
-var translation = new TranslationFileParser("Data/strings/item-names.json");
-foreach (var armor in armorEntries)
+var itemTypePath = Path.Combine(AppContext.BaseDirectory, "Data/excel/ItemTypes.txt");
+var itemTypes = await ItemTypeParser.GetEntries(itemTypePath);
+Console.WriteLine($"Parsed {itemTypes.Count} item types.");
+foreach (var type in itemTypes)
 {
-    var translationEntry = await translation.GetTranslationByKeyAsync(armor.NameStr);
-    Console.WriteLine($"Armor: {armor.Name} - EnUS Translation: {translationEntry.EnUS}");
+    Console.WriteLine($"ItemType: {type.ItemType}, Code: {type.Code}");
 }
