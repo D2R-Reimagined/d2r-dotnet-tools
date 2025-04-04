@@ -25,17 +25,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
+        
       - name: Run tests
         run: dotnet test --configuration Release
       
       # Create the NuGet package in the folder from the environment variable NuGetDirectory
       - run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
-
-      # Install the .NET SDK indicated in the global.json file
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v4
 
       # Publish all NuGet packages to NuGet.org
       # Use --skip-duplicate to prevent errors if a package with the same version already exists.
