@@ -12,3 +12,11 @@ foreach (var armor in armorEntries)
     var translationEntry = await translation.GetTranslationByKeyAsync(armor.NameStr);
     Console.WriteLine($"Armor: {armor.Name} - EnUS Translation: {translationEntry.EnUS}");
 }
+
+var path = Path.Combine(AppContext.BaseDirectory, "Data/excel/charstats.txt");
+var charStats = await CharStatsParser.GetEntries(path);
+Console.WriteLine($"Loaded {charStats.Count} classes:");
+foreach (var c in charStats)
+{
+    Console.WriteLine($"Class: {c.Class}, Strength: {c.Strength}, StartSkill: {c.StartSkill}, Items: {c.StartingItems.Count}");
+}
