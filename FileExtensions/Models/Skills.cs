@@ -12,26 +12,26 @@ public record Skills
     public string? Id { get; init; }
     public string? CharClass { get; init; }
     public string? SkillDesc { get; init; }
-    public string? SrvStFunc { get; init; }
-    public string? SrvDoFunc { get; init; }
-    public string? SrvStopFunc { get; init; }
-    public string? PrgStack { get; init; }
-    public string? SrvPrgFunc1 { get; init; }
-    public string? SrvPrgFunc2 { get; init; }
-    public string? SrvPrgFunc3 { get; init; }
+    public int? SrvStFunc { get; init; }
+    public int? SrvDoFunc { get; init; }
+    public int? SrvStopFunc { get; init; }
+    public int? PrgStack { get; init; }
+    public int? SrvPrgFunc1 { get; init; }
+    public int? SrvPrgFunc2 { get; init; }
+    public int? SrvPrgFunc3 { get; init; }
     public string? PrgCalc1 { get; init; }
     public string? PrgCalc2 { get; init; }
     public string? PrgCalc3 { get; init; }
-    public string? PrgDam { get; init; }
+    public int? PrgDam { get; init; }
     public string? SrvMissile { get; init; }
     public string? DecQuant { get; init; }
-    public string? Lob { get; init; }
+    public int? Lob { get; init; }
     public string? SrvMissileA { get; init; }
     public string? SrvMissileB { get; init; }
     public string? SrvMissileC { get; init; }
     public string? UseServerMissilesOnRemoteClients { get; init; }
     public string? SrvOverlay { get; init; }
-    public string? AuraFilter { get; init; }
+    public int? AuraFilter { get; init; }
     public string? AuraState { get; init; }
     public string? AuraTargetState { get; init; }
     public string? AuraLenCalc { get; init; }
@@ -207,7 +207,7 @@ public record Skills
     public string? ManaShift { get; init; }
     public string? Mana { get; init; }
     public string? LvlMana { get; init; }
-    public string? Interrupt { get; init; }
+    public bool? Interrupt { get; init; }
     public string? InTown { get; init; }
     public string? Aura { get; init; }
     public string? Periodic { get; init; }
@@ -254,50 +254,50 @@ public record Skills
     public string? Param11Desc { get; init; }
     public string? Param12 { get; init; }
     public string? Param12Desc { get; init; }
-    public string? InGame { get; init; }
-    public string? ToHit { get; init; }
-    public string? LevToHit { get; init; }
+    public bool? InGame { get; init; }
+    public int? ToHit { get; init; }
+    public int? LevToHit { get; init; }
     public string? ToHitCalc { get; init; }
     public string? ResultFlags { get; init; }
     public string? HitFlags { get; init; }
-    public string? HitClass { get; init; }
-    public string? Kick { get; init; }
-    public string? HitShift { get; init; }
-    public string? SrcDam { get; init; }
-    public string? MinDam { get; init; }
-    public string? MinLevDam1 { get; init; }
-    public string? MinLevDam2 { get; init; }
-    public string? MinLevDam3 { get; init; }
-    public string? MinLevDam4 { get; init; }
-    public string? MinLevDam5 { get; init; }
-    public string? MaxDam { get; init; }
-    public string? MaxLevDam1 { get; init; }
-    public string? MaxLevDam2 { get; init; }
-    public string? MaxLevDam3 { get; init; }
-    public string? MaxLevDam4 { get; init; }
-    public string? MaxLevDam5 { get; init; }
+    public int? HitClass { get; init; }
+    public int? Kick { get; init; }
+    public int? HitShift { get; init; }
+    public int? SrcDam { get; init; }
+    public int? MinDam { get; init; }
+    public int? MinLevDam1 { get; init; }
+    public int? MinLevDam2 { get; init; }
+    public int? MinLevDam3 { get; init; }
+    public int? MinLevDam4 { get; init; }
+    public int? MinLevDam5 { get; init; }
+    public int? MaxDam { get; init; }
+    public int? MaxLevDam1 { get; init; }
+    public int? MaxLevDam2 { get; init; }
+    public int? MaxLevDam3 { get; init; }
+    public int? MaxLevDam4 { get; init; }
+    public int? MaxLevDam5 { get; init; }
     public string? DmgSymPerCalc { get; init; }
     public string? EType { get; init; }
-    public string? EMin { get; init; }
-    public string? EMinLev1 { get; init; }
-    public string? EMinLev2 { get; init; }
-    public string? EMinLev3 { get; init; }
-    public string? EMinLev4 { get; init; }
-    public string? EMinLev5 { get; init; }
-    public string? EMax { get; init; }
-    public string? EMaxLev1 { get; init; }
-    public string? EMaxLev2 { get; init; }
-    public string? EMaxLev3 { get; init; }
-    public string? EMaxLev4 { get; init; }
-    public string? EMaxLev5 { get; init; }
+    public int? EMin { get; init; }
+    public int? EMinLev1 { get; init; }
+    public int? EMinLev2 { get; init; }
+    public int? EMinLev3 { get; init; }
+    public int? EMinLev4 { get; init; }
+    public int? EMinLev5 { get; init; }
+    public int? EMax { get; init; }
+    public int? EMaxLev1 { get; init; }
+    public int? EMaxLev2 { get; init; }
+    public int? EMaxLev3 { get; init; }
+    public int? EMaxLev4 { get; init; }
+    public int? EMaxLev5 { get; init; }
     public string? EDmgSymPerCalc { get; init; }
-    public string? ELen { get; init; }
-    public string? ELevLen1 { get; init; }
-    public string? ELevLen2 { get; init; }
-    public string? ELevLen3 { get; init; }
+    public int? ELen { get; init; }
+    public int? ELevLen1 { get; init; }
+    public int? ELevLen2 { get; init; }
+    public int? ELevLen3 { get; init; }
     public string? ELenSymPerCalc { get; init; }
-    public string? AIType { get; init; }
-    public string? AIBonus { get; init; }
-    public string? CostMult { get; init; }
-    public string? CostAdd { get; init; }
+    public int? AIType { get; init; }
+    public int? AIBonus { get; init; }
+    public int? CostMult { get; init; }
+    public int? CostAdd { get; init; }
 }
