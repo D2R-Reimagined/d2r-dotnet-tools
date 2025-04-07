@@ -40,5 +40,5 @@ public record Sounds
     public int? Block3 { get; init; }
     public bool? HDOptOut { get; init; }
     public int? Delay { get; init; }
-    public int? Unknown4737 { get; init; }
+    public string? Unknown4737 { get; init; }
 }

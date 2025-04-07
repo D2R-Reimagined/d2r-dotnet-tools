@@ -48,7 +48,7 @@ public static class SoundsParser
                 Block3 = columns[34].ToNullableInt(),
                 HDOptOut = columns[35].ToBool(),
                 Delay = columns[36].ToNullableInt(),
-                Unknown4737 = columns[37].ToNullableInt()
+                Unknown4737 = columns[37]
             })
             .ToList();
     }

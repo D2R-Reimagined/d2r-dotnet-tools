@@ -34,8 +34,12 @@ public record Missiles
     public string? ClientParameter5 { get; init; }
     public string? ClientParameter5Description { get; init; }
     public string? ServerHitCalculation1 { get; init; }
+    public string? ServerHitCalculation1Description { get; init; }
+    public string? ServerHitParameter1 { get; init; }
     public string? ServerHitParameter1Description { get; init; }
+    public string? ServerHitParameter2 { get; init; }
     public string? ServerHitParameter2Description { get; init; }
+    public string? ServerHitParameter3 { get; init; }
     public string? ServerHitParameter3Description { get; init; }
     public string? ClientHitCalculation1 { get; init; }
     public string? ClientHitParameter1Description { get; init; }
