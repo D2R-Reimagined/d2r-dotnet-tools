@@ -50,8 +50,11 @@ public record Missiles
     public int? ClientHitParam3 { get; init; }
     public string? ClientHitParam3Description { get; init; }
     public string? DamageCalculation1 { get; init; }
+    public string? DamageCalculation1Description { get; init; }
     public string? DamageParam1 { get; init; }
+    public string? DamageParam1Description { get; init; }
     public string? DamageParam2 { get; init; }
+    public string? DamageParam2Description { get; init; }
     public int? Velocity { get; init; }
     public int? MaxVelocity { get; init; }
     public int? VelocityLevel { get; init; }
