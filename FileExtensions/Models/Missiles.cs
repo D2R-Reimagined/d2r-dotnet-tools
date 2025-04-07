@@ -3,7 +3,7 @@
 public record Missiles
 {
     public string? MissileName { get; init; }
-    public int? MissileId { get; init; }
+    public int MissileId { get; init; }
     public int? ClientDoFunction { get; init; }
     public int? ClientHitFunction { get; init; }
     public int? ServerDoFunction { get; init; }
@@ -11,43 +11,47 @@ public record Missiles
     public int? ServerDamageFunction { get; init; }
     public string? ServerCalculation1 { get; init; }
     public string? ServerCalculation1Description { get; init; }
-    public string? Parameter1 { get; init; }
-    public string? Parameter1Description { get; init; }
-    public string? Parameter2 { get; init; }
-    public string? Parameter2Description { get; init; }
-    public string? Parameter3 { get; init; }
-    public string? Parameter3Description { get; init; }
-    public string? Parameter4 { get; init; }
-    public string? Parameter4Description { get; init; }
-    public string? Parameter5 { get; init; }
-    public string? Parameter5Description { get; init; }
+    public int? Param1 { get; init; }
+    public string? Param1Description { get; init; }
+    public int? Param2 { get; init; }
+    public string? Param2Description { get; init; }
+    public int? Param3 { get; init; }
+    public string? Param3Description { get; init; }
+    public int? Param4 { get; init; }
+    public string? Param4Description { get; init; }
+    public int? Param5 { get; init; }
+    public string? Param5Description { get; init; }
     public string? ClientCalculation1 { get; init; }
     public string? ClientCalculation1Description { get; init; }
-    public string? ClientParameter1 { get; init; }
-    public string? ClientParameter1Description { get; init; }
-    public string? ClientParameter2 { get; init; }
-    public string? ClientParameter2Description { get; init; }
-    public string? ClientParameter3 { get; init; }
-    public string? ClientParameter3Description { get; init; }
-    public string? ClientParameter4 { get; init; }
-    public string? ClientParameter4Description { get; init; }
-    public string? ClientParameter5 { get; init; }
-    public string? ClientParameter5Description { get; init; }
+    public int? ClientParam1 { get; init; }
+    public string? ClientParam1Description { get; init; }
+    public int? ClientParam2 { get; init; }
+    public string? ClientParam2Description { get; init; }
+    public int? ClientParam3 { get; init; }
+    public string? ClientParam3Description { get; init; }
+    public int? ClientParam4 { get; init; }
+    public string? ClientParam4Description { get; init; }
+    public int? ClientParam5 { get; init; }
+    public string? ClientParam5Description { get; init; }
     public string? ServerHitCalculation1 { get; init; }
     public string? ServerHitCalculation1Description { get; init; }
-    public string? ServerHitParameter1 { get; init; }
-    public string? ServerHitParameter1Description { get; init; }
-    public string? ServerHitParameter2 { get; init; }
-    public string? ServerHitParameter2Description { get; init; }
-    public string? ServerHitParameter3 { get; init; }
-    public string? ServerHitParameter3Description { get; init; }
+    public int? ServerHitParam1 { get; init; }
+    public string? ServerHitParam1Description { get; init; }
+    public int? ServerHitParam2 { get; init; }
+    public string? ServerHitParam2Description { get; init; }
+    public int? ServerHitParam3 { get; init; }
+    public string? ServerHitParam3Description { get; init; }
     public string? ClientHitCalculation1 { get; init; }
-    public string? ClientHitParameter1Description { get; init; }
-    public string? ClientHitParameter2Description { get; init; }
-    public string? ClientHitParameter3Description { get; init; }
+    public string? ClientHitCalculation1Description { get; init; }
+    public int? ClientHitParam1 { get; init; }
+    public string? ClientHitParam1Description { get; init; }
+    public int? ClientHitParam2 { get; init; }
+    public string? ClientHitParam2Description { get; init; }
+    public int? ClientHitParam3 { get; init; }
+    public string? ClientHitParam3Description { get; init; }
     public string? DamageCalculation1 { get; init; }
-    public string? DamageParameter1Description { get; init; }
-    public string? DamageParameter2Description { get; init; }
+    public string? DamageParam1 { get; init; }
+    public string? DamageParam2 { get; init; }
     public int? Velocity { get; init; }
     public int? MaxVelocity { get; init; }
     public int? VelocityLevel { get; init; }
@@ -59,7 +63,7 @@ public record Missiles
     public int? Red { get; init; }
     public int? Green { get; init; }
     public int? Blue { get; init; }
-    public int? InitialSteps { get; init; }
+    public int? InitSteps { get; init; }
     public int? Activate { get; init; }
     public int? LoopAnimation { get; init; }
     public string? CelFile { get; init; }
@@ -70,10 +74,10 @@ public record Missiles
     public int? SubLoop { get; init; }
     public int? SubStart { get; init; }
     public int? SubStop { get; init; }
-    public int? CollisionType { get; init; }
-    public int? CollisionKill { get; init; }
-    public int? CollisionFriend { get; init; }
-    public int? LastCollision { get; init; }
+    public int? CollideType { get; init; }
+    public int? CollideKill { get; init; }
+    public int? CollideFriend { get; init; }
+    public int? LastCollide { get; init; }
     public int? Collision { get; init; }
     public int? ClientCollision { get; init; }
     public int? ClientSend { get; init; }
@@ -88,9 +92,9 @@ public record Missiles
     public int? CanDestroy { get; init; }
     public int? ToHit { get; init; }
     public int? AlwaysExplode { get; init; }
-    public int? Explosion { get; init; }
+    public string? Explosion { get; init; }
     public int? Town { get; init; }
-    public int? NoUniqueModifier { get; init; }
+    public int? NoUniqueMod { get; init; }
     public int? NoMultiShot { get; init; }
     public int? Holy { get; init; }
     public int? CanSlow { get; init; }
@@ -98,7 +102,7 @@ public record Missiles
     public int? GetHit { get; init; }
     public int? SoftHit { get; init; }
     public int? KnockBack { get; init; }
-    public int? Transform { get; init; }
+    public string? Trans { get; init; }
     public int? Pierce { get; init; }
     public int? MissileSkill { get; init; }
     public string? Skill { get; init; }
@@ -107,47 +111,47 @@ public record Missiles
     public int? HitShift { get; init; }
     public int? ApplyMastery { get; init; }
     public int? SourceDamage { get; init; }
-    public int? HalfTwoHandedSource { get; init; }
+    public int? Half2HSource { get; init; }
     public int? SourceMissileDamage { get; init; }
-    public int? MinimumDamage { get; init; }
-    public int? MinimumLevelDamage1 { get; init; }
-    public int? MinimumLevelDamage2 { get; init; }
-    public int? MinimumLevelDamage3 { get; init; }
-    public int? MinimumLevelDamage4 { get; init; }
-    public int? MinimumLevelDamage5 { get; init; }
-    public int? MaximumDamage { get; init; }
-    public int? MaximumLevelDamage1 { get; init; }
-    public int? MaximumLevelDamage2 { get; init; }
-    public int? MaximumLevelDamage3 { get; init; }
-    public int? MaximumLevelDamage4 { get; init; }
-    public int? MaximumLevelDamage5 { get; init; }
-    public int? DamageSymbolPerCalculation { get; init; }
-    public string? ElementType { get; init; }
-    public int? ElementMinimum { get; init; }
-    public int? MinimumElementLevel1 { get; init; }
-    public int? MinimumElementLevel2 { get; init; }
-    public int? MinimumElementLevel3 { get; init; }
-    public int? MinimumElementLevel4 { get; init; }
-    public int? MinimumElementLevel5 { get; init; }
-    public int? ElementMaximum { get; init; }
-    public int? MaximumElementLevel1 { get; init; }
-    public int? MaximumElementLevel2 { get; init; }
-    public int? MaximumElementLevel3 { get; init; }
-    public int? MaximumElementLevel4 { get; init; }
-    public int? MaximumElementLevel5 { get; init; }
-    public string? ElementDamageSymbolPerCalculation { get; init; }
-    public int? ElementLength { get; init; }
-    public int? ElementLevelLength1 { get; init; }
-    public int? ElementLevelLength2 { get; init; }
-    public int? ElementLevelLength3 { get; init; }
-    public int? HitClass { get; init; }
+    public int? MinDamage { get; init; }
+    public int? MinLevelDamage1 { get; init; }
+    public int? MinLevelDamage2 { get; init; }
+    public int? MinLevelDamage3 { get; init; }
+    public int? MinLevelDamage4 { get; init; }
+    public int? MinLevelDamage5 { get; init; }
+    public int? MaxDamage { get; init; }
+    public int? MaxLevelDamage1 { get; init; }
+    public int? MaxLevelDamage2 { get; init; }
+    public int? MaxLevelDamage3 { get; init; }
+    public int? MaxLevelDamage4 { get; init; }
+    public int? MaxLevelDamage5 { get; init; }
+    public string? DamageSymPerCalculation { get; init; }
+    public string? ElementalType { get; init; }
+    public int? ElementalMin { get; init; }
+    public int? MinElementalLevel1 { get; init; }
+    public int? MinElementalLevel2 { get; init; }
+    public int? MinElementalLevel3 { get; init; }
+    public int? MinElementalLevel4 { get; init; }
+    public int? MinElementalLevel5 { get; init; }
+    public int? ElementalMax { get; init; }
+    public int? MaxElementalLevel1 { get; init; }
+    public int? MaxElementalLevel2 { get; init; }
+    public int? MaxElementalLevel3 { get; init; }
+    public int? MaxElementalLevel4 { get; init; }
+    public int? MaxElementalLevel5 { get; init; }
+    public string? ElementalDamageSymPerCalculation { get; init; }
+    public string? ElementalLength { get; init; }
+    public int? ElementalLevelLength1 { get; init; }
+    public int? ElementalLevelLength2 { get; init; }
+    public int? ElementalLevelLength3 { get; init; }
+    public string? HitClass { get; init; }
     public int? NumberOfDirections { get; init; }
     public int? LocalBlood { get; init; }
     public int? DamageRate { get; init; }
     public string? TravelSound { get; init; }
     public string? HitSound { get; init; }
-    public string? ProgressionSound { get; init; }
-    public string? ProgressionOverlay { get; init; }
+    public string? ProgressSound { get; init; }
+    public string? ProgressOverlay { get; init; }
     public string? ExplosionMissile { get; init; }
     public string? SubMissile1 { get; init; }
     public string? SubMissile2 { get; init; }
