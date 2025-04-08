@@ -50,14 +50,14 @@ public record Equipment
     public int? MaxStack { get; set; }
     public int? SpawnStack { get; set; }
     public int? Transmogrify { get; set; }
-    public int? TMogType { get; set; }
+    public string? TMogType { get; set; }
     public int? TMogMin { get; set; }
     public int? TMogMax { get; set; }
     public string Type { get; set; }
     public string? Type2 { get; set; }
-    public string DropSound { get; set; }
+    public string? DropSound { get; set; }
     public int DropSfxFrame { get; set; }
-    public string UseSound { get; set; }
+    public string? UseSound { get; set; }
     public int? Unique { get; set; }
     public int? Transparent { get; set; }
     public int? TransTbl { get; set; }
@@ -167,6 +167,18 @@ public record Equipment
     public string? HellUpgrade { get; set; }
     public int? Nameable { get; set; }
     public int? PermStoreItem { get; set; }
+    public int? OneOrTwoHanded { get; set; }
+    public bool? TwoHanded { get; set; }
+    public int? TwoHandMinDam { get; set; }
+    public int? TwoHandMaxDam { get; set; }
+    public int? MinMisDam { get; set; }
+    public int? MaxMisDam { get; set; }
+    public int? RangeAdder { get; set; }
+    public string? HitClass { get; set; }
+    public string? Comment { get; set; }
+    public string? WClass { get; set; }
+    public string? TwoHandedWClass { get; set; }
+    
 
     public int? DiabloCloneWeight { get; set; }
 }
