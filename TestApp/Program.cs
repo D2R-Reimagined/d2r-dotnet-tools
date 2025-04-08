@@ -1,14 +1,30 @@
 ﻿using D2RReimaginedTools.FileParsers;
 using D2RReimaginedTools.JsonFileParsers;
 using D2RReimaginedTools.Models;
+using D2RReimaginedTools.TextFileParsers;
 
-var filePath = Path.Combine(AppContext.BaseDirectory, "Data/excel/armor.txt");
-var armorEntries = await ArmorParser.GetEntries(filePath);
-Console.WriteLine($"Found {armorEntries.Count} armor entries.");
 
-var translation = new TranslationFileParser("Data/strings/item-names.json");
-foreach (var armor in armorEntries)
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+using D2RReimaginedTools.Models;
+
+var difficultyLevels = await DifficultyLevelParser.GetEntries("Data/excel/difficultylevels.txt");
+
+//Console.WriteLine($"Parsed {difficultyLevels.Count} difficulty entries.");
+//Console.WriteLine(string.Join(Environment.NewLine, difficultyLevels.Select(d => d.Name)));
+
+foreach (var difficulty in difficultyLevels)
 {
-    var translationEntry = await translation.GetTranslationByKeyAsync(armor.NameStr);
-    Console.WriteLine($"Armor: {armor.Name} - EnUS Translation: {translationEntry.EnUS}");
+    Console.WriteLine($"--- {difficulty.Name} ---");
+    Console.WriteLine($"Resist Penalty: {difficulty.ResistPenalty}");
+    Console.WriteLine($"Death Exp Penalty: {difficulty.DeathExpPenalty}");
+    Console.WriteLine($"Monster Skill Bonus: {difficulty.MonsterSkillBonus}");
+    Console.WriteLine($"Player vs Player Damage %: {difficulty.PlayerDamagePercentVSPlayer}");
+    Console.WriteLine($"Merc vs Boss Damage %: {difficulty.MercenaryDamagePercentVSBoss}");
+    Console.WriteLine($"Static Field Min: {difficulty.StaticFieldMin}");
+    Console.WriteLine($"Gamble Unique Chance: {difficulty.GambleUnique}");
+    Console.WriteLine();
 }
