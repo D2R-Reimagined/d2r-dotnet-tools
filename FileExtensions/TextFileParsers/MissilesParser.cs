@@ -1,7 +1,7 @@
 ﻿using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
-namespace D2RReimaginedTools.FileParsers;
+namespace D2RReimaginedTools.TextFileParsers;
 public static class MissilesParser
 {
     public static async Task<IList<Missiles>> GetEntries(string path)

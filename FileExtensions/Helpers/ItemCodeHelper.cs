@@ -1,5 +1,5 @@
-﻿using D2RReimaginedTools.FileParsers;
-using D2RReimaginedTools.Models;
+﻿using D2RReimaginedTools.Models;
+using D2RReimaginedTools.TextFileParsers;
 
 namespace D2RReimaginedTools.Helpers;
 
