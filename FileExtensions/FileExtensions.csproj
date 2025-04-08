@@ -5,7 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>D2RReimaginedTools.FileExtensions</PackageId>
-        <Version>0.0.6</Version>
+        <Version>0.1.0</Version>
         <Authors>ScottieKnowz</Authors>
         <Company>D2RReimagined</Company>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
