@@ -3,38 +3,48 @@ using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
 
-public class MiscParser
+public static class MiscParser
 {
     public static async Task<IList<Misc>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
+        var lines = await File.ReadAllLinesAsync(path);
+        if (lines.Length == 0) return new List<Misc>();
 
-        return lines.Select(line => line.Split('\t'))
+        var header = lines[0].Split('\t');
+        var columnMap = header
+            .Select((name, index) => new { name, index })
+            .ToDictionary(x => x.name.Trim(), x => x.index, StringComparer.OrdinalIgnoreCase);
+
+        return lines
+            .Skip(1)
+            .Select(line => line.Split('\t'))
+            .Where(columns => columns.Length >= header.Length) // optional safety check
             .Select(columns => new Misc
             {
-                Name = columns[0],
-                Version = columns[1].ToInt(),
-                CompactSave = columns[2].ToInt(),
-                Rarity = columns[3].ToInt(),
-                Spawnable = columns[4].ToBool(),
-                MinAC = columns[5].ToInt(),
-                MaxAC = columns[6].ToInt(),
-                Speed = columns[7].ToInt(),
-                ReqStr = columns[8].ToInt(),
-                ReqDex = columns[9].ToInt(),
-                Block = columns[10].ToInt(),
-                Durability = columns[11].ToInt(),
-                NoDurability = columns[12].ToInt(),
-                Level = columns[13].ToInt(),
-                ShowLevel = columns[14].ToBool(),
-                LevelReq = columns[15].ToInt(),
-                Cost = columns[16].ToInt(),
-                GambleCost = columns[17].ToInt(),
-                Code = columns[18],
-                NameStr = columns[19],
-                MagicLvl = columns[20].ToInt(),
-                AutoPrefix = columns[21].ToInt(),
-                AlternateGfx = columns[22],
-            }).ToList();
+                Name = columns.GetValue(columnMap, "name"),
+                Version = columns.GetValue(columnMap, "version").ToInt(),
+                CompactSave = columns.GetValue(columnMap, "compactsave").ToInt(),
+                Rarity = columns.GetValue(columnMap, "rarity").ToInt(),
+                Spawnable = columns.GetValue(columnMap, "spawnable").ToBool(),
+                MinAC = columns.GetValue(columnMap, "minac").ToInt(),
+                MaxAC = columns.GetValue(columnMap, "maxac").ToInt(),
+                Speed = columns.GetValue(columnMap, "speed").ToInt(),
+                ReqStr = columns.GetValue(columnMap, "reqstr").ToInt(),
+                ReqDex = columns.GetValue(columnMap, "reqdex").ToInt(),
+                Block = columns.GetValue(columnMap, "block").ToInt(),
+                Durability = columns.GetValue(columnMap, "durability").ToInt(),
+                NoDurability = columns.GetValue(columnMap, "nodurability").ToInt(),
+                Level = columns.GetValue(columnMap, "level").ToInt(),
+                ShowLevel = columns.GetValue(columnMap, "showlevel").ToBool(),
+                LevelReq = columns.GetValue(columnMap, "levelreq").ToInt(),
+                Cost = columns.GetValue(columnMap, "cost").ToInt(),
+                GambleCost = columns.GetValue(columnMap, "gamble cost").ToInt(),
+                Code = columns.GetValue(columnMap, "code"),
+                AlternateGfx = columns.GetValue(columnMap, "alternategfx"),
+                NameStr = columns.GetValue(columnMap, "namestr"),
+                MagicLvl = columns.GetValue(columnMap, "magiclvl").ToInt(),
+                AutoPrefix = columns.GetValue(columnMap, "auto prefix").ToInt(),
+            })
+            .ToList();
     }
 }

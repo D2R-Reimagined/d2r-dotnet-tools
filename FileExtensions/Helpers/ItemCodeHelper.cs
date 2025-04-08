@@ -16,12 +16,12 @@ public class ItemCodeHelper
 
         var armorItems = File.Exists(armorPath) ? await ArmorParser.GetEntries(armorPath) : new List<Armor>();
         var weaponItems = File.Exists(weaponsPath) ? await WeaponParser.GetEntries(weaponsPath) : new List<Weapon>();
-        //var miscItems = File.Exists(miscPath) ? await MiscParser.GetEntries(miscPath) : new List<Misc>();
+        var miscItems = File.Exists(miscPath) ? await MiscParser.GetEntries(miscPath) : new List<Misc>();
 
         _validItemCodes = new HashSet<string>(
             armorItems.Select(a => a.Code)
                 .Concat(weaponItems.Select(w => w.Code))
-                //.Concat(miscItems.Select(m => m.Code))
+                .Concat(miscItems.Select(m => m.Code))
                 .Where(code => !string.IsNullOrWhiteSpace(code))
         );
     }
