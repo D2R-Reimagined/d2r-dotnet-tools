@@ -1,4 +1,4 @@
-name: publish
+name: test
 on:
   workflow_dispatch: # Allow running the workflow manually from the GitHub UI
   push:
@@ -25,23 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x' # Use the latest .NET 9 version
+
       - name: Run tests
         run: dotnet test --configuration Release
-      
-      # Create the NuGet package in the folder from the environment variable NuGetDirectory
-      - run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
-
-      # Install the .NET SDK indicated in the global.json file
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v4
-
-      # Publish all NuGet packages to NuGet.org
-      # Use --skip-duplicate to prevent errors if a package with the same version already exists.
-      # If you retry a failed workflow, already published packages will be skipped without error.
-      - name: Publish NuGet package
-        run: |
-          foreach($file in (Get-ChildItem "${{ env.NuGetDirectory }}" -Recurse -Include *.nupkg)) {
-              dotnet nuget push $file --api-key "${{ secrets.NUGET_APIKEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
-          }
