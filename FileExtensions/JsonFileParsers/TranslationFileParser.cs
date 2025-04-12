@@ -31,7 +31,7 @@ public class TranslationFileParser(string filePath)
     {
         if (string.IsNullOrEmpty(key))
         {
-            return new TranslatableString();
+            throw new KeyNotFoundException($"{key} must be supplied");
         }
         
         var translations = await LoadTranslationsAsync();

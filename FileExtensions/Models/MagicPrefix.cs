@@ -3,7 +3,7 @@
 
 public record MagicPrefix
 {
-    public string? Name { get; init; }
+    public required string Name { get; init; }    
     public string? Description { get; init; }
     public int? Version { get; init; }
     public bool? Spawnable { get; init; }

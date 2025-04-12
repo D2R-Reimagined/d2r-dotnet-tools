@@ -1,58 +1,66 @@
 ﻿using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
-
 namespace D2RReimaginedTools.TextFileParsers;
-
 
 public static class MagicPrefixParser
 {
     public static async Task<IList<MagicPrefix>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
-        return lines.Select(line => line.Split('\t'))
+        var lines = await File.ReadAllLinesAsync(path);
+        if (lines.Length == 0) return new List<MagicPrefix>();
+
+        var header = lines[0].Split('\t');
+        var columnMap = header
+            .Select((name, index) => new { name, index })
+            .ToDictionary(x => x.name.Trim(), x => x.index, StringComparer.OrdinalIgnoreCase);
+
+        return lines
+            .Skip(1)
+            .Select(line => line.Split('\t'))
+            .Where(columns => columns.Length >= header.Length)
             .Select(columns => new MagicPrefix
             {
-                Name = columns[0],
-                Description = columns[1],
-                Version = columns[2].ToInt(),
-                Spawnable = columns[3].ToBool(),
-                Rare = columns[4].ToBool(),
-                Level = columns[5].ToInt(),
-                MaxLevel = columns[6].ToInt(),
-                LevelReq = columns[7].ToInt(),
-                ClassSpecific = columns[8].ToBool(),
-                Class = columns[9],
-                ClassLevelReq = columns[10].ToInt(),
-                Frequency = columns[11].ToInt(),
-                Group = columns[12].ToInt(),
-                Mod1Code = columns[13],
-                Mod1Param = columns[14],
-                Mod1Min = columns[15].ToInt(),
-                Mod1Max = columns[16].ToInt(),
-                Mod2Code = columns[17],
-                Mod2Param = columns[18],
-                Mod2Min = columns[19].ToInt(),
-                Mod2Max = columns[20].ToInt(),
-                Mod3Code = columns[21],
-                Mod3Param = columns[22],
-                Mod3Min = columns[23].ToInt(),
-                Mod3Max = columns[24].ToInt(),
-                TransformColor = columns[25],
-                IType1 = columns[26],
-                IType2 = columns[27],
-                IType3 = columns[28],
-                IType4 = columns[29],
-                IType5 = columns[30],
-                IType6 = columns[31],
-                IType7 = columns[32],
-                EType1 = columns[33],
-                EType2 = columns[34],
-                EType3 = columns[35],
-                EType4 = columns[36],
-                EType5 = columns[37],
-                Multiply = columns[38].ToInt(),
-                Add = columns[39].ToInt()
+                Name = columns.GetValue(columnMap, "name"),
+                Description = columns.GetValue(columnMap, "* Description"),
+                Version = columns.GetValue(columnMap, "version").ToInt(),
+                Spawnable = columns.GetValue(columnMap, "spawnable").ToBool(),
+                Rare = columns.GetValue(columnMap, "rare").ToBool(),
+                Level = columns.GetValue(columnMap, "level").ToInt(),
+                MaxLevel = columns.GetValue(columnMap, "maxlevel").ToInt(),
+                LevelReq = columns.GetValue(columnMap, "levelreq").ToInt(),
+                ClassSpecific = columns.GetValue(columnMap, "classspecific").ToBool(),
+                Class = columns.GetValue(columnMap, "class"),
+                ClassLevelReq = columns.GetValue(columnMap, "classlevelreq").ToInt(),
+                Frequency = columns.GetValue(columnMap, "frequency").ToInt(),
+                Group = columns.GetValue(columnMap, "group").ToInt(),
+                Mod1Code = columns.GetValue(columnMap, "mod1code"),
+                Mod1Param = columns.GetValue(columnMap, "mod1param"),
+                Mod1Min = columns.GetValue(columnMap, "mod1min").ToInt(),
+                Mod1Max = columns.GetValue(columnMap, "mod1max").ToInt(),
+                Mod2Code = columns.GetValue(columnMap, "mod2code"),
+                Mod2Param = columns.GetValue(columnMap, "mod2param"),
+                Mod2Min = columns.GetValue(columnMap, "mod2min").ToInt(),
+                Mod2Max = columns.GetValue(columnMap, "mod2max").ToInt(),
+                Mod3Code = columns.GetValue(columnMap, "mod3code"),
+                Mod3Param = columns.GetValue(columnMap, "mod3param"),
+                Mod3Min = columns.GetValue(columnMap, "mod3min").ToInt(),
+                Mod3Max = columns.GetValue(columnMap, "mod3max").ToInt(),
+                TransformColor = columns.GetValue(columnMap, "transformcolor"),
+                IType1 = columns.GetValue(columnMap, "itype1"),
+                IType2 = columns.GetValue(columnMap, "itype2"),
+                IType3 = columns.GetValue(columnMap, "itype3"),
+                IType4 = columns.GetValue(columnMap, "itype4"),
+                IType5 = columns.GetValue(columnMap, "itype5"),
+                IType6 = columns.GetValue(columnMap, "itype6"),
+                IType7 = columns.GetValue(columnMap, "itype7"),
+                EType1 = columns.GetValue(columnMap, "etype1"),
+                EType2 = columns.GetValue(columnMap, "etype2"),
+                EType3 = columns.GetValue(columnMap, "etype3"),
+                EType4 = columns.GetValue(columnMap, "etype4"),
+                EType5 = columns.GetValue(columnMap, "etype5"),
+                Multiply = columns.GetValue(columnMap, "multiply").ToInt(),
+                Add = columns.GetValue(columnMap, "add").ToInt()
             })
             .ToList();
     }

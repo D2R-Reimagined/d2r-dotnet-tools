@@ -3,61 +3,78 @@ using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
 
-public class PropertiesParser
+public static class PropertiesParser
 {
+    public static IList<Property> Entries { get; private set; } = new List<Property>();
+    
     public static async Task<IList<Property>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
+        if (Entries.Count > 0)
+            return Entries;
+        
+        var lines = await File.ReadAllLinesAsync(path);
+        if (lines.Length == 0) return new List<Property>();
 
-        return lines.Select(line => line.Split('\t'))
-            .Select(columns => new Property()
+        var header = lines[0].Split('\t');
+        var columnMap = header
+            .Select((name, index) => new { name, index })
+            .ToDictionary(x => x.name.Trim(), x => x.index, StringComparer.OrdinalIgnoreCase);
+
+        Entries = lines
+            .Skip(1)
+            .Select(line => line.Split('\t'))
+            .Where(columns => columns.Length >= header.Length)
+            .Select(columns => new Property
             {
-                Code = columns[0],
-                Enabled = columns[1].ToBool(),
-                Tooltip = columns[2],
+                Code = columns.GetValue(columnMap, "code"),
+                Enabled = columns.GetValue(columnMap, "*Enabled").ToBool(),
+                Tooltip = columns.GetValue(columnMap, "*Tooltip"),
 
-                Func1 = columns[3].ToNullableInt(),
-                Stat1 = columns[4],
-                Set1 = columns[5].ToNullableInt(),
-                Val1 = columns[6].ToNullableInt(),
+                Func1 = columns.GetValue(columnMap, "func1").ToNullableInt(),
+                Stat1 = columns.GetValue(columnMap, "stat1"),
+                Set1 = columns.GetValue(columnMap, "set1").ToNullableInt(),
+                Val1 = columns.GetValue(columnMap, "val1"),
 
-                Func2 = columns[7].ToNullableInt(),
-                Stat2 = columns[8],
-                Set2 = columns[9].ToNullableInt(),
-                Val2 = columns[10].ToNullableInt(),
+                Func2 = columns.GetValue(columnMap, "func2").ToNullableInt(),
+                Stat2 = columns.GetValue(columnMap, "stat2"),
+                Set2 = columns.GetValue(columnMap, "set2").ToNullableInt(),
+                Val2 = columns.GetValue(columnMap, "val2"),
 
-                Func3 = columns[11].ToNullableInt(),
-                Stat3 = columns[12],
-                Set3 = columns[13].ToNullableInt(),
-                Val3 = columns[14].ToNullableInt(),
+                Func3 = columns.GetValue(columnMap, "func3").ToNullableInt(),
+                Stat3 = columns.GetValue(columnMap, "stat3"),
+                Set3 = columns.GetValue(columnMap, "set3").ToNullableInt(),
+                Val3 = columns.GetValue(columnMap, "val3"),
 
-                Func4 = columns[15].ToNullableInt(),
-                Stat4 = columns[16],
-                Set4 = columns[17].ToNullableInt(),
-                Val4 = columns[18].ToNullableInt(),
+                Func4 = columns.GetValue(columnMap, "func4").ToNullableInt(),
+                Stat4 = columns.GetValue(columnMap, "stat4"),
+                Set4 = columns.GetValue(columnMap, "set4").ToNullableInt(),
+                Val4 = columns.GetValue(columnMap, "val4"),
 
-                Func5 = columns[19].ToNullableInt(),
-                Stat5 = columns[20],
-                Set5 = columns[21].ToNullableInt(),
-                Val5 = columns[22].ToNullableInt(),
+                Func5 = columns.GetValue(columnMap, "func5").ToNullableInt(),
+                Stat5 = columns.GetValue(columnMap, "stat5"),
+                Set5 = columns.GetValue(columnMap, "set5").ToNullableInt(),
+                Val5 = columns.GetValue(columnMap, "val5"),
 
-                Func6 = columns[23].ToNullableInt(),
-                Stat6 = columns[24],
-                Set6 = columns[25].ToNullableInt(),
-                Val6 = columns[26].ToNullableInt(),
+                Func6 = columns.GetValue(columnMap, "func6").ToNullableInt(),
+                Stat6 = columns.GetValue(columnMap, "stat6"),
+                Set6 = columns.GetValue(columnMap, "set6").ToNullableInt(),
+                Val6 = columns.GetValue(columnMap, "val6"),
 
-                Func7 = columns[27].ToNullableInt(),
-                Stat7 = columns[28],
-                Set7 = columns[29].ToNullableInt(),
-                Val7 = columns[30].ToNullableInt(),
+                Func7 = columns.GetValue(columnMap, "func7").ToNullableInt(),
+                Stat7 = columns.GetValue(columnMap, "stat7"),
+                Set7 = columns.GetValue(columnMap, "set7").ToNullableInt(),
+                Val7 = columns.GetValue(columnMap, "val7"),
 
-                Parameter = columns[31],
-                Min = columns[32],
-                Max = columns[33],
-                Notes = columns[34],
-                Eol = columns[35].ToInt(),
+                Parameter = columns.GetValue(columnMap, "*Parameter"),
+                Min = columns.GetValue(columnMap, "*Min"),
+                Max = columns.GetValue(columnMap, "*Max"),
+                Notes = columns.GetValue(columnMap, "*Notes"),
+                Eol = columns.GetValue(columnMap, "*eol").ToInt(),
 
-                PropertyFunctions = new List<PropertyFunction>() // Assuming this needs further parsing
-            }).ToList();
+                PropertyFunctions = new List<PropertyFunction>()
+            })
+            .ToList();
+        
+        return Entries;
     }
 }
