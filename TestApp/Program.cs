@@ -1,10 +1,6 @@
-﻿using D2RReimaginedTools.TextFileParsers;
+﻿using D2RReimaginedTools.Helpers;
 
-var filePath = Path.Combine(AppContext.BaseDirectory, "Data/excel/cubemain.txt");
-var cubeMainEntries = await CubeMainParser.GetEntries(filePath);
-Console.WriteLine($"Found {cubeMainEntries.Count} cube main entries.");
+var excelDirectory = "Data/excel";
+await ItemCodeHelper.InitializeAsync(excelDirectory);
 
-foreach (var recipe in cubeMainEntries)
-{
-    Console.WriteLine($"Recipe Output: {recipe.Output}");
-}
+Console.WriteLine($"Is valid item code: {ItemCodeHelper.IsValidItemCode("mpo")}");
