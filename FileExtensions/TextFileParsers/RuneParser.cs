@@ -1,67 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using D2RReimaginedTools.Extensions;
+﻿using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
 
-
-public static class TsvToRuneWordExtensions
+public static class RunesParser
 {
-    public static RuneWord ToRuneWord(this string[] columns)
+    private static IList<RuneWord> Entries { get; set; } = new List<RuneWord>();
+
+    public static async Task<IList<RuneWord>> GetEntries(string path)
     {
-        return new RuneWord
-        {
-            Name = columns[0],
-            RuneName = columns[1],
-            Complete = columns[2].ToNullableInt(),
-            FirstLadderSeason = columns[3].ToNullableInt(),
-            LastLadderSeason = columns[4].ToNullableInt(),
-            PatchRelease = columns[5],
+        if (Entries != null && Entries.Count > 0)
+            return Entries;
 
-            ItemType1 = columns[6],
-            ItemType2 = columns[7],
-            ItemType3 = columns[8],
-            ItemType4 = columns[9],
-            ItemType5 = columns[10],
-            ItemType6 = columns[11],
+        var lines = await File.ReadAllLinesAsync(path);
+        if (lines.Length < 2)
+            return new List<RuneWord>();
 
-            ExcludeItemType1 = columns[12],
-            ExcludeItemType2 = columns[13],
-            ExcludeItemType3 = columns[14],
+        var header = lines[0].Split('\t');
+        var columnMap = header
+            .Select((name, index) => new { name = name.Trim(), index })
+            .ToDictionary(x => x.name, x => x.index, StringComparer.OrdinalIgnoreCase);
 
-            RunesUsed = columns[15],
-            Rune1 = columns[16],
-            Rune2 = columns[17],
-            Rune3 = columns[18],
-            Rune4 = columns[19],
-            Rune5 = columns[20],
-            Rune6 = columns[21],
-
-            Mods = new List<RuneWordMod>
+        Entries = lines
+            .Skip(1)
+            .Select(line => line.Split('\t'))
+            .Where(columns => columns.Length >= header.Length)
+            .Select(columns => new RuneWord
             {
-                ParseMod(columns, 22),
-                ParseMod(columns, 26),
-                ParseMod(columns, 30),
-                ParseMod(columns, 34),
-                ParseMod(columns, 38),
-                ParseMod(columns, 42),
-                ParseMod(columns, 46),
-            }
-        };
-    }
+                Name = columns.GetValue(columnMap, "Name"),
+                RuneName = columns.GetValue(columnMap, "*Rune Name"),
+                Complete = columns.GetValue(columnMap, "complete").ToNullableInt(),
+                FirstLadderSeason = columns.GetValue(columnMap, "firstLadderSeason").ToNullableInt(),
+                LastLadderSeason = columns.GetValue(columnMap, "lastLadderSeason").ToNullableInt(),
+                PatchRelease = columns.GetValue(columnMap, "*Patch Release"),
 
-    private static RuneWordMod ParseMod(string[] columns, int startIndex)
-    {
-        return new RuneWordMod
-        {
-            Code = columns[startIndex],
-            Param = columns[startIndex + 1],
-            Min = columns[startIndex + 2].ToNullableInt(),
-            Max = columns[startIndex + 3].ToNullableInt()
-        };
+                ItemType1 = columns.GetValue(columnMap, "itype1"),
+                ItemType2 = columns.GetValue(columnMap, "itype2"),
+                ItemType3 = columns.GetValue(columnMap, "itype3"),
+                ItemType4 = columns.GetValue(columnMap, "itype4"),
+                ItemType5 = columns.GetValue(columnMap, "itype5"),
+                ItemType6 = columns.GetValue(columnMap, "itype6"),
+
+                ExcludeItemType1 = columns.GetValue(columnMap, "etype1"),
+                ExcludeItemType2 = columns.GetValue(columnMap, "etype2"),
+                ExcludeItemType3 = columns.GetValue(columnMap, "etype3"),
+
+                RunesUsed = columns.GetValue(columnMap, "*RunesUsed"),
+                Rune1 = columns.GetValue(columnMap, "Rune1"),
+                Rune2 = columns.GetValue(columnMap, "Rune2"),
+                Rune3 = columns.GetValue(columnMap, "Rune3"),
+                Rune4 = columns.GetValue(columnMap, "Rune4"),
+                Rune5 = columns.GetValue(columnMap, "Rune5"),
+                Rune6 = columns.GetValue(columnMap, "Rune6"),
+
+                Mods = Enumerable.Range(1, 7)
+                    .Select(i => new RuneWordMod
+                    {
+                        Code = columns.GetValue(columnMap, $"T1Code{i}"),
+                        Param = columns.GetValue(columnMap, $"T1Param{i}"),
+                        Min = columns.GetValue(columnMap, $"T1Min{i}").ToNullableInt(),
+                        Max = columns.GetValue(columnMap, $"T1Max{i}").ToNullableInt()
+                    })
+                    .ToList()
+            })
+            .ToList();
+
+        return Entries;
     }
 }
