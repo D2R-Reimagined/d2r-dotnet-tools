@@ -7,22 +7,24 @@ public class PropertiesHelper
 {
     public static async Task<string> GetPropertyTranslationKeyAsync(string excelPath, Property property)
     {
-        var hasMoreThanOneStat = !string.IsNullOrWhiteSpace(property.Stat2);
         var itemStatEntries = await ItemStatCostParser.GetEntries(Path.Combine(excelPath, "itemstatcost.txt"));
 
-        if (!hasMoreThanOneStat)
+        // List of all stat fields in the property
+        var stats = new[] { property.Stat1, property.Stat2, property.Stat3, property.Stat4, property.Stat5, property.Stat6, property.Stat7 };
+
+        foreach (var stat in stats)
         {
-            var foundItemStatEntry = itemStatEntries.FirstOrDefault(x => x.Stat == property.Stat1);
-            if (foundItemStatEntry != null)
+            if (!string.IsNullOrWhiteSpace(stat))
             {
-                return foundItemStatEntry.DescStrPos;
+                var itemStatEntry = itemStatEntries.FirstOrDefault(x => x.Stat == stat);
+                if (itemStatEntry != null && !string.IsNullOrWhiteSpace(itemStatEntry.DescStrPos))
+                {
+                    return itemStatEntry.DescStrPos;
+                }
             }
-        }
-        else
-        {
-            //TODO handle stat groups
         }
 
         return $"NOT FOUND - {property.Code} - {property.Stat1}";
     }
+
 }
