@@ -13,6 +13,8 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RootNamespace>D2RReimaginedTools</RootNamespace>
         <RepositoryUrl>https://github.com/D2R-Reimagined/dotnet-tools</RepositoryUrl>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
 
     <ItemGroup>
