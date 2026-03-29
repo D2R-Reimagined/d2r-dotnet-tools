@@ -49,7 +49,7 @@ Act 1 - Pond	46	0	1	0	1	0	1	1	8	8	0	0	0	0	1	Act1/Outdoors/Pond1.ds1	0	0	0	0	0	41
 Act 1 - Cottages 1	47	0	1	1	1	0	1	1	8	8	0	0	2	-4	6	Act1/Outdoors/Cott1.ds1	Act1/Outdoors/Cott2.ds1	Act1/Outdoors/Cott3.ds1	Act1/Outdoors/Cott4.ds1	Act1/Outdoors/Cott5.ds1	Act1/Outdoors/Cott6.ds1	16777217
 Act 1 - Cottages 2	48	0	1	1	1	0	1	1	8	8	0	0	2	-4	6	Act1/Outdoors/Cott1A.ds1	Act1/Outdoors/Cott2A.ds1	Act1/Outdoors/Cott3A.ds1	Act1/Outdoors/Cott4A.ds1	Act1/Outdoors/Cott5A.ds1	Act1/Outdoors/Cott6A.ds1	16777217
 Act 1 - Cottages 3	49	0	1	1	1	0	1	1	8	8	0	0	2	-4	1	Act1/Outdoors/Cott7.ds1	0	0	0	0	0	16777217
-Act 1 - Bivouac	50	0	1	1	1	0	1	1	16	16	0	0	0	0	1	Act1/Outdoors/Bivouac.ds1	0	0	0	0	0	41943297
+Act 1 - Bivouac	50	0	1	1	1	0	1	1	16	16	0	1	0	0	1	Act1/Outdoors/Bivouac.ds1	0	0	0	0	0	41943297
 Act 1 - Cave Entrance	51	0	1	0	1	0	1	1	8	8	0	1	0	0	2	Act1/Caves/CaveDr1.ds1	Act1/Caves/CaveDr2.ds1	0	0	0	0	1048835
 Act 1 - DOE Entrance	52	0	1	0	1	0	1	1	8	8	0	1	0	0	2	Act1/Caves/DenEnt.ds1	Act1/Caves/DenEnt2.ds1	0	0	0	0	1048835
 Act 1 - Cave W	53	0	1	0	0	0	1	1	24	24	0	0	0	0	2	Act1/Caves/CaveW.ds1	Act1/Caves/CaveW2.ds1	0	0	0	0	1
@@ -1091,5 +1091,15 @@ Act 5 - WorldStone	1087	132	1	0	0	0	1	1	0	0	0	1	0	0	1	Expansion/baalLair/wstone0
 Act 5 - Temple Entrance	1088	121	1	0	0	0	1	1	0	0	0	1	1	-4	1	Expansion/wildtemple/tempEnter.ds1	0	0	0	0	0	3711029
 Act 5 - Baal Entrance	1089	120	1	0	0	0	1	1	0	0	0	1	0	0	1	Expansion/mountaintop/MtnTop.ds1	0	0	0	0	0	29360148
 Act 5 - Pandemonium Finale	1090	136	1	0	1	0	0	1	0	0	0	1	0	0	1	Act1/Tristram/Tri_Town4.ds1	0	0	0	0	0	63
-Pitzilla Boss Room 1	1091	138	1	0	0	0	1	0	0	0	1	1	0	0	1	Act1/Caves/pzboss1.ds1	0	0	0	0	0	1
-Pitzilla End	1092	139	1	0	0	0	1	0	0	0	1	1	0	0	1	Act1/Caves/pzend.ds1	0	0	0	0	0	1
+Act 5 - Colossal Summit	1091	137	1	0	0	0	1	1	0	0	0	1	0	0	1	Garden/ColossalSummit/ColossalSummit.ds1	0	0	0	0	0	29360148
+Act 5 Portal - Dark Tristram	1092	137	1	0	1	0	0	1	0	0	0	1	0	0	1	Act1/Tristram/Tri_Town5.ds1	0	0	0	0	0	63
+Act 5 Portal - Triad of the Elements	1093	138	1	0	0	0	0	1	0	0	0	1	0	0	1	Act2/Tomb/Durielcust.ds1	0	0	0	0	0	639
+Act 5 - Mountain Top	1094	139	1	0	0	0	1	1	0	0	0	1	0	0	1	Expansion/mountaintop/MtnTop2.ds1	0	0	0	0	0	29360148
+Act 5 Portal - Lesser Evil's Complex	1095	140	1	1	0	0	0	1	0	0	0	1	0	0	1	Act3/Travincal/mephcomp2.ds1	0	0	0	0	0	53256
+Act 5 Portal - Tathamet	1096	141	1	1	0	0	0	1	0	0	0	1	0	0	1	Act3/Travincal/Tethamet.ds1	0	0	0	0	0	53256
+Act 5 Portal - Cavern of Agony	1097	142	1	0	0	0	1	1	0	0	0	1	0	0	1	Act1/Caves/CavernofAgony.ds1	0	0	0	0	0	1
+Act 5 Portal - Demon Crypts	1098	143	1	1	0	0	0	1	0	0	0	1	0	0	1	Act3/Temple/DemonCrypts.ds1	0	0	0	0	0	4136
+Act 5 Portal -  Palace of the Degenerate	1099	144	1	1	0	0	0	1	0	0	0	1	0	0	1	Act2/Palace/PalaceoftheDegenerate.ds1	0	0	0	0	0	79
+Labyrinth 00	1100	145	0	1	0	0	0	1	0	0	0	1	0	0	1	Labyrinth/Labyrinth00.ds1	0	0	0	0	0	3
+Labyrinth 05	1101	150	1	1	0	0	0	1	16	16	0	1	0	0	1	Labyrinth/Labyrinth05.ds1	0	0	0	0	0	191
+Labyrinth10	1102	155	1	1	0	0	0	1	0	0	0	1	0	0	1	Labyrinth/Labyrinth10.ds1	0	0	0	0	0	4136

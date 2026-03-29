@@ -5,6 +5,10 @@ public record UniqueItem
     public string? Index { get; init; }
     public int ID { get; init; }
     public int Version { get; init; }
+    public bool Disabled { get; init; }
+    public bool Spawnable { get; init; }
+    public bool DisableChronicle { get; init; }
+    public string? DropConditionCalc { get; init; }
     public bool Enabled { get; init; }
     public int FirstLadderSeason { get; init; }
     public int LastLadderSeason { get; init; }
@@ -24,6 +28,54 @@ public record UniqueItem
     public string? DropSound { get; init; }
     public int DropSfxFrame { get; init; }
     public string? UseSound { get; init; }
+    public string? Prop1 { get; init; }
+    public string? Par1 { get; init; }
+    public int? Min1 { get; init; }
+    public int? Max1 { get; init; }
+    public string? Prop2 { get; init; }
+    public string? Par2 { get; init; }
+    public int? Min2 { get; init; }
+    public int? Max2 { get; init; }
+    public string? Prop3 { get; init; }
+    public string? Par3 { get; init; }
+    public int? Min3 { get; init; }
+    public int? Max3 { get; init; }
+    public string? Prop4 { get; init; }
+    public string? Par4 { get; init; }
+    public int? Min4 { get; init; }
+    public int? Max4 { get; init; }
+    public string? Prop5 { get; init; }
+    public string? Par5 { get; init; }
+    public int? Min5 { get; init; }
+    public int? Max5 { get; init; }
+    public string? Prop6 { get; init; }
+    public string? Par6 { get; init; }
+    public int? Min6 { get; init; }
+    public int? Max6 { get; init; }
+    public string? Prop7 { get; init; }
+    public string? Par7 { get; init; }
+    public int? Min7 { get; init; }
+    public int? Max7 { get; init; }
+    public string? Prop8 { get; init; }
+    public string? Par8 { get; init; }
+    public int? Min8 { get; init; }
+    public int? Max8 { get; init; }
+    public string? Prop9 { get; init; }
+    public string? Par9 { get; init; }
+    public int? Min9 { get; init; }
+    public int? Max9 { get; init; }
+    public string? Prop10 { get; init; }
+    public string? Par10 { get; init; }
+    public int? Min10 { get; init; }
+    public int? Max10 { get; init; }
+    public string? Prop11 { get; init; }
+    public string? Par11 { get; init; }
+    public int? Min11 { get; init; }
+    public int? Max11 { get; init; }
+    public string? Prop12 { get; init; }
+    public string? Par12 { get; init; }
+    public int? Min12 { get; init; }
+    public int? Max12 { get; init; }
     public int DiabloCloneWeight { get; init; }
     public IList<ItemProperty>? Properties { get; init; }
     public int Eol { get; init; }

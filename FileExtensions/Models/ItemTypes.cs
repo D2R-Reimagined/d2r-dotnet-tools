@@ -37,4 +37,9 @@ public record ItemType
         public string InvGfx5 { get; init; }
         public string InvGfx6 { get; init; }
         public string StorePage { get; init; }
+        public int Eol { get; init; }
+        public string? UICategory { get; init; }
+        public string? RunewordCategory1 { get; init; }
+        public string? RunewordCategory2 { get; init; }
+        public bool Restricted { get; init; }
 }

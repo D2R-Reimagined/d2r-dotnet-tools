@@ -3,6 +3,7 @@
 public record MonUMod
 {
     public string? UniqueModId { get; init; }
+    public int? Id { get; init; }
     public int? Enabled { get; init; }
     public int? Version { get; init; }
     public int? Xfer { get; init; }
@@ -18,4 +19,5 @@ public record MonUMod
     public int? UPick_H { get; init; }
     public int? Constants { get; init; }
     public string? ConstantDesc { get; init; }
+    public int? Eol { get; init; }
 }

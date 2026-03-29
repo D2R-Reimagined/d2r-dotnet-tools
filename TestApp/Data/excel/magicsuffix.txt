@@ -1,4 +1,4 @@
-Name	* Description	version	spawnable	rare	level	maxlevel	levelreq	classspecific	class	classlevelreq	frequency	group	mod1code	mod1param	mod1min	mod1max	mod2code	mod2param	mod2min	mod2max	mod3code	mod3param	mod3min	mod3max	transformcolor	itype1	itype2	itype3	itype4	itype5	itype6	itype7	etype1	etype2	etype3	etype4	etype5	multiply	add
+name	* Description	version	spawnable	rare	level	maxlevel	levelreq	classspecific	class	classlevelreq	frequency	group	mod1code	mod1param	mod1min	mod1max	mod2code	mod2param	mod2min	mod2max	mod3code	mod3param	mod3min	mod3max	transformcolor	itype1	itype2	itype3	itype4	itype5	itype6	itype7	etype1	etype2	etype3	etype4	etype5	multiply	add
 of Defense1	+# Defense & +#% Enhanced Damage	100	1	1	12		8				60	61	ac		5	10										ring	amul											0	0
 of Defense1	+# Defense & +#% Enhanced Damage	100	1	1	33		27				60	61	ac		11	25										ring	amul											0	0
 of Guarding	+# Defense & +#% Enhanced Damage	100	1	1	51		46				60	61	ac		26	50										ring	amul											0	0
@@ -45,7 +45,7 @@ of Excellence	+# to Minimum Damage	100	1	1	59		51				32	15	dmg-min		6	9									
 of Performance	+# to Minimum Damage	100	1	1	81		73				32	15	dmg-min		10	13										ring	amul	circ										0	0
 of Joyfulness	+# to Minimum Damage	100	1	1	5	50	3				32	15	dmg-min		1	4									whit	jewl												0	0
 of Bliss	+# to Minimum Damage	100	1	1	43		37				32	15	dmg-min		5	10									whit	jewl												0	0
-of Frost	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second) 	100	1	1	4	35	3				60	10	cold-min		1	1	cold-max		1	2	cold-len		50	50		weap							wand	orb				0	0
+of Frost	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	1	4	35	3				60	10	cold-min		1	1	cold-max		1	2	cold-len		50	50		weap							wand	orb				0	0
 of the Icicle	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	1	13	50	9				48	10	cold-min		1	1	cold-max		3	4	cold-len		75	75		weap							wand	orb				0	0
 of the Glacier	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	1	27	70	20				36	10	cold-min		2	4	cold-max		4	15	cold-len		100	100	dblu	weap							wand	orb				0	0
 of Winter	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	1	45		37				24	10	cold-min		5	9	cold-max		16	50	cold-len		150	150	dblu	weap							wand	orb				0	0
@@ -67,7 +67,7 @@ of Incineration	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	80
 of Flame	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	40		30				24	12	fire-min		1	1	fire-max		2	5					dred	glov	ring	amul										0	0
 of Passion	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	55		51				24	12	fire-min		1	3	fire-max		6	10					dred	glov	ring	amul										0	0
 of Fire	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	65		62				24	12	fire-min		4	10	fire-max		11	30					dred	glov	ring	amul										0	0
-of Burning	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	80		77				24	12	fire-min		11	25	fire-max		31	50					dred	glov	ring	amul										0	0
+of Burning	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	80		74				24	12	fire-min		11	25	fire-max		31	50					dred	glov	ring	amul										0	0
 of Passion	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	15		11				24	12	fire-min		1	3	fire-max		6	10					dred	jewl												0	0
 of Fire	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	36		28				24	12	fire-min		4	10	fire-max		11	30					dred	jewl												0	0
 of Burning	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	57		49				24	12	fire-min		11	25	fire-max		31	50					dred	jewl												0	0
@@ -120,14 +120,14 @@ of the Bat	#% Mana stolen per hit	100	1	1	35		27				48	28	manasteal		3	3								
 of the Bat	#% Mana stolen per hit	100	1	1	25		21				24	28	manasteal		2	3										ring												0	0
 of the Wraith	#% Mana stolen per hit	100	1	1	58		46				24	28	manasteal		4	5										ring												0	0
 of the Vampire	#% Mana stolen per hit	100	1	1	86		74				24	28	manasteal		6	8									cred	ring												0	0
-of the Lich1	#% Mana stolen per hit & #% Life stolen per hit	100	1	1	44		38				12	60	manasteal		3	5	lifesteal		5	7						ring	amul											0	0
-of the Lich1	#% Mana stolen per hit & #% Life stolen per hit	100	1	1	66		60				12	60	manasteal		6	7	lifesteal		8	9						ring	amul											0	0
-of the Lich1	#% Mana stolen per hit & #% Life stolen per hit	100	1	1	87		84				12	60	manasteal		8	9	lifesteal		10	12						ring	amul											0	0
+of the Lich	#% Mana stolen per hit & #% Life stolen per hit	100	1	1	44		38				12	60	manasteal		3	5	lifesteal		5	7						ring	amul											0	0
+of the Lich	#% Mana stolen per hit & #% Life stolen per hit	100	1	1	66		60				12	60	manasteal		6	7	lifesteal		8	9						ring	amul											0	0
+of the Lich	#% Mana stolen per hit & #% Life stolen per hit	100	1	1	87		84				12	60	manasteal		8	9	lifesteal		10	12						ring	amul											0	0
 of Health	Damage Reduced by #	100	1	1	7	20	5				48	1	red-dmg		1	1										tors	shld	ring	amul	circ								0	0
 of Protection	Damage Reduced by #	100	1	1	18	40	13				48	1	red-dmg		2	2										ring	amul	circ										0	0
 of Absorption	Damage Reduced by #	100	1	1	26	50	19				48	1	red-dmg		3	5										amul	circ	ring										0	0
 of Life	Damage Reduced by #	100	1	1	35		26				48	1	red-dmg		6	10									dblu	amul	circ	ring										0	0
-of Life Everlasting	Damage Reduced by #	100	1	1	45		37				48	1	red-dmg		10	25										amul	circ	ring										0	0
+of Life Everlasting	Damage Reduced by #	100	1	1	45		37				48	1	red-dmg		10	25										amul	circ											0	0
 of Protection	Damage Reduced by #	100	1	1	24	25	18				48	1	red-dmg		2	3										tors	shld	circ										0	0
 of Absorption	Damage Reduced by #	100	1	1	32	55	24				48	1	red-dmg		4	5										tors	shld	circ										0	0
 of Life	Damage Reduced by #	100	1	1	41		33				48	1	red-dmg		6	7										tors	shld	circ										0	0
@@ -198,7 +198,7 @@ of Summer2	+#% to Maximum Fire Resist	100	1	1	54		45				24	67	res-fire-max		1	10
 of Spring2	+#% to Maximum Lightning Resist	100	1	1	54		45				24	67	res-ltng-max		1	10										armo	shld	ring	amul									0	0
 of Autumn2	+#% to Maximum Poison Resist	100	1	1	54		45				24	67	res-pois-max		1	10										armo	shld	ring	amul									0	0
 of the Four Seasons2	#% All Maximum Resistances	100	1	1	68		58				24	67	res-all-max		1	3										armo	shld	ring	amul									0	0
-of the Four Seasons2	#% All Maximum Resistances	100	1	1	87		79				12	67	res-all-max		4	6										armo	shld	ring	amul									0	0
+of the Four Seasons2	#% All Maximum Resistances	100	1	1	87		75				12	67	res-all-max		4	6										armo	shld	ring	amul									0	0
 of Dexterity	+# to Dexterity	100	1	1	1	20	1				48	17	dex		1	2										amul	miss	circ										0	0
 of Skill	+# to Dexterity	100	1	1	11	40	8				36	17	dex		3	5										amul	miss	circ										0	0
 of Accuracy	+# to Dexterity	100	1	1	27	55	20				36	17	dex		6	9										amul	miss	circ										0	0
@@ -318,7 +318,7 @@ of the Soul2	+# Life after each Kill	100	1	1	75		75				24	67	heal-kill		16	25			
 of Pacing	+#% Faster Run/Walk	100	1	1	12	50	8				36	35	move1		10	10										boot	circ											0	0
 of Haste	+#% Faster Run/Walk	100	1	1	22		16				48	35	move2		20	20										boot	circ											0	0
 of Speed	+#% Faster Run/Walk	100	1	1	37		29				48	35	move3		30	30										boot	circ											0	0
-of Traveling	+#% Faster Run/Walk	100	1	1	65		57				48	35	move3		30	30	stamdrain		80	90						boot												0	0
+of Traveling	+#% Faster Run/Walk	100	0	1	65		57				48	35	move3		30	30	stamdrain		80	90						boot												0	0
 of Acceleration	+#% Faster Run/Walk	100	1	1	51		43				48	35	move3		40	40										boot												0	0
 of Balance	+#% Faster Hit Recovery	100	1	1	5		3				48	18	balance1		10	10										armo							glov					0	0
 of Equilibrium	+#% Faster Hit Recovery	100	1	1	9		6				48	18	balance2		20	20										tors	belt	shld										0	0
@@ -457,8 +457,8 @@ of Iron Maiden	#% Chance to cast level # [Skill] when struck	100	1	1	12	30	12		n
 of Iron Maiden	#% Chance to cast level # [Skill] when struck	100	1	1	30		30		nec	12	1	77	gethit-skill	76	6	10										shld	weap	head										0	0
 of Terror	#% Chance to cast level # [Skill] when struck	100	1	1	12	30	12		nec	12	1	77	gethit-skill	77	4	1										shld	weap	head										0	0
 of Terror	#% Chance to cast level # [Skill] when struck	100	1	1	30		30		nec	12	1	77	gethit-skill	77	9	12										shld	weap	head										0	0
-of Bone Walls	#% Chance to cast level # [Skill] when struck	100	1	1	12	35	12		nec	12	1	77	gethit-skill	78	5	1										weap	head											0	0
-of Bone Walls	#% Chance to cast level # [Skill] when struck	100	1	1	35		37		nec	12	1	77	gethit-skill	78	4	25										weap	head											0	0
+of Bone Walls	#% Chance to cast level # [Skill] when struck	100	0	1	12	35	12		nec	12	1	77	gethit-skill	78	5	1										weap	head											0	0
+of Bone Walls	#% Chance to cast level # [Skill] when struck	100	0	1	35		37		nec	12	1	77	gethit-skill	78	4	25										weap	head											0	0
 of Confusion	#% Chance to cast level # [Skill] when struck	100	1	1	18	36	18		nec	18	1	77	gethit-skill	81	35	1										ring	circ	head	weap									0	0
 of Confusion	#% Chance to cast level # [Skill] when struck	100	1	1	36		35		nec	18	1	77	gethit-skill	81	35	5										ring	circ	head	weap									0	0
 of Life Tap	#% Chance to cast level # [Skill] when struck	100	1	1	18	40	18		nec	18	1	77	gethit-skill	82	12	1										weap	ring	head										0	0
@@ -471,16 +471,16 @@ of Attraction	#% Chance to cast level # [Skill] when struck	100	1	1	24	48	25		ne
 of Attraction	#% Chance to cast level # [Skill] when struck	100	1	1	48	77	44		nec	24	1	77	gethit-skill	86	7	16										ring	amul	circ	head	weap								0	0
 of Decrepification	#% Chance to cast level # [Skill] when struck	100	1	1	24	70	25		nec	24	1	77	gethit-skill	87	11	2										weap	shld	head										0	0
 of Decrepification	#% Chance to cast level # [Skill] when struck	100	1	1	70		75		nec	24	1	77	gethit-skill	87	10	15										shld	weap	head										0	0
-of Bone Imprisonment	#% Chance to cast level # [Skill] when struck	100	1	1	24	46	25		nec	24	1	77	gethit-skill	88	8	2										weap	ring	head										0	0
-of Bone Imprisonment	#% Chance to cast level # [Skill] when struck	100	1	1	46		44		nec	24	1	77	gethit-skill	88	8	14										weap	ring	head										0	0
+of Bone Imprisonment	#% Chance to cast level # [Skill] when struck	100	0	1	24	46	25		nec	24	1	77	gethit-skill	88	8	2										weap	ring	head										0	0
+of Bone Imprisonment	#% Chance to cast level # [Skill] when struck	100	0	1	46		44		nec	24	1	77	gethit-skill	88	8	14										weap	ring	head										0	0
 of Lower Resistance	#% Chance to cast level # [Skill] when struck	100	1	1	30	77	33		nec	30	1	77	gethit-skill	91	6	3										weap	head											0	0
 of Lower Resistance	#% Chance to cast level # [Skill] when struck	100	1	1	77		80		nec	30	1	77	gethit-skill	91	6	18										weap	head											0	0
 of Poison Novas	#% Chance to cast level # [Skill] when struck	100	1	1	30	48	33		nec	30	1	77	gethit-skill	92	5	3										weap	glov	head										0	0
 of Poison Novas	#% Chance to cast level # [Skill] when struck	100	1	1	48		48		nec	30	1	77	gethit-skill	92	7	14										glov	weap	glov										0	0
 of Bone Spirits	#% Chance to cast level # [Skill] when struck	100	1	1	30	48	33		nec	30	1	77	gethit-skill	93	4	3										amul	circ	head	weap									0	0
 of Bone Spirits	#% Chance to cast level # [Skill] when struck	100	1	1	48		48		nec	30	1	77	gethit-skill	93	6	23										amul	circ	head	weap									0	0
-of Revivification	#% Chance to cast level # [Skill] when struck	100	1	1	30	80	33		nec	30	1	77	gethit-skill	95	4	3										weap	head											0	0
-of Revivification	#% Chance to cast level # [Skill] when struck	100	1	1	80		85		nec	30	1	77	gethit-skill	95	7	10										weap	head											0	0
+of Revivification	#% Chance to cast level # [Skill] when struck	100	0	1	30	80	33		nec	30	1	77	gethit-skill	95	4	3										weap	head											0	0
+of Revivification	#% Chance to cast level # [Skill] when struck	100	0	1	80		85		nec	30	1	77	gethit-skill	95	7	10										weap	head											0	0
 of Holy Bolts	#% Chance to cast level # [Skill] when struck	100	1	1	6	24	6		pal	6	1	77	gethit-skill	101	12	1										mele	ashd	amul	circ									0	0
 of Holy Bolts	#% Chance to cast level # [Skill] when struck	100	1	1	24	50	24		pal	6	1	77	gethit-skill	101	12	16										amul	circ	mele	circ									0	0
 of Blessed Hammers	#% Chance to cast level # [Skill] when struck	100	1	1	18	50	18		pal	18	1	77	gethit-skill	112	5	1										mele	ashd											0	0
@@ -497,8 +497,8 @@ of Battle Cry	#% Chance to cast level # [Skill] when struck	100	1	1	18	36	18		ba
 of Battle Cry	#% Chance to cast level # [Skill] when struck	100	1	1	36	65	36		bar	18	1	77	gethit-skill	146	15	18										phlm	mele											0	0
 of Battle Orders	#% Chance to cast level # [Skill] when struck	100	1	1	24	55	25		bar	24	1	77	gethit-skill	149	5	2										phlm	mele											0	0
 of Battle Orders	#% Chance to cast level # [Skill] when struck	100	1	1	55		55		bar	24	1	77	gethit-skill	149	7	22										phlm	mele											0	0
-of Grim Ward	#% Chance to cast level # [Skill] when struck	100	1	1	24	50	25		bar	24	1	77	gethit-skill	150	4	2										phlm	mele	amul										0	0
-of Grim Ward	#% Chance to cast level # [Skill] when struck	100	1	1	50		55		bar	24	1	77	gethit-skill	150	8	15										amul	phlm	mele										0	0
+of Korlics Fury	#% Chance to cast level # [Skill] when struck	100	1	1	24	50	25		bar	24	1	77	gethit-skill	150	4	2										phlm	mele	amul										0	0
+of Korlics Fury	#% Chance to cast level # [Skill] when struck	100	1	1	50		55		bar	24	1	77	gethit-skill	150	8	15										amul	phlm	mele										0	0
 of War Cry	#% Chance to cast level # [Skill] when struck	100	1	1	30	55	33		bar	30	1	77	gethit-skill	154	7	3										phlm	mele											0	0
 of War Cry	#% Chance to cast level # [Skill] when struck	100	1	1	55		63		bar	30	1	77	gethit-skill	154	10	13										phlm	mele											0	0
 of Battle Command	#% Chance to cast level # [Skill] when struck	100	1	1	30	48	33		bar	30	1	77	gethit-skill	155	4	3										phlm	mele											0	0
@@ -523,12 +523,12 @@ of Hurricane	#% Chance to cast level # [Skill] when struck	100	1	1	30	65	33		dru
 of Hurricane	#% Chance to cast level # [Skill] when struck	100	1	1	65		65		dru	30	1	77	gethit-skill	250	8	21										amul	circ	mele										0	0
 of Burst of Speed2	#% Chance to cast level # [Skill] when struck	100	1	1	6	40	6		ass	6	1	77	gethit-skill	258	5	2										boot	mele											0	0
 of Burst of Speed2	#% Chance to cast level # [Skill] when struck	100	1	1	40		45		ass	6	1	77	gethit-skill	258	8	8										boot	mele											0	0
-of Cloak of Shadows2	#% Chance to cast level # [Skill] when struck	100	1	1	18	36	18		ass	18	1	77	gethit-skill	264	5	1										amul	mele											0	0
-of Cloak of Shadows2	#% Chance to cast level # [Skill] when struck	100	1	1	36		38		ass	18	1	77	gethit-skill	264	9	13										amul	mele											0	0
+of Snowlash	#% Chance to cast level # [Skill] when struck	100	0	1	18	36	18		ass	18	1	77	gethit-skill	264	5	1										amul	mele											0	0
+of Snowlash	#% Chance to cast level # [Skill] when struck	100	0	1	36		38		ass	18	1	77	gethit-skill	264	9	13										amul	mele											0	0
 of Fading2	#% Chance to cast level # [Skill] when struck	100	1	1	18	50	18		ass	18	1	77	gethit-skill	267	4	1										tors	amul	mele										0	0
 of Fading2	#% Chance to cast level # [Skill] when struck	100	1	1	50		53		ass	18	1	77	gethit-skill	267	8	12										tors	amul	mele										0	0
-of Mind Blasting2	#% Chance to cast level # [Skill] when struck	100	1	1	24	48	25		ass	24	1	77	gethit-skill	273	3	2										helm	mele											0	0
-of Mind Blasting2	#% Chance to cast level # [Skill] when struck	100	1	1	48		48		ass	24	1	77	gethit-skill	273	7	18										helm	mele											0	0
+of Mind Blasting2	#% Chance to cast level # [Skill] when struck	100	0	1	24	48	25		ass	24	1	77	gethit-skill	273	3	2										helm	mele											0	0
+of Mind Blasting2	#% Chance to cast level # [Skill] when struck	100	0	1	48		48		ass	24	1	77	gethit-skill	273	7	18										helm	mele											0	0
 of Blade Shield2	#% Chance to cast level # [Skill] when struck	100	1	1	30	48	33		ass	30	1	77	gethit-skill	277	6	3										tors	mele											0	0
 of Blade Shield2	#% Chance to cast level # [Skill] when struck	100	1	1	48		50		ass	30	1	77	gethit-skill	277	9	17										tors	mele											0	0
 of Venom	#% Chance to cast level # [Skill] when struck	100	1	1	30	57	33		ass	30	1	77	gethit-skill	278	12	3										glov	mele											0	0
@@ -580,11 +580,11 @@ of Life Tap	#% Chance to cast level # [Skill] on striking	100	1	1	32		32		nec	18
 of Poison Explosion	#% Chance to cast level # [Skill] on striking	100	1	1	27		27		nec	18	1	78	hit-skill	83	4	9										weap	head											0	0
 of Bone Spears	#% Chance to cast level # [Skill] on striking	100	1	1	30		30		nec	18	1	78	hit-skill	84	4	11										weap	head											0	0
 of Decrepification	#% Chance to cast level # [Skill] on striking	100	1	1	38		38		nec	24	1	78	hit-skill	87	6	9										weap	shld	head										0	0
-of Bone Imprisonment	#% Chance to cast level # [Skill] on striking	100	1	1	30		30		nec	24	1	78	hit-skill	88	5	5										weap	ring	head										0	0
+of Bone Imprisonment	#% Chance to cast level # [Skill] on striking	100	0	1	30		30		nec	24	1	78	hit-skill	88	5	5										weap	ring	head										0	0
 of Lower Resistance	#% Chance to cast level # [Skill] on striking	100	1	1	45		45		nec	30	1	78	hit-skill	91	6	13										weap	head											0	0
 of Poison Novas	#% Chance to cast level # [Skill] on striking	100	1	1	55		55		nec	30	1	78	hit-skill	92	5	22										weap	glov	head										0	0
 of Bone Spirits	#% Chance to cast level # [Skill] on striking	100	1	1	48		48		nec	30	1	78	hit-skill	93	4	18										amul	circ	head	weap									0	0
-of Revivification	#% Chance to cast level # [Skill] on striking	100	1	1	51		51		nec	30	1	78	hit-skill	95	3	8										weap	head											0	0
+of Revivification	#% Chance to cast level # [Skill] on striking	100	0	1	51		51		nec	30	1	78	hit-skill	95	3	8										weap	head											0	0
 of Firestorms	#% Chance to cast level # [Skill] on striking	100	1	1	1	18	1		dru	1	1	78	hit-skill	225	12	4										mele												0	0
 of Firestorms	#% Chance to cast level # [Skill] on striking	100	1	1	18	36	18		dru	1	1	78	hit-skill	225	6	12										mele												0	0
 of Molten Boulders	#% Chance to cast level # [Skill] on striking	100	1	1	18		18		dru	6	1	78	hit-skill	229	4	9										mele												0	0
@@ -593,8 +593,8 @@ of Twister	#% Chance to cast level # [Skill] on striking	100	1	1	24	48	24		dru	1
 of Volcano	#% Chance to cast level # [Skill] on striking	100	1	1	48		48		dru	24	1	78	hit-skill	244	3	22										mele												0	0
 of Tornado	#% Chance to cast level # [Skill] on striking	100	1	1	36		36		dru	24	1	78	hit-skill	245	7	12										mele	amul	circ										0	0
 of Armageddon	#% Chance to cast level # [Skill] on striking	100	1	1	60		60		dru	30	1	78	hit-skill	249	3	24										mele												0	0
-of Cloak of Shadows2	#% Chance to cast level # [Skill] on striking	100	1	1	18		18		ass	18	1	78	hit-skill	264	5	3										amul	mele											0	0
-of Mind Blasting2	#% Chance to cast level # [Skill] on striking	100	1	1	30		30		ass	24	1	78	hit-skill	273	3	7										helm	mele											0	0
+of Snowlash	#% Chance to cast level # [Skill] on striking	100	0	1	18		18		ass	18	1	78	hit-skill	264	5	3										amul	mele											0	0
+of Mind Blasting2	#% Chance to cast level # [Skill] on striking	100	0	1	30		30		ass	24	1	78	hit-skill	273	3	7										helm	mele											0	0
 of Inner Sight	#% Chance to cast level # [Skill] when you Level-Up	100	1	1	6		6		ama	1	4	79	levelup-skill	Inner Sight	100	17										amul	amaz	circ	glov									0	0
 of Enchantment	#% Chance to cast level # [Skill] when you Level-Up	100	1	1	18		18		sor	18	4	79	levelup-skill	Enchant	100	27										weap												0	0
 of Thunder Storm	#% Chance to cast level # [Skill] when you Level-Up	100	1	1	24		24		sor	24	4	79	levelup-skill	Thunder Storm	100	24										weap												0	0
@@ -625,9 +625,9 @@ of Pumping	Life gained after each hit	100	1	1	20		20				4	80	healperhit		7	9				
 of Siphoning	Life gained after each hit	100	1	1	20		20				2	80	healperhit		10	12									dred	mele	amaz											0	0
 of Splitting	+# Bone Spear Projectiles	100	1	1	30		30		nec	30	64	81	extra_bonespears		1	1										head	wand											0	0
 of Splitting	+# Holy Bolt Projectiles	100	1	1	30		30		pal	30	64	81	extra_holybolt		1	1										scep	ashd											0	0
-of Craftsmanship	+# to Maximum Damage	100	1	0	21	70	15				20	14	dmg-max		5	5										scha												0	0
-of Quality	+# to Maximum Damage	100	1	0	36		45				10	14	dmg-max		10	10										scha												0	0
-of Maiming	+# to Maximum Damage	100	1	0	60		75				3	14	dmg-max		20	20										scha												0	0
+of Craftsmanship	+# to Maximum Damage	100	1	0	21	70	15				20	14	dmg-max		3	3										scha												0	0
+of Quality	+# to Maximum Damage	100	1	0	36		45				10	14	dmg-max		5	5										scha												0	0
+of Maiming	+# to Maximum Damage	100	1	0	60		75				3	14	dmg-max		10	10										scha												0	0
 of Frost	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	0	14	70	10				20	10	cold-min		1	1	cold-max		1	5	cold-len		25	25		scha												0	0
 of the Icicle	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	0	21		25				10	10	cold-min		2	5	cold-max		5	10	cold-len		25	25		scha												0	0
 of the Glacier	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	0	60		40				3	10	cold-min		3	10	cold-max		10	20	cold-len		25	25		scha												0	0
@@ -699,34 +699,84 @@ of Mastery	+#% to Fire Skill Damage	100	1	0	65		81				1	83	extra-fire		3	5						
 of Mastery	+#% to Lightning Skill Damage	100	1	0	65		81				1	83	extra-ltng		3	5										mcha												0	0
 of Mastery	+#% to Cold Skill Damage	100	1	0	65		81				1	83	extra-cold		3	5										mcha												0	0
 of Mastery	+#% to Poison Skill Damage	100	1	0	65		81				1	83	extra-pois		3	5										mcha												0	0
-of Frost	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	0	5	20	3				24	10	cold-min		4	6	cold-max		6	8						lcha												0	0
-of the Icicle	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	0	10		6				12	10	cold-min		6	8	cold-max		10	15						lcha												0	0
-of the Glacier	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	1	30		11				12	10	cold-min		8	10	cold-max		12	18						lcha												0	0
-of Winter	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	1	40		17				12	10	cold-min		12	14	cold-max		20	25						lcha												0	0
-of Flame	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	0	10		2				24	12	fire-min		2	4	fire-max		6	8						lcha												0	0
-of Fire	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	0	15		6				12	12	fire-min		4	6	fire-max		10	15						lcha												0	0
-of Burning	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	30		10				12	12	fire-min		6	8	fire-max		12	18						lcha												0	0
-of Incineration	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	40		16				12	12	fire-min		10	15	fire-max		20	25						lcha												0	0
-of Shock	+# to Minimum Lightning Damage & +# to Maximum Lightning Damage	100	1	0	10	20	3				24	13	ltng-min		2	4	ltng-max		6	8						lcha												0	0
-of Lightning	+# to Minimum Lightning Damage & +# to Maximum Lightning Damage	100	1	0	15		5				12	13	ltng-min		4	6	ltng-max		10	15						lcha												0	0
-of Thunder	+# to Minimum Lightning Damage & +# to Maximum Lightning Damage	100	1	1	30		11				12	13	ltng-min		6	8	ltng-max		12	18						lcha												0	0
-of Storms	+# to Minimum Lightning Damage & +# to Maximum Lightning Damage	100	1	1	40		16				12	13	ltng-min		10	15	ltng-max		20	25						lcha												0	0
-of Blight	+# to Minimum Poison Damage & +# to Maximum Poison Damage	100	1	0	20		10				24	16	dmg-pois	75	60	80	res-pois-len		4	6						lcha												0	0
-of Venom	+# to Minimum Poison Damage & +# to Maximum Poison Damage	100	1	0	30		25				12	16	dmg-pois	75	80	100	res-pois-len		6	8						lcha												0	0
-of Pestilence	+# to Minimum Poison Damage & +# to Maximum Poison Damage	100	1	1	35		40				12	16	dmg-pois	100	100	120	res-pois-len		8	10						lcha												0	0
-of Anthrax	+# to Minimum Poison Damage & +# to Maximum Poison Damage	100	1	1	50		55				12	16	dmg-pois	125	120	140	res-pois-len		10	12						lcha												0	0
-of Dexterity	+# to Dexterity	100	1	0	1		1				12	31	dex		5	8	vit		5	8						lcha												0	0
-of Dexterity	+# to Dexterity	100	1	1	35		10				12	31	dex		8	10	enr		8	10						lcha												0	0
-of Strength	+# to Strength	100	1	0	1	60	1				12	31	str		5	8	vit		5	8						lcha												0	0
-of Strength	+# to Strength	100	1	1	35		10				12	31	str		8	10	enr		8	10						lcha												0	0
-of Life	+# to Life	100	1	0	10	25	5				24	26	hp		10	15	regen		5	5						lcha												0	0
-of Life	+# to Life	100	1	0	20	40	15				24	26	hp		15	20	regen		5	5						lcha												0	0
-of Life	+# to Life	100	1	0	35	55	30				24	26	hp		20	25	regen		5	5						lcha												0	0
-of Substinence	+# to Life	100	1	0	45		40				24	26	hp		25	30	regen		7	7						lcha												0	0
-of Substinence	+# to Life	100	1	0	55		50				12	26	hp		30	40	regen		7	7						lcha												0	0
-of Substinence	+# to Life	100	1	0	61		60				12	26	hp		40	50	regen		7	7						lcha												0	0
-of Vita	+# to Life	100	1	1	75		70				12	26	hp		50	75	regen		10	10						lcha												0	0
-of Vita	+# to Life	100	1	1	81		80				5	26	hp		75	100	regen		10	10						lcha												0	0
-of Vita	+# to Life	100	1	1	88		88				5	26	hp		100	150	regen		10	10						lcha												0	0
-of Inertia	+#% Faster Run/Walk	100	1	1	15		14				5	35	move3		10	15										lcha												0	0
-of Balance	+#% Faster Hit Recovery	100	1	1	10		1				5	18	balance3		12	15										lcha												0	0
+of Frost	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	0	5	60	5				24	10	cold-min		4	6	cold-max		6	8						lcha												0	0
+of the Icicle	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	0	35	81	35				12	10	cold-min		6	8	cold-max		10	15						lcha												0	0
+of the Glacier	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	1	61		61				6	10	cold-min		8	10	cold-max		12	18						lcha												0	0
+of Winter	+# to Minimum Cold Damage & +# to Maximum Cold Damage & Cold Length # of Frames (25 Frames = 1 Second)	100	1	1	81		81				6	10	cold-min		12	14	cold-max		20	25						lcha												0	0
+of Flame	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	0	5	60	5				24	10	fire-min		2	4	fire-max		6	8						lcha												0	0
+of Fire	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	0	35	81	35				12	10	fire-min		4	6	fire-max		10	15						lcha												0	0
+of Burning	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	61		61				6	10	fire-min		6	8	fire-max		12	18						lcha												0	0
+of Incineration	+# to Minimum Fire Damage & +# to Maximum Fire Damage	100	1	1	81		81				6	10	fire-min		10	15	fire-max		20	25						lcha												0	0
+of Shock	+# to Minimum Lightning Damage & +# to Maximum Lightning Damage	100	1	0	5	60	5				24	10	ltng-min		2	4	ltng-max		6	8						lcha												0	0
+of Lightning	+# to Minimum Lightning Damage & +# to Maximum Lightning Damage	100	1	0	35	81	35				12	10	ltng-min		4	6	ltng-max		10	15						lcha												0	0
+of Thunder	+# to Minimum Lightning Damage & +# to Maximum Lightning Damage	100	1	1	61		61				6	10	ltng-min		6	8	ltng-max		12	18						lcha												0	0
+of Storms	+# to Minimum Lightning Damage & +# to Maximum Lightning Damage	100	1	1	81		81				6	10	ltng-min		10	15	ltng-max		20	25						lcha												0	0
+of Blight	+# to Minimum Poison Damage & +# to Maximum Poison Damage	100	1	0	5	60	5				24	10	dmg-pois	75	60	80										lcha												0	0
+of Venom	+# to Minimum Poison Damage & +# to Maximum Poison Damage	100	1	0	35	81	35				12	10	dmg-pois	75	80	100										lcha												0	0
+of Pestilence	+# to Minimum Poison Damage & +# to Maximum Poison Damage	100	1	1	61		61				6	10	dmg-pois	100	100	120										lcha												0	0
+of Anthrax	+# to Minimum Poison Damage & +# to Maximum Poison Damage	100	1	1	81		81				6	10	dmg-pois	125	120	140										lcha												0	0
+of Dexterity	+# to Dexterity	100	1	0	1	60	1				12	31	dex		2	3										lcha												0	0
+of Dexterity	+# to Dexterity	100	1	1	35	81	35				6	31	dex		3	5										lcha												0	0
+of Strength	+# to Strength	100	1	0	1	60	1				12	31	str		2	3										lcha												0	0
+of Strength	+# to Strength	100	1	1	35	81	35				6	31	str		3	5										lcha												0	0
+of Life	+# to Life	100	1	0	10	60	10				24	26	hp		10	15										lcha												0	0
+of Life	+# to Life	100	1	0	20	60	20				24	26	hp		15	20										lcha												0	0
+of Life	+# to Life	100	1	0	35	60	35				24	26	hp		20	25										lcha												0	0
+of Substinence	+# to Life	100	1	0	45	81	45				24	26	hp		25	30										lcha												0	0
+of Substinence	+# to Life	100	1	0	55	81	55				12	26	hp		30	35										lcha												0	0
+of Substinence	+# to Life	100	1	0	61		61				12	26	hp		35	40										lcha												0	0
+of Vita	+# to Life	100	1	0	75		70				6	26	hp		40	50										lcha												0	0
+of Vita	+# to Life	100	1	1	81		81				6	26	hp		50	60										lcha												0	0
+of Vita	+# to Life	100	1	1	88		88				6	26	hp		60	70										lcha												0	0
+of Inertia	+#% Faster Run/Walk	100	1	1	15		15				6	35	move3		5	5										lcha												0	0
+of Balance	+#% Faster Hit Recovery	100	1	1	10		10				6	18	balance3		5	5										lcha												0	0
+of Mosaic	+#% chance for finishing moves to not consume charges	100	1	1	30		30		ass	30	64	81	charge-noconsume		50	50										h2h												0	0
+of Vitality	+# to Vitality	100	1	0	1	60	1				12	31	vit		2	3										lcha												0	0
+of Vitality	+# to Vitality	100	1	1	35	81	35				6	31	vit		3	5										lcha												0	0
+of Energy	+# to Energy	100	1	0	1	60	1				12	31	enr		2	3										lcha												0	0
+of Energy	+# to Energy	100	1	1	35	81	35				6	31	enr		3	5										lcha												0	0
+of Dexterity	+# to Dexterity	100	1	0	61		61				4	31	dex		5	8										lcha												0	0
+of Strength	+# to Strength	100	1	0	61		61				4	31	str		5	8										lcha												0	0
+of Vitality	+# to Vitality	100	1	0	61		61				4	31	vit		5	8										lcha												0	0
+of Energy	+# to Energy	100	1	1	61		61				4	31	enr		5	8										lcha												0	0
+of Inertia	+#% Faster Run/Walk	100	1	1	81		81				6	35	move3		10	10										lcha												0	0
+of Balance	+#% Faster Hit Recovery	100	1	1	81		81				6	18	balance3		10	10										lcha												0	0
+of Acidity	-# Enemy Poison Resistance	100	0	1	92		75				1	307	pierce-pois	1	1	1										scha													
+of Acidity	-# Enemy Poison Resistance	100	0	1	92		75				1	307	pierce-pois	1	1	2										ring	mcha												
+of Acidity	-# Enemy Poison Resistance	100	0	1	92		75				1	307	pierce-pois	1	1	3										amul	glov	boot	belt	helm	lcha								
+of Acidity	-# Enemy Poison Resistance	100	0	1	92		75				1	307	pierce-pois	1	1	4										shld	weap												
+of Acidity	-# Enemy Poison Resistance	100	0	1	92		75				1	307	pierce-pois	1	2	8										tors													
+of Kindling	-# Enemy Poison Resistance	100	0	1	92		75				1	307	pierce-fire	1	1	1										scha													
+of Kindling	-# Enemy Fire Resistance	100	0	1	92		75				1	307	pierce-fire	1	1	2										ring	mcha												
+of Kindling	-# Enemy Fire Resistance	100	0	1	92		75				1	307	pierce-fire	1	1	3										amul	glov	boot	belt	helm	lcha								
+of Kindling	-# Enemy Fire Resistance	100	0	1	92		75				1	307	pierce-fire	1	1	4										shld	weap												
+of Kindling	-# Enemy Fire Resistance	100	0	1	92		75				1	307	pierce-fire	1	2	8										tors													
+of Numbing	-# Enemy Cold Resistance	100	0	1	92		75				1	307	pierce-cold	1	1	1										scha													
+of Numbing	-# Enemy Cold Resistance	100	0	1	92		75				1	307	pierce-cold	1	1	2										ring	mcha												
+of Numbing	-# Enemy Cold Resistance	100	0	1	92		75				1	307	pierce-cold	1	1	3										amul	glov	boot	belt	helm	lcha								
+of Numbing	-# Enemy Cold Resistance	100	0	1	92		75				1	307	pierce-cold	1	1	4										shld	weap												
+of Numbing	-# Enemy Cold Resistance	100	0	1	92		75				1	307	pierce-cold	1	2	8										tors													
+of Conductivity	-# Enemy Lightning Resistance	100	0	1	92		75				1	307	pierce-ltng	1	1	1										scha													
+of Conductivity	-# Enemy Lightning Resistance	100	0	1	92		75				1	307	pierce-ltng	1	1	2										ring	mcha												
+of Conductivity	-# Enemy Lightning Resistance	100	0	1	92		75				1	307	pierce-ltng	1	1	3										amul	glov	boot	belt	helm	lcha								
+of Conductivity	-# Enemy Lightning Resistance	100	0	1	92		75				1	307	pierce-ltng	1	1	4										shld	weap												
+of Conductivity	-# Enemy Lightning Resistance	100	0	1	92		75				1	307	pierce-ltng	1	2	8										tors													
+of Thaumaturgy	-# Enemy Magic Resistance	100	0	1	92		75				1	307	pierce-mag	1	1	1										scha													
+of Thaumaturgy	-# Enemy Magic Resistance	100	0	1	92		75				1	307	pierce-mag	1	1	2										ring	mcha												
+of Thaumaturgy	-# Enemy Magic Resistance	100	0	1	92		75				1	307	pierce-mag	1	1	3										amul	glov	boot	belt	helm	lcha								
+of Thaumaturgy	-# Enemy Magic Resistance	100	0	1	92		75				1	307	pierce-mag	1	1	4										shld	weap												
+of Thaumaturgy	-# Enemy Magic Resistance	100	0	1	92		75				1	307	pierce-mag	1	2	8										tors													
+of Force	-# Enemy Physical Resistance	100	0	1	92		75				1	307	pierce-dmg	1	1	1										scha													
+of Force	-# Enemy Physical Resistance	100	0	1	92		75				1	307	pierce-dmg	1	1	2										ring	mcha												
+of Force	-# Enemy Physical Resistance	100	0	1	92		75				1	307	pierce-dmg	1	1	3										amul	glov	boot	belt	helm	lcha								
+of Force	-# Enemy Physical Resistance	100	0	1	92		75				1	307	pierce-dmg	1	1	4										shld	weap												
+of Force	-# Enemy Physical Resistance	100	0	1	92		75				1	307	pierce-dmg	1	2	8										tors													
+of Miasma Bolt	Charged Skill	100	1	1	7		7		war	1	1	44	charged	395	-60	-10										pole	knif	head										0	0
+of Miasma Bolt	Charged Skill	100	1	1	14		14		war	1	1	44	charged	395	-20	-6										swor												0	0
+of Lethargy	Charged Skill	100	1	1	12		12		war	6	1	44	charged	393	-60	-8										pole	knif	head										0	0
+of Lethargy	Charged Skill	100	1	1	24		24		war	6	1	44	charged	393	-20	-5										ring	circ											0	0
+of Rancor	Charged Skill	100	1	1	18		18		war	12	1	44	charged	396	-60	-7										pole	knif	head										0	0
+of Rancor	Charged Skill	100	1	1	36		36		war	12	1	44	charged	396	-20	-4										shld												0	0
+of Apocalypse	Charged Skill	100	1	1	36		36		war	30	1	44	charged	401	-60	-3										staf	knif	head										0	0
+of Apocalypse	Charged Skill	100	1	1	72		72		war	30	1	44	charged	401	-20	-1										glov												0	0
+of Mastery	-# Enemy Magic Resistance	100	1	0	65		81				1	83	pierce-mag		3	5										mcha												0	0

@@ -46,6 +46,7 @@ public static class DifficultyLevelParser
                 GambleUnique = columns[30].ToInt(),
                 GambleUber = columns[31].ToInt(),
                 GambleUltra = columns[32].ToInt(),
+                ResistFloor = columns[33].ToInt(),
             }).ToList();
     }
 

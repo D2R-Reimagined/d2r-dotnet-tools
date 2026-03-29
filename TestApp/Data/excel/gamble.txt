@@ -167,3 +167,8 @@ Long Staff	lst
 Gnarled Staff	cst
 Battle Staff	bst
 War Staff	wst
+Old Book	wa1
+Tome	wa2
+Codex	wa3
+Compendium	wa4
+Grimoire	wa5

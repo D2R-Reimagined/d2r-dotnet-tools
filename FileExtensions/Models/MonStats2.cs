@@ -128,4 +128,5 @@ public record MonStats2
     public string? ResurrectMode { get; init; }
     public string? ResurrectSkill { get; init; }
     public string? SpawnUniqueMod { get; init; }
+    public int? Eol { get; init; }
 }

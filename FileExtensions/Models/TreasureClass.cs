@@ -35,8 +35,12 @@ public record TreasureClass
     public int? ItemProbSum { get; init; }
     public int? ItemProbTotal { get; init; }
     public string? TreasureClassDropChance { get; init; }
+    public string? ConditionCalc { get; init; }
     public int? FirstLadderSeason { get; init; }
     public int? LastLadderSeason { get; init; }
     public bool? NoAlwaysSpawn { get; init; }
+    public string? QuestFlag { get; init; }
+    public string? QuestFlagEx { get; init; }
+    public int? Eol { get; init; }
 }
 

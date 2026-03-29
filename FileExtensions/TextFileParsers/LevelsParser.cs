@@ -192,8 +192,29 @@ public static class LevelParser
                 Camt4 = columns[162].ToInt(),
 
                 Themes = columns[163].ToInt(),
-                Waypoint = columns[164].ToInt(),
-                LevelName = columns[165]
+                SoundEnv = columns[164],
+                Waypoint = columns[165].ToInt(),
+                LevelName = columns[166],
+                LevelWarp = columns[167],
+                LevelEntry = columns[168],
+                ObjGrp0 = columns[169].ToInt(),
+                ObjGrp1 = columns[170].ToInt(),
+                ObjGrp2 = columns[171].ToInt(),
+                ObjGrp3 = columns[172].ToInt(),
+                ObjGrp4 = columns[173].ToInt(),
+                ObjGrp5 = columns[174].ToInt(),
+                ObjGrp6 = columns[175].ToInt(),
+                ObjGrp7 = columns[176].ToInt(),
+                ObjPrb0 = columns[177].ToInt(),
+                ObjPrb1 = columns[178].ToInt(),
+                ObjPrb2 = columns[179].ToInt(),
+                ObjPrb3 = columns[180].ToInt(),
+                ObjPrb4 = columns[181].ToInt(),
+                ObjPrb5 = columns[182].ToInt(),
+                ObjPrb6 = columns[183].ToInt(),
+                ObjPrb7 = columns[184].ToInt(),
+                LevelGroup = columns[185],
+                PreventTownPortal = columns[186].ToInt()
             })
             .ToList();
     }

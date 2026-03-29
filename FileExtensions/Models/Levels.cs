@@ -200,4 +200,5 @@ public record Level
     public int? ObjPrb7 { get; init; }
 
     public string?  LevelGroup { get; init; }
+    public int? PreventTownPortal { get; init; }
 }

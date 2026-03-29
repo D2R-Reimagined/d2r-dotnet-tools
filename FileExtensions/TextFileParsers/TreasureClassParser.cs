@@ -43,9 +43,13 @@ public static class TreasureClassParser
                 ItemProbSum = columns[29].ToNullableInt(),
                 ItemProbTotal = columns[30].ToNullableInt(),
                 TreasureClassDropChance = columns[31],
-                FirstLadderSeason = columns[32].ToNullableInt(),
-                LastLadderSeason = columns[33].ToNullableInt(),
-                NoAlwaysSpawn = columns[34].ToBool()
+                ConditionCalc = columns[32],
+                FirstLadderSeason = columns[33].ToNullableInt(),
+                LastLadderSeason = columns[34].ToNullableInt(),
+                NoAlwaysSpawn = columns[35].ToBool(),
+                QuestFlag = columns[36],
+                QuestFlagEx = columns[37],
+                Eol = columns[38].ToNullableInt()
             }).ToList();
     }
 

@@ -83,7 +83,9 @@ public static class StatesParser
                 SrvActiveFunc = columns[69],
                 CanStack = columns[70],
                 SunderFull = columns[71],
-                SunderResReduce = columns[72]
+                SunderResReduce = columns[72],
+                VfxWeaponState = columns[73],
+                Eol = columns[74].ToNullableInt(),
             })
             .ToList();
     }

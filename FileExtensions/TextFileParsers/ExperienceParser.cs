@@ -21,7 +21,8 @@ public static class ExperienceParser
                 Barbarian = uint.Parse(col[5]),
                 Druid = uint.Parse(col[6]),
                 Assassin = uint.Parse(col[7]),
-                ExpRatio = int.Parse(col[8])
+                Warlock = uint.Parse(col[8]),
+                ExpRatio = int.Parse(col[9])
             })
             .ToList();
     }

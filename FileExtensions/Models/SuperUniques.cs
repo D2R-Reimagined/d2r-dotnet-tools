@@ -24,4 +24,5 @@ public record SuperUnique
     public string? TCN_Desecrated { get; set; }
     public string? TCH { get; set; }
     public string? TCH_Desecrated { get; set; }
+    public int? Eol { get; set; }
 }

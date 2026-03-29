@@ -47,6 +47,11 @@ namespace D2RReimaginedTools.TextFileParsers
                     InvGfx5 = columns[32],
                     InvGfx6 = columns[33],
                     StorePage = columns[34],
+                    Eol = columns[35].ToInt(),
+                    UICategory = columns[36],
+                    RunewordCategory1 = columns[37],
+                    RunewordCategory2 = columns[38],
+                    Restricted = columns[39].ToBool(),
                 }).ToList();
         }
         public static Task<FileInfo> SaveEntries(IList<ItemType> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)

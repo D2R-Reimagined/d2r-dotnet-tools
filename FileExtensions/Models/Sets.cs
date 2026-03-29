@@ -92,4 +92,6 @@ public record Sets
     public string? FParam8 { get; init; }
     public int? FMin8 { get; init; }
     public int? FMax8 { get; init; }
+    public string? UIClass { get; init; }
+    public int? Eol { get; init; }
 }

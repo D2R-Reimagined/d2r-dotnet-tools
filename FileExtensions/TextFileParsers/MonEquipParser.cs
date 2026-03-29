@@ -25,6 +25,7 @@ public static class MonEquipParser
                 Item3 = columns[9],
                 Location3 = columns[10],
                 Modifier3 = columns[11].ToInt(),
+                Eol = columns[12].ToInt(),
             })
             .ToList();
     }

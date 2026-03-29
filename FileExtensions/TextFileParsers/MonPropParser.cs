@@ -104,6 +104,7 @@ public static class MonPropParser
                 Par6H = columns[88],
                 Min6H = columns[89].ToNullableInt(),
                 Max6H = columns[90].ToNullableInt(),
+                Eol = columns[91].ToNullableInt(),
             })
             .ToList();
     }

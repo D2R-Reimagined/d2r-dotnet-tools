@@ -5,6 +5,12 @@ public class SetItem
     public string? Index { get; set; }
     public string? Id { get; set; }
     public string? Set { get; set; }
+    public bool? Disabled { get; set; }
+    public bool? Spawnable { get; set; }
+    public bool? DisableChronicle { get; set; }
+    public string? DropConditionCalc { get; set; }
+    public int? FirstLadderSeason { get; set; }
+    public int? LastLadderSeason { get; set; }
     public string? Item { get; set; }
     public string? ItemName { get; set; }
     public int? Rarity { get; set; }
@@ -20,9 +26,86 @@ public class SetItem
     public int? CostMultiplier { get; set; }
     public int? CostAdd { get; set; }
     public int? AddFunc { get; set; }
+    public string? Prop1 { get; set; }
+    public string? Par1 { get; set; }
+    public int? Min1 { get; set; }
+    public int? Max1 { get; set; }
+    public string? Prop2 { get; set; }
+    public string? Par2 { get; set; }
+    public int? Min2 { get; set; }
+    public int? Max2 { get; set; }
+    public string? Prop3 { get; set; }
+    public string? Par3 { get; set; }
+    public int? Min3 { get; set; }
+    public int? Max3 { get; set; }
+    public string? Prop4 { get; set; }
+    public string? Par4 { get; set; }
+    public int? Min4 { get; set; }
+    public int? Max4 { get; set; }
+    public string? Prop5 { get; set; }
+    public string? Par5 { get; set; }
+    public int? Min5 { get; set; }
+    public int? Max5 { get; set; }
+    public string? Prop6 { get; set; }
+    public string? Par6 { get; set; }
+    public int? Min6 { get; set; }
+    public int? Max6 { get; set; }
+    public string? Prop7 { get; set; }
+    public string? Par7 { get; set; }
+    public int? Min7 { get; set; }
+    public int? Max7 { get; set; }
+    public string? Prop8 { get; set; }
+    public string? Par8 { get; set; }
+    public int? Min8 { get; set; }
+    public int? Max8 { get; set; }
+    public string? Prop9 { get; set; }
+    public string? Par9 { get; set; }
+    public int? Min9 { get; set; }
+    public int? Max9 { get; set; }
+    public string? AProp1A { get; set; }
+    public string? APar1A { get; set; }
+    public int? AMin1A { get; set; }
+    public int? AMax1A { get; set; }
+    public string? AProp1B { get; set; }
+    public string? APar1B { get; set; }
+    public int? AMin1B { get; set; }
+    public int? AMax1B { get; set; }
+    public string? AProp2A { get; set; }
+    public string? APar2A { get; set; }
+    public int? AMin2A { get; set; }
+    public int? AMax2A { get; set; }
+    public string? AProp2B { get; set; }
+    public string? APar2B { get; set; }
+    public int? AMin2B { get; set; }
+    public int? AMax2B { get; set; }
+    public string? AProp3A { get; set; }
+    public string? APar3A { get; set; }
+    public int? AMin3A { get; set; }
+    public int? AMax3A { get; set; }
+    public string? AProp3B { get; set; }
+    public string? APar3B { get; set; }
+    public int? AMin3B { get; set; }
+    public int? AMax3B { get; set; }
+    public string? AProp4A { get; set; }
+    public string? APar4A { get; set; }
+    public int? AMin4A { get; set; }
+    public int? AMax4A { get; set; }
+    public string? AProp4B { get; set; }
+    public string? APar4B { get; set; }
+    public int? AMin4B { get; set; }
+    public int? AMax4B { get; set; }
+    public string? AProp5A { get; set; }
+    public string? APar5A { get; set; }
+    public int? AMin5A { get; set; }
+    public int? AMax5A { get; set; }
+    public string? AProp5B { get; set; }
+    public string? APar5B { get; set; }
+    public int? AMin5B { get; set; }
+    public int? AMax5B { get; set; }
 
     public List<SetItemMod> Properties { get; set; } = new();
     public List<SetItemMod> AdditionalProperties { get; set; } = new();
 
     public int? DiabloCloneWeight { get; set; }
+    public int? Eol { get; set; }
 }

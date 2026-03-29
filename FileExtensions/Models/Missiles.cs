@@ -83,6 +83,7 @@ public record Missiles
     public int? LastCollide { get; init; }
     public int? Collision { get; init; }
     public int? ClientCollision { get; init; }
+    public int? CollisionOverlap { get; init; }
     public int? ClientSend { get; init; }
     public int? NextHit { get; init; }
     public int? NextDelay { get; init; }
@@ -153,6 +154,7 @@ public record Missiles
     public int? DamageRate { get; init; }
     public string? TravelSound { get; init; }
     public string? HitSound { get; init; }
+    public string? OnDiedSound { get; init; }
     public string? ProgressSound { get; init; }
     public string? ProgressOverlay { get; init; }
     public string? ExplosionMissile { get; init; }
@@ -170,5 +172,7 @@ public record Missiles
     public string? ClientHitSubMissile2 { get; init; }
     public string? ClientHitSubMissile3 { get; init; }
     public string? ClientHitSubMissile4 { get; init; }
+    public string? MissileWeaponVFX { get; init; }
+    public int? Eol { get; init; }
 }
 

@@ -3,6 +3,7 @@ public record PetType
 {
     public string? PetTypeId { get; init; }
     public string? Group { get; init; }
+    public string? Pool { get; init; }
     public int? BaseMax { get; init; }
     public int? Warp { get; init; }
     public int? Range { get; init; }
@@ -15,10 +16,14 @@ public record PetType
     public string? BaseIcon { get; init; }
     public string? MClass1 { get; init; }
     public string? MIcon1 { get; init; }
+    public string? OverrideName1 { get; init; }
     public string? MClass2 { get; init; }
     public string? MIcon2 { get; init; }
+    public string? OverrideName2 { get; init; }
     public string? MClass3 { get; init; }
     public string? MIcon3 { get; init; }
+    public string? OverrideName3 { get; init; }
     public string? MClass4 { get; init; }
     public string? MIcon4 { get; init; }
+    public string? OverrideName4 { get; init; }
 }

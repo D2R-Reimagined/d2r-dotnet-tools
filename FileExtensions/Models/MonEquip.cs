@@ -14,4 +14,5 @@ public record MonEquip
     public string? Item3 { get; init; }
     public string? Location3 { get; init; }
     public int? Modifier3 { get; init; }
+    public int? Eol { get; init; }
 }

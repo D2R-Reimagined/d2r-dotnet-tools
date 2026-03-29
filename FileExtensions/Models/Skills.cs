@@ -48,6 +48,8 @@ public record Skills
     public string? AuraEventFunc2 { get; init; }
     public string? AuraEvent3 { get; init; }
     public string? AuraEventFunc3 { get; init; }
+    public string? AuraEvent4 { get; init; }
+    public string? AuraEventFunc4 { get; init; }
     public string? PassiveState { get; init; }
     public string? PassiveIType { get; init; }
     public string? PassiveReqWeaponCount { get; init; }
@@ -82,6 +84,7 @@ public record Skills
     public string? Summon { get; init; }
     public string? PetType { get; init; }
     public string? PetMax { get; init; }
+    public string? RequiresPetType { get; init; }
     public string? SumMode { get; init; }
     public string? SumSkill1 { get; init; }
     public string? SumSk1Calc { get; init; }
@@ -134,6 +137,7 @@ public record Skills
     public string? NoAmmo { get; init; }
     public string? Range { get; init; }
     public string? WeapSel { get; init; }
+    public string? RequiresWeapon { get; init; }
     public string? ITypeA1 { get; init; }
     public string? ITypeA2 { get; init; }
     public string? ITypeA3 { get; init; }
@@ -206,6 +210,7 @@ public record Skills
     public string? Aura { get; init; }
     public string? Periodic { get; init; }
     public string? PerDelay { get; init; }
+    public string? PeriodicClearAura { get; init; }
     public string? Finishing { get; init; }
     public string? PrgChargesToCast { get; init; }
     public string? PrgChargesConsumed { get; init; }
@@ -224,6 +229,14 @@ public record Skills
     public string? Calc5Desc { get; init; }
     public string? Calc6 { get; init; }
     public string? Calc6Desc { get; init; }
+    public string? Calc7 { get; init; }
+    public string? Calc7Desc { get; init; }
+    public string? Calc8 { get; init; }
+    public string? Calc8Desc { get; init; }
+    public string? Calc9 { get; init; }
+    public string? Calc9Desc { get; init; }
+    public string? Calc10 { get; init; }
+    public string? Calc10Desc { get; init; }
     public string? Param1 { get; init; }
     public string? Param1Desc { get; init; }
     public string? Param2 { get; init; }
@@ -248,6 +261,22 @@ public record Skills
     public string? Param11Desc { get; init; }
     public string? Param12 { get; init; }
     public string? Param12Desc { get; init; }
+    public string? Param13 { get; init; }
+    public string? Param13Desc { get; init; }
+    public string? Param14 { get; init; }
+    public string? Param14Desc { get; init; }
+    public string? Param15 { get; init; }
+    public string? Param15Desc { get; init; }
+    public string? Param16 { get; init; }
+    public string? Param16Desc { get; init; }
+    public string? Param17 { get; init; }
+    public string? Param17Desc { get; init; }
+    public string? Param18 { get; init; }
+    public string? Param18Desc { get; init; }
+    public string? Param19 { get; init; }
+    public string? Param19Desc { get; init; }
+    public string? Param20 { get; init; }
+    public string? Param20Desc { get; init; }
     public bool? InGame { get; init; }
     public int? ToHit { get; init; }
     public int? LevToHit { get; init; }
@@ -294,4 +323,5 @@ public record Skills
     public int? AIBonus { get; init; }
     public int? CostMult { get; init; }
     public int? CostAdd { get; init; }
+    public int? Eol { get; init; }
 }

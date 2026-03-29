@@ -94,6 +94,8 @@ public static class SetsParser
                 FParam8 = columns[64],
                 FMin8 = columns[65].ToNullableInt(),
                 FMax8 = columns[66].ToNullableInt(),
+                UIClass = columns[67],
+                Eol = columns[68].ToNullableInt(),
             })
             .ToList();
     }

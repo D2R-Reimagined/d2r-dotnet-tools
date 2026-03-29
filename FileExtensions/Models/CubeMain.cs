@@ -111,4 +111,5 @@ public record CubeMain
     public string?  Mod5ParamC { get; init; }
     public int? Mod5MinC { get; init; }
     public int? Mod5MaxC { get; init; }
+    public int? Eol { get; init; }
 }

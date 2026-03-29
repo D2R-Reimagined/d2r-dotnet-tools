@@ -138,6 +138,7 @@ public class MonStats2Parser
                 ResurrectMode = columns[123],
                 ResurrectSkill = columns[124],
                 SpawnUniqueMod = columns[125],
+                Eol = columns[126].ToInt(),
             }).ToList();
     }
 

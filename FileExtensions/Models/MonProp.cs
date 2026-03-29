@@ -102,4 +102,5 @@ public record MonProp
     public string? Par6H { get; init; }
     public int? Min6H { get; init; }
     public int? Max6H { get; init; }
+    public int? Eol { get; init; }
 }

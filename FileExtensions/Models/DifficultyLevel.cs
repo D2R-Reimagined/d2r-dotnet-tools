@@ -34,4 +34,5 @@ public class DifficultyLevel
     public int GambleUnique { get; set; }
     public int GambleUber { get; set; }
     public int GambleUltra { get; set; }
+    public int ResistFloor { get; set; }
 }

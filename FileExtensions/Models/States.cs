@@ -76,4 +76,6 @@ public record States
     public string? CanStack { get; init; }
     public string? SunderFull { get; init; }
     public string? SunderResReduce { get; init; }
+    public string? VfxWeaponState { get; init; }
+    public int? Eol { get; init; }
 }

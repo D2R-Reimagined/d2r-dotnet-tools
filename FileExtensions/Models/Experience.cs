@@ -11,6 +11,7 @@ public record Experience
     public uint Barbarian { get; set; }
     public uint Druid { get; set; }
     public uint Assassin { get; set; }
+    public uint Warlock { get; set; }
 
     public int ExpRatio { get; set; }
 }

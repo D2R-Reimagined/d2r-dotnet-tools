@@ -12,21 +12,23 @@ public static class MonUModParser
             .Select(columns => new MonUMod
             {
                 UniqueModId = columns[0],
-                Enabled = columns[1].ToNullableInt(),
-                Version = columns[2].ToNullableInt(),
-                Xfer = columns[3].ToNullableInt(),
-                Champion = columns[4].ToNullableInt(),
-                FPick = columns[5].ToNullableInt(),
-                Exclude1 = columns[6],
-                Exclude2 = columns[7],
-                CPick = columns[8].ToNullableInt(),
-                CPick_N = columns[9].ToNullableInt(),
-                CPick_H = columns[10].ToNullableInt(),
-                UPick = columns[11].ToNullableInt(),
-                UPick_N = columns[12].ToNullableInt(),
-                UPick_H = columns[13].ToNullableInt(),
-                Constants = columns[14].ToNullableInt(),
-                ConstantDesc = columns[15]
+                Id = columns[1].ToNullableInt(),
+                Enabled = columns[2].ToNullableInt(),
+                Version = columns[3].ToNullableInt(),
+                Xfer = columns[4].ToNullableInt(),
+                Champion = columns[5].ToNullableInt(),
+                FPick = columns[6].ToNullableInt(),
+                Exclude1 = columns[7],
+                Exclude2 = columns[8],
+                CPick = columns[9].ToNullableInt(),
+                CPick_N = columns[10].ToNullableInt(),
+                CPick_H = columns[11].ToNullableInt(),
+                UPick = columns[12].ToNullableInt(),
+                UPick_N = columns[13].ToNullableInt(),
+                UPick_H = columns[14].ToNullableInt(),
+                Constants = columns[15].ToNullableInt(),
+                ConstantDesc = columns[16],
+                Eol = columns[17].ToNullableInt()
             })
             .ToList();
     }

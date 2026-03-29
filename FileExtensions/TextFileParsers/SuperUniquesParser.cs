@@ -32,7 +32,8 @@ public static class SuperUniquesParser
                 TCN = columns[18],
                 TCN_Desecrated = columns[19],
                 TCH = columns[20],
-                TCH_Desecrated = columns[21]
+                TCH_Desecrated = columns[21],
+                Eol = columns[22].ToNullableInt()
             })
             .ToList();
     }

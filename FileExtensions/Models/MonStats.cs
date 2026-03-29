@@ -95,12 +95,14 @@ public record MonStat
     public string? SwitchAI { get; set; }
     public string? NoAura { get; set; }
     public string? NoMultiShot { get; set; }
+    public string? NoPreventMonsterHeal { get; set; }
     public string? NeverCount { get; set; }
     public string? PetIgnore { get; set; }
     public string? DeathDmg { get; set; }
     public string? GenericSpawn { get; set; }
     public string? Zoo { get; set; }
     public string? CannotDesecrate { get; set; }
+    public string? CannotHerald { get; set; }
     public string? RightArmItemType { get; set; }
     public string? LeftArmItemType { get; set; }
     public string? CanNotUseTwoHandedItems { get; set; }
@@ -251,6 +253,7 @@ public record MonStat
     public string? TreasureClassDesecrated { get; set; }
     public string? TreasureClassDesecratedChamp { get; set; }
     public string? TreasureClassDesecratedUnique { get; set; }
+    public string? TreasureClassHerald { get; set; }
     public string? TreasureClassN { get; set; }
     public string? TreasureClassChampN { get; set; }
     public string? TreasureClassUniqueN { get; set; }
@@ -258,6 +261,7 @@ public record MonStat
     public string? TreasureClassDesecratedN { get; set; }
     public string? TreasureClassDesecratedChampN { get; set; }
     public string? TreasureClassDesecratedUniqueN { get; set; }
+    public string? TreasureClassHeraldN { get; set; }
     public string? TreasureClassH { get; set; }
     public string? TreasureClassChampH { get; set; }
     public string? TreasureClassUniqueH { get; set; }
@@ -265,6 +269,7 @@ public record MonStat
     public string? TreasureClassDesecratedH { get; set; }
     public string? TreasureClassDesecratedChampH { get; set; }
     public string? TreasureClassDesecratedUniqueH { get; set; }
+    public string? TreasureClassHeraldH { get; set; }
     public int? TCQuestId { get; set; }
     public int? TCQuestCP { get; set; }
     public int? SplEndDeath { get; set; }

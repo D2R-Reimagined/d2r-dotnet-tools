@@ -1,11 +1,4 @@
 name	letter	transform	code	weaponMod1Code	weaponMod1Param	weaponMod1Min	weaponMod1Max	weaponMod2Code	weaponMod2Param	weaponMod2Min	weaponMod2Max	weaponMod3Code	weaponMod3Param	weaponMod3Min	weaponMod3Max	helmMod1Code	helmMod1Param	helmMod1Min	helmMod1Max	helmMod2Code	helmMod2Param	helmMod2Min	helmMod2Max	helmMod3Code	helmMod3Param	helmMod3Min	helmMod3Max	shieldMod1Code	shieldMod1Param	shieldMod1Min	shieldMod1Max	shieldMod2Code	shieldMod2Param	shieldMod2Min	shieldMod2Max	shieldMod3Code	shieldMod3Param	shieldMod3Min	shieldMod3Max
-Amethyst		17	gmm	att	0	150	150						0	0	0	str	0	10	10		0	0	0		0	0	0	ac	0	30	30		0	0	0		0	0	0
-Sapphire		6	gms	cold-min	0	10	10	cold-max	0	14	14	cold-len	0	75	75	mana	0	38	38		0	0	0		0	0	0	res-cold	0	40	40		0	0	0		0	0	0
-Emerald		12	gme	pois-min	0	143	143	pois-max	0	143	143	pois-len	0	179	179	dex	0	10	10		0	0	0		0	0	0	res-pois	0	40	40		0	0	0		0	0	0
-Ruby		9	gmr	fire-min	0	15	15	fire-max	0	20	20		0	0	0	hp	0	38	38		0	0	0		0	0	0	res-fire	0	40	40		0	0	0		0	0	0
-Diamond		0	gmd	dmg-undead	0	68	68						0	0	0	att	0	100	100		0	0	0		0	0	0	res-all	0	19	19		0	0	0		0	0	0
-Topaz		13	gmt	ltng-min	0	1	1	ltng-max	0	40	40		0	0	0	mag%	0	24	24		0	0	0		0	0	0	res-ltng	0	40	40		0	0	0		0	0	0
-Skull		3	gmk	manasteal	0	3	3	lifesteal	0	4	4					regen	0	5	5	regen-mana	0	19	19		0	0	0	thorns	0	20	20		0	0	0		0	0	0
 Chipped Amethyst		18	gcv	att	0	40	40						0	0	0	str	0	3	3		0	0	0		0	0	0	ac	0	8	8		0	0	0		0	0	0
 Flawed Amethyst		18	gfv	att	0	60	60						0	0	0	str	0	4	4		0	0	0		0	0	0	ac	0	12	12		0	0	0		0	0	0
 Normal Amethyst		18	gsv	att	0	80	80						0	0	0	str	0	6	6		0	0	0		0	0	0	ac	0	18	18		0	0	0		0	0	0
@@ -71,7 +64,15 @@ Vex Rune	r26L	18	r26	manasteal		7	7									res-fire-max		5	5									res-fire-m
 Ohm Rune	r27L	18	r27	dmg%		50	50									res-cold-max		5	5									res-cold-max		5	5								0
 Lo Rune	r28L	18	r28	deadly		20	20									res-ltng-max		5	5									res-ltng-max		5	5								0
 Sur Rune	r29L	18	r29	stupidity		1	1									mana%		5	5									mana		50	50								0
-Ber Rune	r30L	18	r30	crush		20	20									red-dmg%		8	8									red-dmg%		8	8								0
+Ber Rune	r30L	18	r30	crush		10	10									red-dmg%		8	8									red-dmg%		8	8								0
 Jah Rune	r31L	18	r31	ignore-ac		1	1									hp%		5	5									hp		50	50								0
 Cham Rune	r32L	18	r32	freeze		3	3									nofreeze		1	1									nofreeze		1	1								0
 Zod Rune	r33L	18	r33	indestruct		1	1									indestruct		1	1									indestruct		1	1								0
+Amethyst		17	gmm	att	0	150	150						0	0	0	str	0	10	10		0	0	0		0	0	0	ac	0	30	30		0	0	0		0	0	0
+Sapphire		6	gms	cold-min	0	10	10	cold-max	0	14	14	cold-len	0	75	75	mana	0	38	38		0	0	0		0	0	0	res-cold	0	40	40		0	0	0		0	0	0
+Emerald		12	gme	pois-min	0	143	143	pois-max	0	143	143	pois-len	0	179	179	dex	0	10	10		0	0	0		0	0	0	res-pois	0	40	40		0	0	0		0	0	0
+Ruby		9	gmr	fire-min	0	15	15	fire-max	0	20	20		0	0	0	hp	0	38	38		0	0	0		0	0	0	res-fire	0	40	40		0	0	0		0	0	0
+Diamond		0	gmd	dmg-undead	0	68	68						0	0	0	att	0	100	100		0	0	0		0	0	0	res-all	0	19	19		0	0	0		0	0	0
+Topaz		13	gmt	ltng-min	0	1	1	ltng-max	0	40	40		0	0	0	mag%	0	24	24		0	0	0		0	0	0	res-ltng	0	40	40		0	0	0		0	0	0
+Skull		3	gmk	manasteal	0	3	3	lifesteal	0	4	4					regen	0	5	5	regen-mana	0	19	19		0	0	0	thorns	0	20	20		0	0	0		0	0	0
+Chaos Onyx		18	gmo	dmg-mag		15	20									all-stats		5	5									res-mag		5	5								
