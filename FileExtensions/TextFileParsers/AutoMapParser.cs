@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class LevelPresetPathingParser
 {
     public static async Task<IList<LevelPresetPathing>> GetEntries(string path)
     {
-        var columns = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header
+        var columns = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(LevelPresetPathingParser), path)).Skip(1); // Skip header
 
         return columns.Select(columns => columns.Split('\t'))
             .Where(columns => columns.Length > 10)
@@ -32,4 +32,11 @@ public static class LevelPresetPathingParser
                 Cel4 = columns[12].ToInt(),
             }).ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<LevelPresetPathing> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<LevelPresetPathing>(typeof(LevelPresetPathingParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

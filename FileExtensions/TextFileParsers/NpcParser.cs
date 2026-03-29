@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class NpcParser
 {
     public static async Task<IList<Npc>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(NpcParser), path)).Skip(1); // Skip header
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new Npc
             {
@@ -37,4 +37,11 @@ public static class NpcParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<Npc> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<Npc>(typeof(NpcParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

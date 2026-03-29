@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class SuperUniquesParser
 {
     public static async Task<IList<SuperUnique>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(SuperUniquesParser), path)).Skip(1); // Skip header
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new SuperUnique
             {
@@ -36,4 +36,11 @@ public static class SuperUniquesParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<SuperUnique> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<SuperUnique>(typeof(SuperUniquesParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

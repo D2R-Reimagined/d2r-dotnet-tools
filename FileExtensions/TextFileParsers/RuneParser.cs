@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -12,7 +12,7 @@ public static class RunesParser
         if (Entries != null && Entries.Count > 0)
             return Entries;
 
-        var lines = await File.ReadAllLinesAsync(path);
+        var lines = await TextFileParserFileUtility.ReadAllLinesAsync(typeof(RunesParser), path);
         if (lines.Length < 2)
             return new List<RuneWord>();
 
@@ -67,4 +67,11 @@ public static class RunesParser
 
         return Entries;
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<RuneWord> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<RuneWord>(typeof(RunesParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

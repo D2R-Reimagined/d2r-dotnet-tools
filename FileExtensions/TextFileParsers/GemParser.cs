@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Models;
+using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
 
@@ -7,7 +7,7 @@ public static class GemParser
     public static async Task<IList<Gem>> GetEntries(string filePath)
 
     {
-        var lines = (await File.ReadAllLinesAsync(filePath)).Skip(1); // Skip header line
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(GemParser), filePath)).Skip(1); // Skip header line
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new Gem
             {
@@ -56,4 +56,11 @@ public static class GemParser
                 ShieldMod3Max = columns[39],
             }).ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<Gem> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<Gem>(typeof(GemParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

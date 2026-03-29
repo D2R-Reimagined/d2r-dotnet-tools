@@ -1,4 +1,4 @@
-﻿namespace D2RReimaginedTools.TextFileParsers;
+namespace D2RReimaginedTools.TextFileParsers;
 
 using System.IO;
 using D2RReimaginedTools.Extensions;
@@ -8,7 +8,7 @@ public static class DifficultyLevelParser
 {
     public static async Task<IList<DifficultyLevel>> GetEntries(string filePath)
     {
-        var lines = (await File.ReadAllLinesAsync(filePath)).Skip(1); // skip header
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(DifficultyLevelParser), filePath)).Skip(1); // skip header
 
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new DifficultyLevel
@@ -48,4 +48,11 @@ public static class DifficultyLevelParser
                 GambleUltra = columns[32].ToInt(),
             }).ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<DifficultyLevel> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<DifficultyLevel>(typeof(DifficultyLevelParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

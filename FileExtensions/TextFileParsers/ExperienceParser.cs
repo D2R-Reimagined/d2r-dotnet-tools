@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Models;
+using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
 
@@ -6,7 +6,7 @@ public static class ExperienceParser
 {
     public static async Task<IList<Experience>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(2); // skip header + MaxLvl row
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(ExperienceParser), path)).Skip(2); // skip header + MaxLvl row
 
         return lines
             .Where(l => !string.IsNullOrWhiteSpace(l))
@@ -25,4 +25,11 @@ public static class ExperienceParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<Experience> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<Experience>(typeof(ExperienceParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

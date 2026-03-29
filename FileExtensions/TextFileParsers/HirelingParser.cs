@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class HirelingParser
 {
     public static List<Hirelings> Parse(string filePath)
     {
-        var lines = File.ReadAllLines(filePath);
+        var lines = TextFileParserFileUtility.ReadAllLines(typeof(HirelingParser), filePath);
         return lines
             .Skip(1) // skip header
             .Where(line => !string.IsNullOrWhiteSpace(line))
@@ -98,4 +98,11 @@ public static class HirelingParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<Hirelings> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<Hirelings>(typeof(HirelingParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

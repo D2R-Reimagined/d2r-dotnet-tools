@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public class WeaponParser
 {
     public static async Task<IList<Weapon>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1);
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(WeaponParser), path)).Skip(1);
 
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new Weapon
@@ -111,4 +111,11 @@ public class WeaponParser
                 DiabloCloneWeight = columns[167].ToNullableInt(),
             }).ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<Weapon> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<Weapon>(typeof(WeaponParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

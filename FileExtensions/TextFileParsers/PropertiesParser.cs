@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -12,7 +12,7 @@ public static class PropertiesParser
         if (Entries.Count > 0)
             return Entries;
         
-        var lines = await File.ReadAllLinesAsync(path);
+        var lines = await TextFileParserFileUtility.ReadAllLinesAsync(typeof(PropertiesParser), path);
         if (lines.Length == 0) return new List<Property>();
 
         var header = lines[0].Split('\t');
@@ -77,4 +77,11 @@ public static class PropertiesParser
         
         return Entries;
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<Property> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<Property>(typeof(PropertiesParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

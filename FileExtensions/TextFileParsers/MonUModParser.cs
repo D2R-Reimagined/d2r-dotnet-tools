@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class MonUModParser
 {
     public static async Task<IList<MonUMod>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(MonUModParser), path)).Skip(1); // Skip header
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new MonUMod
             {
@@ -30,4 +30,11 @@ public static class MonUModParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<MonUMod> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<MonUMod>(typeof(MonUModParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -9,7 +9,7 @@ public static class LvlPrestParser
 {
     public static async Task<IList<LevelsPreset>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(LvlPrestParser), path)).Skip(1); // Skip header line
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new LevelsPreset
             {
@@ -39,4 +39,11 @@ public static class LvlPrestParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<LevelsPreset> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<LevelsPreset>(typeof(LvlPrestParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

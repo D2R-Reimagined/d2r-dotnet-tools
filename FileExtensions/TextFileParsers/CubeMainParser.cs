@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class CubeMainParser
 {
     public static async Task<IList<CubeMain>> GetEntries(string path)
     {
-        var lines = await File.ReadAllLinesAsync(path);
+        var lines = await TextFileParserFileUtility.ReadAllLinesAsync(typeof(CubeMainParser), path);
         if (lines.Length == 0) return new List<CubeMain>();
 
         var header = lines[0].Split('\t');
@@ -145,4 +145,11 @@ public static class CubeMainParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<CubeMain> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<CubeMain>(typeof(CubeMainParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

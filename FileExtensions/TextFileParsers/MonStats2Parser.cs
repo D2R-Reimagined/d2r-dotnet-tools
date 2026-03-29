@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public class MonStats2Parser
 {
     public static async Task<IList<MonStats2>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(MonStats2Parser), path)).Skip(1); // Skip header line
 
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new MonStats2
@@ -140,4 +140,11 @@ public class MonStats2Parser
                 SpawnUniqueMod = columns[125],
             }).ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<MonStats2> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<MonStats2>(typeof(MonStats2Parser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

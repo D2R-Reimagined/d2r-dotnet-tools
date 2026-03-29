@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 
@@ -10,7 +10,7 @@ public static class LvlWarpParser
 {
     public static async Task<IList<LvlWarp>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(LvlWarpParser), path)).Skip(1); // Skip header line
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new LvlWarp
             {
@@ -32,4 +32,11 @@ public static class LvlWarpParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<LvlWarp> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<LvlWarp>(typeof(LvlWarpParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

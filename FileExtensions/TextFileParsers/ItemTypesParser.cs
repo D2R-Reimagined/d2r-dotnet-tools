@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers
@@ -7,7 +7,7 @@ namespace D2RReimaginedTools.TextFileParsers
     {
         public static async Task<IList<ItemType>> GetEntries(string path)
         {
-            var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
+            var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(ItemTypeParser), path)).Skip(1); // Skip header line
 
             return lines.Select(line => line.Split('\t'))
                 .Select(columns => new ItemType
@@ -49,5 +49,10 @@ namespace D2RReimaginedTools.TextFileParsers
                     StorePage = columns[34],
                 }).ToList();
         }
+        public static Task<FileInfo> SaveEntries(IList<ItemType> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+        {
+            return TextFileParserFileUtility.SaveEntriesAsync<ItemType>(typeof(ItemTypeParser), entries, sourcePath, outputDirectory, cancellationToken);
+        }
     }
 }
+

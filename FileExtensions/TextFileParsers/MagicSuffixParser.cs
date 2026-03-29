@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 
@@ -9,7 +9,7 @@ public static class MagicSuffixParser
 {
     public static async Task<IList<MagicSuffix>> GetEntries(string path)
     {
-       var lines = await File.ReadAllLinesAsync(path);
+       var lines = await TextFileParserFileUtility.ReadAllLinesAsync(typeof(MagicSuffixParser), path);
         if (lines.Length == 0) return new List<MagicSuffix>();
 
         var header = lines[0].Split('\t');
@@ -66,4 +66,11 @@ public static class MagicSuffixParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<MagicSuffix> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<MagicSuffix>(typeof(MagicSuffixParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public class UniqueItemsParser
 {
     public static async Task<IList<UniqueItem>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(UniqueItemsParser), path)).Skip(1); // Skip header line
 
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new UniqueItem
@@ -54,4 +54,11 @@ public class UniqueItemsParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<UniqueItem> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<UniqueItem>(typeof(UniqueItemsParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

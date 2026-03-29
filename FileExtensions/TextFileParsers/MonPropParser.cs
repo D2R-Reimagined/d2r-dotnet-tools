@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class MonPropParser
 {
     public static async Task<IList<MonProp>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(MonPropParser), path)).Skip(1); // Skip header
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new MonProp
             {
@@ -106,6 +106,12 @@ public static class MonPropParser
                 Max6H = columns[90].ToNullableInt(),
             })
             .ToList();
+    }
+
+
+    public static Task<FileInfo> SaveEntries(IList<MonProp> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<MonProp>(typeof(MonPropParser), entries, sourcePath, outputDirectory, cancellationToken);
     }
 }
 

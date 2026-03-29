@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class MonEquipParser
 {
     public static async Task<IList<MonEquip>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(MonEquipParser), path)).Skip(1); // Skip header
         return lines
             .Where(line => !string.IsNullOrWhiteSpace(line))
             .Select(line => line.Split('\t'))
@@ -28,4 +28,11 @@ public static class MonEquipParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<MonEquip> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<MonEquip>(typeof(MonEquipParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

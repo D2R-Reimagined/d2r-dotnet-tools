@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public class ItemStatCostParser
 {
     public static async Task<IList<ItemStatCost>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1);
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(ItemStatCostParser), path)).Skip(1);
 
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new ItemStatCost
@@ -66,4 +66,11 @@ public class ItemStatCostParser
                 Eol = columns[51]
             }).ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<ItemStatCost> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<ItemStatCost>(typeof(ItemStatCostParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

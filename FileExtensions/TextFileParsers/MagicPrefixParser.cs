@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class MagicPrefixParser
 {
     public static async Task<IList<MagicPrefix>> GetEntries(string path)
     {
-        var lines = await File.ReadAllLinesAsync(path);
+        var lines = await TextFileParserFileUtility.ReadAllLinesAsync(typeof(MagicPrefixParser), path);
         if (lines.Length == 0) return new List<MagicPrefix>();
 
         var header = lines[0].Split('\t');
@@ -64,4 +64,11 @@ public static class MagicPrefixParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<MagicPrefix> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<MagicPrefix>(typeof(MagicPrefixParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

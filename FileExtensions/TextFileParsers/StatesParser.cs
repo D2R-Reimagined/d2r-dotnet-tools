@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class StatesParser
 {
     public static async Task<IList<States>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(StatesParser), path)).Skip(1); // Skip header
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new States
             {
@@ -87,4 +87,11 @@ public static class StatesParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<States> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<States>(typeof(StatesParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

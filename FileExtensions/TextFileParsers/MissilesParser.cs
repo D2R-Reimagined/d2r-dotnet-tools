@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -6,7 +6,7 @@ public static class MissilesParser
 {
     public static async Task<IList<Missiles>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1);
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(MissilesParser), path)).Skip(1);
         return lines.Select(columns => columns.Split('\t'))
                     .Select(columns => new Missiles
                     {
@@ -181,4 +181,11 @@ public static class MissilesParser
 
                     }).ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<Missiles> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<Missiles>(typeof(MissilesParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

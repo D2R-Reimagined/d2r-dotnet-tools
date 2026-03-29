@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class MiscParser
 {
     public static async Task<IList<Misc>> GetEntries(string path)
     {
-        var lines = await File.ReadAllLinesAsync(path);
+        var lines = await TextFileParserFileUtility.ReadAllLinesAsync(typeof(MiscParser), path);
         if (lines.Length == 0) return new List<Misc>();
 
         var header = lines[0].Split('\t');
@@ -47,4 +47,11 @@ public static class MiscParser
             })
             .ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<Misc> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<Misc>(typeof(MiscParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

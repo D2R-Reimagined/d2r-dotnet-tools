@@ -45,4 +45,44 @@ public record CharStats
     public int HealthPotionPercent { get; set; }
     public int ManaPotionPercent { get; set; }
     public string? BaseWeaponClass { get; set; }
+    public string? Item1 { get; set; }
+    public string? Item1Location { get; set; }
+    public int Item1Count { get; set; }
+    public int Item1Quality { get; set; }
+    public string? Item2 { get; set; }
+    public string? Item2Location { get; set; }
+    public int Item2Count { get; set; }
+    public int Item2Quality { get; set; }
+    public string? Item3 { get; set; }
+    public string? Item3Location { get; set; }
+    public int Item3Count { get; set; }
+    public int Item3Quality { get; set; }
+    public string? Item4 { get; set; }
+    public string? Item4Location { get; set; }
+    public int Item4Count { get; set; }
+    public int Item4Quality { get; set; }
+    public string? Item5 { get; set; }
+    public string? Item5Location { get; set; }
+    public int Item5Count { get; set; }
+    public int Item5Quality { get; set; }
+    public string? Item6 { get; set; }
+    public string? Item6Location { get; set; }
+    public int Item6Count { get; set; }
+    public int Item6Quality { get; set; }
+    public string? Item7 { get; set; }
+    public string? Item7Location { get; set; }
+    public int Item7Count { get; set; }
+    public int Item7Quality { get; set; }
+    public string? Item8 { get; set; }
+    public string? Item8Location { get; set; }
+    public int Item8Count { get; set; }
+    public int Item8Quality { get; set; }
+    public string? Item9 { get; set; }
+    public string? Item9Location { get; set; }
+    public int Item9Count { get; set; }
+    public int Item9Quality { get; set; }
+    public string? Item10 { get; set; }
+    public string? Item10Location { get; set; }
+    public int Item10Count { get; set; }
+    public int Item10Quality { get; set; }
 }

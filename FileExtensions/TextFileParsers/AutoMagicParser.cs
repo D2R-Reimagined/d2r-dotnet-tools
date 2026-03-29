@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class AutoMagicParser
 {
     public static async Task<IList<AutoMagic>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // skip header
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(AutoMagicParser), path)).Skip(1); // skip header
 
         return lines
             .Where(l => !string.IsNullOrWhiteSpace(l))
@@ -62,4 +62,11 @@ public static class AutoMagicParser
                 Add = col[38].ToNullableInt(),
             }).ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<AutoMagic> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<AutoMagic>(typeof(AutoMagicParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+

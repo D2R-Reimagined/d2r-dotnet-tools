@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -7,7 +7,7 @@ public static class TreasureClassParser
 {
     public static async Task<IList<TreasureClass>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1);
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(TreasureClassParser), path)).Skip(1);
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new TreasureClass
             {
@@ -47,6 +47,12 @@ public static class TreasureClassParser
                 LastLadderSeason = columns[33].ToNullableInt(),
                 NoAlwaysSpawn = columns[34].ToBool()
             }).ToList();
+    }
+
+
+    public static Task<FileInfo> SaveEntries(IList<TreasureClass> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<TreasureClass>(typeof(TreasureClassParser), entries, sourcePath, outputDirectory, cancellationToken);
     }
 }
 

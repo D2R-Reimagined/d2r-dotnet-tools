@@ -1,4 +1,4 @@
-﻿using D2RReimaginedTools.Extensions;
+using D2RReimaginedTools.Extensions;
 using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
@@ -11,7 +11,7 @@ public class InventoryParser
 {
     public static async Task<IList<Inventory>> GetEntries(string path)
     {
-        var lines = (await File.ReadAllLinesAsync(path)).Skip(1); // Skip header line
+        var lines = (await TextFileParserFileUtility.ReadAllLinesAsync(typeof(InventoryParser), path)).Skip(1); // Skip header line
 
         return lines.Select(line => line.Split('\t'))
             .Select(columns => new Inventory
@@ -101,4 +101,11 @@ public class InventoryParser
                 GlovesHeight = columns[72].ToInt(),
             }).ToList();
     }
+
+
+    public static Task<FileInfo> SaveEntries(IList<Inventory> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return TextFileParserFileUtility.SaveEntriesAsync<Inventory>(typeof(InventoryParser), entries, sourcePath, outputDirectory, cancellationToken);
+    }
 }
+
