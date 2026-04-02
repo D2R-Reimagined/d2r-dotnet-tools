@@ -2,7 +2,7 @@
 
 public record Property
 {
-    public required string Code { get; init; }
+    public string Code { get; init; }
     public bool Enabled { get; init; }
     public string? Tooltip { get; init; }
 
