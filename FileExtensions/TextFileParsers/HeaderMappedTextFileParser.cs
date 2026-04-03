@@ -17,6 +17,7 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
         .ToArray();
 
     private static ParserFileContext? Context;
+    private static Dictionary<string, PropertyInfo>? _cachedPropertyMap;
 
     public static Task<IList<TEntry>> GetEntries(string path, CancellationToken cancellationToken = default)
     {
@@ -43,7 +44,7 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
 
     protected virtual string? GetValueForHeader(TEntry entry, string headerName)
     {
-        var propertyMap = BuildPropertyMap();
+        var propertyMap = GetOrBuildPropertyMap();
         var normalizedHeader = NormalizeColumnName(headerName);
 
         if (!propertyMap.TryGetValue(normalizedHeader, out var property))
@@ -128,7 +129,7 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
     private TEntry MapEntry(string[] columns, IReadOnlyDictionary<string, int> columnMap)
     {
         var entry = (TEntry)Activator.CreateInstance(typeof(TEntry), nonPublic: true)!;
-        var propertyMap = BuildPropertyMap();
+        var propertyMap = GetOrBuildPropertyMap();
 
         foreach (var pair in propertyMap)
         {
@@ -143,8 +144,13 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
         return entry;
     }
 
-    private Dictionary<string, PropertyInfo> BuildPropertyMap()
+    private Dictionary<string, PropertyInfo> GetOrBuildPropertyMap()
     {
+        if (_cachedPropertyMap is not null)
+        {
+            return _cachedPropertyMap;
+        }
+
         var propertyMap = new Dictionary<string, PropertyInfo>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var property in Properties)
@@ -155,6 +161,7 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
             }
         }
 
+        _cachedPropertyMap = propertyMap;
         return propertyMap;
     }
 
