@@ -5,6 +5,15 @@ namespace D2RReimaginedTools.TextFileParsers;
 
 public class UniqueItemsParser : HeaderMappedTextFileParser<UniqueItem, UniqueItemsParser>
 {
+    private static readonly IReadOnlyDictionary<string, string[]> _aliases = new Dictionary<string, string[]>
+    {
+        [nameof(UniqueItem.Level)] = ["lvl"],
+        [nameof(UniqueItem.LevelRequirement)] = ["lvl req"],
+        [nameof(UniqueItem.CostMultiplier)] = ["cost mult"]
+    };
+
+    protected override IReadOnlyDictionary<string, string[]> PropertyColumnAliases => _aliases;
+
     protected override UniqueItem FinalizeEntry(UniqueItem entry, string[] columns, IReadOnlyDictionary<string, int> columnMap)
     {
         return entry with

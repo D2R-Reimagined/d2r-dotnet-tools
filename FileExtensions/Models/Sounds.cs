@@ -1,4 +1,6 @@
-﻿namespace D2RReimaginedTools.Models;
+﻿using System.Collections.Generic;
+
+namespace D2RReimaginedTools.Models;
 
 
 public record Sounds
@@ -40,5 +42,10 @@ public record Sounds
     public int? Block3 { get; init; }
     public bool? HDOptOut { get; init; }
     public int? Delay { get; init; }
-    public string? Unknown4737 { get; init; }
+
+    /// <summary>
+    /// Raw values for columns whose headers are purely numeric (e.g. "4841").
+    /// These are read and written as-is without interpretation.
+    /// </summary>
+    public Dictionary<string, string> RawNumericColumns { get; init; } = new();
 }
