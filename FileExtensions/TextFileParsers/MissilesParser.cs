@@ -107,6 +107,8 @@ public class MissilesParser : HeaderMappedTextFileParser<Missiles, MissilesParse
         [nameof(Missiles.ClientHitSubMissile1)] = ["CltHitSubMissile1"],
         [nameof(Missiles.ClientHitSubMissile2)] = ["CltHitSubMissile2"],
         [nameof(Missiles.ClientHitSubMissile3)] = ["CltHitSubMissile3"],
+        [nameof(Missiles.Acceleration)] = ["Accel"],
+        [nameof(Missiles.AnimationSpeed)] = ["AnimSpeed"],
         [nameof(Missiles.ClientHitSubMissile4)] = ["CltHitSubMissile4"]
     };
 

@@ -79,9 +79,11 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
         }
 
         var header = lines[HeaderRowIndex].Split('\t');
-        var columnMap = header
-            .Select((name, index) => new { name, index })
-            .ToDictionary(x => NormalizeColumnName(x.name), x => x.index, StringComparer.OrdinalIgnoreCase);
+        var columnMap = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        for (int i = 0; i < header.Length; i++)
+        {
+            columnMap.TryAdd(NormalizeColumnName(header[i]), i);
+        }
 
         return lines
             .Skip(DataStartRowIndex)
@@ -173,12 +175,13 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
         }
 
         var targetType = Nullable.GetUnderlyingType(propertyType) ?? propertyType;
+        var isNullable = Nullable.GetUnderlyingType(propertyType) is not null;
 
         if (targetType == typeof(bool))
         {
-            if (string.IsNullOrWhiteSpace(value) && Nullable.GetUnderlyingType(propertyType) is not null)
+            if (string.IsNullOrWhiteSpace(value))
             {
-                return null;
+                return isNullable ? null : false;
             }
 
             return value == "1" || value.Equals("true", StringComparison.OrdinalIgnoreCase);
@@ -186,24 +189,22 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
 
         if (string.IsNullOrWhiteSpace(value))
         {
-            return Nullable.GetUnderlyingType(propertyType) is not null
-                ? null
-                : Activator.CreateInstance(targetType);
+            return isNullable ? null : Activator.CreateInstance(targetType);
         }
 
         return targetType switch
         {
-            _ when targetType == typeof(byte) => byte.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(sbyte) => sbyte.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(short) => short.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(ushort) => ushort.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(int) => int.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(uint) => uint.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(long) => long.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(ulong) => ulong.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(float) => float.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(double) => double.Parse(value, CultureInfo.InvariantCulture),
-            _ when targetType == typeof(decimal) => decimal.Parse(value, CultureInfo.InvariantCulture),
+            _ when targetType == typeof(byte) => byte.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(sbyte) => sbyte.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(short) => short.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(ushort) => ushort.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(int) => int.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(uint) => uint.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(long) => long.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(ulong) => ulong.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(float) => float.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(double) => double.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
+            _ when targetType == typeof(decimal) => decimal.TryParse(value, CultureInfo.InvariantCulture, out var result) ? (object)result : (isNullable ? null : default),
             _ => value
         };
     }

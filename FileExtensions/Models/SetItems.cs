@@ -26,6 +26,7 @@ public class SetItem
     public int? CostMultiplier { get; set; }
     public int? CostAdd { get; set; }
     public int? AddFunc { get; set; }
+    public int? Vanilla { get; set; }
     public string? Prop1 { get; set; }
     public string? Par1 { get; set; }
     public int? Min1 { get; set; }

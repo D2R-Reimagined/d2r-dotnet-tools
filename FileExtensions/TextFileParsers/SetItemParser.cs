@@ -1,54 +1,71 @@
-﻿namespace D2RReimaginedTools.TextFileParsers;
-
+﻿using System.Collections.Generic;
 using D2RReimaginedTools.Models;
-using D2RReimaginedTools.Extensions;
 
-public static class TsvToSetItemExtensions
+namespace D2RReimaginedTools.TextFileParsers;
+
+public class SetItemParser : HeaderMappedTextFileParser<SetItem, SetItemParser>
 {
-    public static SetItem ToSetItem(this string[] columns)
+    private static readonly IReadOnlyDictionary<string, string[]> _aliases = new Dictionary<string, string[]>
     {
-        return new SetItem
-        {
-            Index = columns[0],
-            Id = columns[1],
-            Set = columns[2],
-            Item = columns[3],
-            ItemName = columns[4],
-            Rarity = columns[5].ToNullableInt(),
-            Level = columns[6].ToNullableInt(),
-            LevelRequirement = columns[7].ToNullableInt(),
-            CharacterTransform = columns[8],
-            InventoryTransform = columns[9],
-            InventoryFile = columns[10],
-            FlippyFile = columns[11],
-            DropSound = columns[12],
-            DropSfxFrame = columns[13].ToNullableInt(),
-            UseSound = columns[14],
-            CostMultiplier = columns[15].ToNullableInt(),
-            CostAdd = columns[16].ToNullableInt(),
-            AddFunc = columns[17].ToNullableInt(),
+        [nameof(SetItem.LevelRequirement)] = ["lvl req"],
+        [nameof(SetItem.CostMultiplier)] = ["cost mult"]
+    };
 
-            Properties = ExtractMods(columns, 18, 9),
-            AdditionalProperties = ExtractMods(columns, 54, 10),
+    protected override IReadOnlyDictionary<string, string[]> PropertyColumnAliases => _aliases;
 
-            DiabloCloneWeight = columns[94].ToNullableInt()
-        };
+    protected override SetItem FinalizeEntry(SetItem entry, string[] columns, IReadOnlyDictionary<string, int> columnMap)
+    {
+        entry.Properties = ExtractBaseMods(columns, columnMap);
+        entry.AdditionalProperties = ExtractAdditionalMods(columns, columnMap);
+        return entry;
     }
 
-    private static List<SetItemMod> ExtractMods(string[] columns, int start, int count)
+    private static List<SetItemMod> ExtractBaseMods(string[] columns, IReadOnlyDictionary<string, int> columnMap)
     {
         var mods = new List<SetItemMod>();
-        for (int i = 0; i < count; i++)
+        for (int i = 1; i <= 9; i++)
         {
-            int index = start + i * 4;
+            if (!columnMap.TryGetValue($"prop{i}", out var codeIdx)) continue;
+            var code = columns[codeIdx];
+            if (string.IsNullOrEmpty(code)) continue;
+
             mods.Add(new SetItemMod
             {
-                Code = columns[index],
-                Param = columns[index + 1],
-                Min = columns[index + 2].ToNullableInt(),
-                Max = columns[index + 3].ToNullableInt()
+                Code = code,
+                Param = columnMap.TryGetValue($"par{i}", out var parIdx) ? columns[parIdx] : null,
+                Min = columnMap.TryGetValue($"min{i}", out var minIdx) ? ParseNullableInt(columns[minIdx]) : null,
+                Max = columnMap.TryGetValue($"max{i}", out var maxIdx) ? ParseNullableInt(columns[maxIdx]) : null
             });
         }
         return mods;
+    }
+
+    private static List<SetItemMod> ExtractAdditionalMods(string[] columns, IReadOnlyDictionary<string, int> columnMap)
+    {
+        var mods = new List<SetItemMod>();
+        // aprop1a, apar1a, amin1a, amax1a, aprop1b, etc.
+        for (int i = 1; i <= 5; i++)
+        {
+            foreach (var suffix in new[] { "a", "b" })
+            {
+                if (!columnMap.TryGetValue($"aprop{i}{suffix}", out var codeIdx)) continue;
+                var code = columns[codeIdx];
+                if (string.IsNullOrEmpty(code)) continue;
+
+                mods.Add(new SetItemMod
+                {
+                    Code = code,
+                    Param = columnMap.TryGetValue($"apar{i}{suffix}", out var parIdx) ? columns[parIdx] : null,
+                    Min = columnMap.TryGetValue($"amin{i}{suffix}", out var minIdx) ? ParseNullableInt(columns[minIdx]) : null,
+                    Max = columnMap.TryGetValue($"amax{i}{suffix}", out var maxIdx) ? ParseNullableInt(columns[maxIdx]) : null
+                });
+            }
+        }
+        return mods;
+    }
+
+    private static int? ParseNullableInt(string s)
+    {
+        return int.TryParse(s, out var result) ? result : null;
     }
 }
