@@ -7,6 +7,7 @@ public class UniqueItemsParser : HeaderMappedTextFileParser<UniqueItem, UniqueIt
 {
     private static readonly IReadOnlyDictionary<string, string[]> _aliases = new Dictionary<string, string[]>
     {
+        [nameof(UniqueItem.Code)] = ["item"],
         [nameof(UniqueItem.Level)] = ["lvl"],
         [nameof(UniqueItem.LevelRequirement)] = ["lvl req"],
         [nameof(UniqueItem.CostMultiplier)] = ["cost mult"]
@@ -52,8 +53,8 @@ public class UniqueItemsParser : HeaderMappedTextFileParser<UniqueItem, UniqueIt
         return typeof(UniqueItem).GetProperty(propertyName)?.GetValue(entry) as string;
     }
 
-    private static int GetInt(UniqueItem entry, string propertyName)
+    private static int? GetInt(UniqueItem entry, string propertyName)
     {
-        return (int?)typeof(UniqueItem).GetProperty(propertyName)?.GetValue(entry) ?? 0;
+        return (int?)typeof(UniqueItem).GetProperty(propertyName)?.GetValue(entry);
     }
 }

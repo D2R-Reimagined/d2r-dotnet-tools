@@ -22,9 +22,15 @@ public class TranslationFileParser(string filePath)
         var json = await File.ReadAllTextAsync(filePath);
         _translations = JsonSerializer.Deserialize<List<TranslatableString>>(json, new JsonSerializerOptions
         {
-            PropertyNameCaseInsensitive = true
+            PropertyNameCaseInsensitive = true,
+            AllowTrailingCommas = true
         }) ?? [];
         return _translations;
+    }
+    
+    public async Task<List<TranslatableString>> GetAllEntriesAsync()
+    {
+        return await LoadTranslationsAsync();
     }
     
     public async Task<TranslatableString> GetTranslationByKeyAsync(string key)
