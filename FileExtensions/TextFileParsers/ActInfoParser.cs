@@ -2,4 +2,4 @@ using D2RReimaginedTools.Models;
 
 namespace D2RReimaginedTools.TextFileParsers;
 
-public class AutomapParser : HeaderMappedTextFileParser<Automap, AutomapParser>;
+public class ActInfoParser : HeaderMappedTextFileParser<ActInfo, ActInfoParser>;

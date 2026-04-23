@@ -10,7 +10,7 @@ public record PetType
     public int? PartySend { get; init; }
     public int? Unsummon { get; init; }
     public int? AutoMap { get; init; }
-    public string Name { get; init; }
+    public string? Name { get; init; }
     public int? DrawHP { get; init; }
     public int? IconType { get; init; }
     public string? BaseIcon { get; init; }

@@ -107,29 +107,29 @@ public record MonStat
     public string? LeftArmItemType { get; set; }
     public string? CanNotUseTwoHandedItems { get; set; }
     public string? SendSkills { get; set; }
-    public string Skill1 { get; set; }
-    public string Sk1Mode { get; set; }
+    public string? Skill1 { get; set; }
+    public string? Sk1Mode { get; set; }
     public int? Sk1Lvl { get; set; }
-    public string Skill2 { get; set; }
-    public string Sk2Mode { get; set; }
+    public string? Skill2 { get; set; }
+    public string? Sk2Mode { get; set; }
     public int? Sk2Lvl { get; set; }
-    public string Skill3 { get; set; }
-    public string Sk3Mode { get; set; }
+    public string? Skill3 { get; set; }
+    public string? Sk3Mode { get; set; }
     public int? Sk3Lvl { get; set; }
-    public string Skill4 { get; set; }
-    public string Sk4Mode { get; set; }
+    public string? Skill4 { get; set; }
+    public string? Sk4Mode { get; set; }
     public int? Sk4Lvl { get; set; }
-    public string Skill5 { get; set; }
-    public string Sk5Mode { get; set; }
+    public string? Skill5 { get; set; }
+    public string? Sk5Mode { get; set; }
     public int? Sk5Lvl { get; set; }
-    public string Skill6 { get; set; }
-    public string Sk6Mode { get; set; }
+    public string? Skill6 { get; set; }
+    public string? Sk6Mode { get; set; }
     public int? Sk6Lvl { get; set; }
-    public string Skill7 { get; set; }
-    public string Sk7Mode { get; set; }
+    public string? Skill7 { get; set; }
+    public string? Sk7Mode { get; set; }
     public int? Sk7Lvl { get; set; }
-    public string Skill8 { get; set; }
-    public string Sk8Mode { get; set; }
+    public string? Skill8 { get; set; }
+    public string? Sk8Mode { get; set; }
     public int? Sk8Lvl { get; set; }
     public int? Drain { get; set; }
     public int? DrainN { get; set; }
@@ -156,7 +156,7 @@ public record MonStat
     public int? ResCoH { get; set; }
     public int? ResPoH { get; set; }
     public int? DamageRegen { get; set; }
-    public int? SkillDamage { get; set; }
+    public string? SkillDamage { get; set; }
     public int? NoRatio { get; set; }
     public int? ShieldBlockOverride { get; set; }
     public int? ToBlock { get; set; }
@@ -202,8 +202,8 @@ public record MonStat
     public int? S1MinDH { get; set; }
     public int? S1MaxDH { get; set; }
     public int? S1THH { get; set; }
-     public string El1Mode { get; set; }
-    public string El1Type { get; set; }
+     public string? El1Mode { get; set; }
+    public string? El1Type { get; set; }
     public int? El1Pct { get; set; }
     public int? El1MinD { get; set; }
     public int? El1MaxD { get; set; }
@@ -217,8 +217,8 @@ public record MonStat
     public int? El1MaxDH { get; set; }
     public int? El1DurH { get; set; }
 
-    public string El2Mode { get; set; }
-    public string El2Type { get; set; }
+    public string? El2Mode { get; set; }
+    public string? El2Type { get; set; }
     public int? El2Pct { get; set; }
     public int? El2MinD { get; set; }
     public int? El2MaxD { get; set; }
@@ -232,8 +232,8 @@ public record MonStat
     public int? El2MaxDH { get; set; }
     public int? El2DurH { get; set; }
 
-    public string El3Mode { get; set; }
-    public string El3Type { get; set; }
+    public string? El3Mode { get; set; }
+    public string? El3Type { get; set; }
     public int? El3Pct { get; set; }
     public int? El3MinD { get; set; }
     public int? El3MaxD { get; set; }

@@ -1,8 +1,8 @@
-namespace D2RReimaginedTools.Models;
+﻿namespace D2RReimaginedTools.Models;
 
 public record Equipment
 {
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public int? Version { get; set; }
     public int? CompactSave { get; set; }
     public int? Rarity { get; set; }
@@ -20,8 +20,8 @@ public record Equipment
     public int? LevelReq { get; set; }
     public int? Cost { get; set; }
     public int? GambleCost { get; set; }
-    public string Code { get; set; }
-    public string NameStr { get; set; }
+    public string? Code { get; set; }
+    public string? NameStr { get; set; }
     public int MagicLvl { get; set; }
     public int AutoPrefix { get; set; }
     public string? AlternateGfx { get; set; }
@@ -53,7 +53,7 @@ public record Equipment
     public string? TMogType { get; set; }
     public int? TMogMin { get; set; }
     public int? TMogMax { get; set; }
-    public string Type { get; set; }
+    public string? Type { get; set; }
     public string? Type2 { get; set; }
     public string? DropSound { get; set; }
     public int DropSfxFrame { get; set; }

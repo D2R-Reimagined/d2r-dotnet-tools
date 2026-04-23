@@ -9,7 +9,7 @@ namespace D2RReimaginedTools.Models;
 
 public record MonProp
 {
-    public string Id { get; init; }
+    public string? Id { get; init; }
     public string? Prop1 { get; init; }
     public int? Chance1 { get; init; }
     public string? Par1 { get; init; }

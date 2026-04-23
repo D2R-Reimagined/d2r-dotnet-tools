@@ -18,7 +18,7 @@ public record UniqueItem
     public int LevelRequirement { get; init; }
     public string? Code { get; init; }
     public string? ItemName { get; init; }
-    public bool Carry1 { get; init; }
+    public int? Carry1 { get; init; }
     public int CostMultiplier { get; init; }
     public int CostAdd { get; init; }
     public string? ChrTransform { get; init; }

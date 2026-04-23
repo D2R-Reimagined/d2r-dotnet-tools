@@ -59,7 +59,7 @@ public record Missiles
     public int? MaxVelocity { get; init; }
     public int? VelocityLevel { get; init; }
     public int? Acceleration { get; init; }
-    public int? Range { get; init; }
+    public string? Range { get; init; }
     public int? LevelRange { get; init; }
     public int? Light { get; init; }
     public int? Flicker { get; init; }
