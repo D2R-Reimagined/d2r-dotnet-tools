@@ -27,7 +27,7 @@ public record ItemType
         public int MaxSockets3 { get; init; }
         public string TreasureClass { get; init; }
         public int Rarity { get; init; }
-        public bool StaffMods { get; init; }
+        public string? StaffMods { get; init; }
         public string Class { get; init; }
         public string VarInvGfx { get; init; }
         public string InvGfx1 { get; init; }

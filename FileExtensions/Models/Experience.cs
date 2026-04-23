@@ -2,7 +2,7 @@
 
 public record Experience
 {
-    public int Level { get; set; }
+    public string? Level { get; set; }
 
     public uint Amazon { get; set; }
     public uint Sorceress { get; set; }

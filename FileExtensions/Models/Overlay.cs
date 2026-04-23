@@ -3,11 +3,11 @@ namespace D2RReimaginedTools.Models;
 public record Overlay
 {
     public string? OverlayName { get; init; }
-    public int? ID { get; init; }
+    public string? ID { get; init; }
     public string? Filename { get; init; }
     public int? Version { get; init; }
     public int? Frames { get; init; }
-    public int? Character { get; init; }
+    public string? Character { get; init; }
     public int? PreDraw { get; init; }
     public int? OneOfN { get; init; }
     public int? Xoffset { get; init; }

@@ -156,7 +156,7 @@ public record MonStat
     public int? ResCoH { get; set; }
     public int? ResPoH { get; set; }
     public int? DamageRegen { get; set; }
-    public int? SkillDamage { get; set; }
+    public string? SkillDamage { get; set; }
     public int? NoRatio { get; set; }
     public int? ShieldBlockOverride { get; set; }
     public int? ToBlock { get; set; }

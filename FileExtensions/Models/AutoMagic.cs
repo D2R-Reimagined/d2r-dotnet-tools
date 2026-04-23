@@ -15,17 +15,17 @@ public record AutoMagic
     public int Group { get; set; }
 
     public string? Mod1Code { get; set; }
-    public int? Mod1Param { get; set; }
+    public string? Mod1Param { get; set; }
     public int? Mod1Min { get; set; }
     public int? Mod1Max { get; set; }
 
     public string? Mod2Code { get; set; }
-    public int? Mod2Param { get; set; }
+    public string? Mod2Param { get; set; }
     public int? Mod2Min { get; set; }
     public int? Mod2Max { get; set; }
 
     public string? Mod3Code { get; set; }
-    public int? Mod3Param { get; set; }
+    public string? Mod3Param { get; set; }
     public int? Mod3Min { get; set; }
     public int? Mod3Max { get; set; }
 

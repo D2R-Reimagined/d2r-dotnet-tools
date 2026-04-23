@@ -11,7 +11,7 @@ public record MagicPrefix
     public int? Level { get; init; }
     public int? MaxLevel { get; init; }
     public int? LevelReq { get; init; }
-    public bool? ClassSpecific { get; init; }
+    public string? ClassSpecific { get; init; }
     public string? Class { get; init; }
     public int? ClassLevelReq { get; init; }
     public int? Frequency { get; init; }

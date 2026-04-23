@@ -29,6 +29,11 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
         return Parser.SaveEntriesCore(entries, sourcePath, outputDirectory, cancellationToken);
     }
 
+    public static Task<FileInfo> SaveEntriesPreservingUnchanged(IList<TEntry> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
+    {
+        return Parser.SaveEntriesCore(entries, sourcePath, outputDirectory, cancellationToken);
+    }
+
     protected virtual int HeaderRowIndex => 0;
 
     protected virtual int DataStartRowIndex => HeaderRowIndex + 1;

@@ -114,7 +114,7 @@ public record MonStats2
     public int? NoUniqueShift { get; init; }
     public string? CompositeDeath { get; init; }
     public string? LocalBlood { get; init; }
-    public bool? Bleed { get; init; }
+    public int? Bleed { get; init; }
     public string? Light { get; init; }
     public int? LightR { get; init; }
     public int? LightG { get; init; }

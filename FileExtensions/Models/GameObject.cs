@@ -2,7 +2,7 @@ namespace D2RReimaginedTools.Models;
 
 public record GameObject
 {
-    public int? Class { get; init; }
+    public string? Class { get; init; }
     public string? Name { get; init; }
     public string? Description { get; init; }
     public int? ID { get; init; }

@@ -38,7 +38,7 @@ public class SetItem
     public string? Prop3 { get; set; }
     public string? Par3 { get; set; }
     public int? Min3 { get; set; }
-    public int? Max3 { get; set; }
+    public string? Max3 { get; set; }
     public string? Prop4 { get; set; }
     public string? Par4 { get; set; }
     public int? Min4 { get; set; }
