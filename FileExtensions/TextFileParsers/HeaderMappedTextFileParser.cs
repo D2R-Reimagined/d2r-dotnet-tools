@@ -24,6 +24,23 @@ public abstract class HeaderMappedTextFileParser<TEntry, TParser>
         return Parser.GetEntriesCore(path, cancellationToken);
     }
 
+    /// <summary>
+    /// Resolves a TSV column header (or property name) to the underlying <see cref="TEntry"/> property.
+    /// Lookup honors the parser's <see cref="PropertyColumnAliases"/> so that raw game column headers
+    /// (e.g. <c>dsc2calca1</c>) resolve to their mapped property (e.g. <c>Dsc2CalculationA1</c>).
+    /// Returns <c>null</c> when the column is unknown.
+    /// </summary>
+    public static PropertyInfo? ResolveProperty(string? columnOrPropertyName)
+    {
+        if (string.IsNullOrWhiteSpace(columnOrPropertyName))
+        {
+            return null;
+        }
+
+        var map = Parser.GetOrBuildPropertyMap();
+        return map.TryGetValue(NormalizeColumnName(columnOrPropertyName), out var property) ? property : null;
+    }
+
     public static Task<FileInfo> SaveEntries(IList<TEntry> entries, string? sourcePath = null, string? outputDirectory = null, CancellationToken cancellationToken = default)
     {
         return Parser.SaveEntriesCore(entries, sourcePath, outputDirectory, cancellationToken);
