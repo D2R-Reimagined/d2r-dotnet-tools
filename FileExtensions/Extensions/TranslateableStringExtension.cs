@@ -4,7 +4,7 @@ namespace D2RReimaginedTools.Extensions;
 
 public static class TranslatableStringExtensions
 {
-    public static string GetLocalized(this TranslatableString ts, string language)
+    public static string? GetLocalized(this TranslatableString ts, string language)
     {
         return language switch
         {

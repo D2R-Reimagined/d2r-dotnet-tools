@@ -23,6 +23,7 @@ public class ItemCodeHelper
                 .Concat(weaponItems.Select(w => w.Code))
                 .Concat(miscItems.Select(m => m.Code))
                 .Where(code => !string.IsNullOrWhiteSpace(code))
+                .Select(code => code!)
         );
     }
 
