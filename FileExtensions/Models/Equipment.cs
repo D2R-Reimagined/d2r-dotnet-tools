@@ -7,6 +7,7 @@ public record Equipment
     public int? CompactSave { get; set; }
     public int? Rarity { get; set; }
     public bool Spawnable { get; set; }
+    public string? DropConditionCalc { get; set; }
     public int? MinAC { get; set; }
     public int? MaxAC { get; set; }
     public int? Speed { get; set; }
@@ -178,7 +179,30 @@ public record Equipment
     public string? Comment { get; set; }
     public string? WClass { get; set; }
     public string? TwoHandedWClass { get; set; }
-    
+    public int? AutoBelt { get; set; }
+    public int? SpellIcon { get; set; }
+    public int? PSpell { get; set; }
+    public string? State { get; set; }
+    public string? CState1 { get; set; }
+    public string? CState2 { get; set; }
+    public int? Len { get; set; }
+    public string? Stat1 { get; set; }
+    public string? Calc1 { get; set; }
+    public string? Stat2 { get; set; }
+    public string? Calc2 { get; set; }
+    public string? Stat3 { get; set; }
+    public string? Calc3 { get; set; }
+    public string? SpellDesc { get; set; }
+    public string? SpellDescStr { get; set; }
+    public string? SpellDescStr2 { get; set; }
+    public string? SpellDescCalc { get; set; }
+    public string? SpellDescColor { get; set; }
+    public string? BetterGem { get; set; }
+    public int? MultiBuy { get; set; }
+    public int? EventItem { get; set; }
+    public int? AdvancedStashStackable { get; set; }
+    public string? UsageConditionCalc { get; set; }
 
+    public string? UICatOverride { get; set; }
     public int? DiabloCloneWeight { get; set; }
 }
