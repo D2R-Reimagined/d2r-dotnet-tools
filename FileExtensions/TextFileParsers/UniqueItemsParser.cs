@@ -7,7 +7,6 @@ public class UniqueItemsParser : HeaderMappedTextFileParser<UniqueItem, UniqueIt
 {
     private static readonly IReadOnlyDictionary<string, string[]> _aliases = new Dictionary<string, string[]>
     {
-        [nameof(UniqueItem.Code)] = ["item"],
         [nameof(UniqueItem.Level)] = ["lvl"],
         [nameof(UniqueItem.LevelRequirement)] = ["lvl req"],
         [nameof(UniqueItem.CostMultiplier)] = ["cost mult"]

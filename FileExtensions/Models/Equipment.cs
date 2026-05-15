@@ -39,12 +39,12 @@ public record Equipment
     public string? InvFile { get; set; }
     public string? UniqueInvFile { get; set; }
     public string? SetInvFile { get; set; }
-    public string? RArm { get; set; }
-    public string? LArm { get; set; }
-    public string? Torso { get; set; }
-    public string? Legs { get; set; }
-    public string? RSPad { get; set; }
-    public string? LSPad { get; set; }
+    public int? RArm { get; set; }
+    public int? LArm { get; set; }
+    public int? Torso { get; set; }
+    public int? Legs { get; set; }
+    public int? RSPad { get; set; }
+    public int? LSPad { get; set; }
     public bool? Useable { get; set; }
     public bool? Stackable { get; set; }
     public int? MinStack { get; set; }

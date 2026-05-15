@@ -1,4 +1,4 @@
-﻿namespace D2RReimaginedTools.Models;
+namespace D2RReimaginedTools.Models;
 
 public record MonStat
 {
@@ -14,61 +14,61 @@ public record MonStat
     public string? AI { get; set; }
     public string? DescStr { get; set; }
     public string? Code { get; set; }
-    public int Enabled { get; set; }
-    public string? RangedType { get; set; }
-    public string? PlaceSpawn { get; set; }
+    public bool? Enabled { get; set; }
+    public bool? RangedType { get; set; }
+    public bool? PlaceSpawn { get; set; }
     public string? Spawn { get; set; }
-    public string? SpawnX { get; set; }
-    public string? SpawnY { get; set; }
+    public int? SpawnX { get; set; }
+    public int? SpawnY { get; set; }
     public string? SpawnMode { get; set; }
     public string? Minion1 { get; set; }
     public string? Minion2 { get; set; }
-    public string? SetBoss { get; set; }
-    public string? BossXfer { get; set; }
-    public string? PartyMin { get; set; }
-    public string? PartyMax { get; set; }
-    public string? MinGrp { get; set; }
-    public string? MaxGrp { get; set; }
-    public string? SparsePopulate { get; set; }
+    public bool? SetBoss { get; set; }
+    public bool? BossXfer { get; set; }
+    public int? PartyMin { get; set; }
+    public int? PartyMax { get; set; }
+    public int? MinGrp { get; set; }
+    public int? MaxGrp { get; set; }
+    public int? SparsePopulate { get; set; }
     public int? Velocity { get; set; }
     public int? Run { get; set; }
-    public string? Rarity { get; set; }
+    public int? Rarity { get; set; }
     public int? Level { get; set; }
     public int? LevelN { get; set; }
     public int? LevelH { get; set; }
     public string? MonSound { get; set; }
     public string? UMonSound { get; set; }
-    public string? Threat { get; set; }
-    public string? AIDel { get; set; }
-    public string? AIDelN { get; set; }
-    public string? AIDelH { get; set; }
-    public string? AIDist { get; set; }
-    public string? AIDistN { get; set; }
-    public string? AIDistH { get; set; }
-    public string? AIP1 { get; set; }
-    public string? AIP1N { get; set; }
-    public string? AIP1H { get; set; }
-    public string? AIP2 { get; set; }
-    public string? AIP2N { get; set; }
-    public string? AIP2H { get; set; }
-    public string? AIP3 { get; set; }
-    public string? AIP3N { get; set; }
-    public string? AIP3H { get; set; }
-    public string? AIP4 { get; set; }
-    public string? AIP4N { get; set; }
-    public string? AIP4H { get; set; }
-    public string? AIP5 { get; set; }
-    public string? AIP5N { get; set; }
-    public string? AIP5H { get; set; }
-    public string? AIP6 { get; set; }
-    public string? AIP6N { get; set; }
-    public string? AIP6H { get; set; }
-    public string? AIP7 { get; set; }
-    public string? AIP7N { get; set; }
-    public string? AIP7H { get; set; }
-    public string? AIP8 { get; set; }
-    public string? AIP8N { get; set; }
-    public string? AIP8H { get; set; }
+    public int? Threat { get; set; }
+    public int? AIDel { get; set; }
+    public int? AIDelN { get; set; }
+    public int? AIDelH { get; set; }
+    public int? AIDist { get; set; }
+    public int? AIDistN { get; set; }
+    public int? AIDistH { get; set; }
+    public int? AIP1 { get; set; }
+    public int? AIP1N { get; set; }
+    public int? AIP1H { get; set; }
+    public int? AIP2 { get; set; }
+    public int? AIP2N { get; set; }
+    public int? AIP2H { get; set; }
+    public int? AIP3 { get; set; }
+    public int? AIP3N { get; set; }
+    public int? AIP3H { get; set; }
+    public int? AIP4 { get; set; }
+    public int? AIP4N { get; set; }
+    public int? AIP4H { get; set; }
+    public int? AIP5 { get; set; }
+    public int? AIP5N { get; set; }
+    public int? AIP5H { get; set; }
+    public int? AIP6 { get; set; }
+    public int? AIP6N { get; set; }
+    public int? AIP6H { get; set; }
+    public int? AIP7 { get; set; }
+    public int? AIP7N { get; set; }
+    public int? AIP7H { get; set; }
+    public int? AIP8 { get; set; }
+    public int? AIP8N { get; set; }
+    public int? AIP8H { get; set; }
     public string? MissA1 { get; set; }
     public string? MissA2 { get; set; }
     public string? MissS1 { get; set; }
@@ -77,36 +77,36 @@ public record MonStat
     public string? MissS4 { get; set; }
     public string? MissC { get; set; }
     public string? MissSQ { get; set; }
-    public string? Align { get; set; }
-    public string? IsSpawn { get; set; }
-    public string? IsMelee { get; set; }
-    public string? Npc { get; set; }
-    public string? Interact { get; set; }
-    public string? Inventory { get; set; }
-    public string? InTown { get; set; }
-    public string? LUndead { get; set; }
-    public string? HUndead { get; set; }
-    public string? Demon { get; set; }
-    public string? Flying { get; set; }
-    public string? OpenDoors { get; set; }
-    public string? Boss { get; set; }
-    public string? PrimeEvil { get; set; }
-    public string? Killable { get; set; }
-    public string? SwitchAI { get; set; }
-    public string? NoAura { get; set; }
-    public string? NoMultiShot { get; set; }
-    public string? NoPreventMonsterHeal { get; set; }
-    public string? NeverCount { get; set; }
-    public string? PetIgnore { get; set; }
-    public string? DeathDmg { get; set; }
-    public string? GenericSpawn { get; set; }
-    public string? Zoo { get; set; }
-    public string? CannotDesecrate { get; set; }
-    public string? CannotHerald { get; set; }
+    public int? Align { get; set; }
+    public bool? IsSpawn { get; set; }
+    public bool? IsMelee { get; set; }
+    public bool? Npc { get; set; }
+    public bool? Interact { get; set; }
+    public bool? Inventory { get; set; }
+    public bool? InTown { get; set; }
+    public bool? LUndead { get; set; }
+    public bool? HUndead { get; set; }
+    public bool? Demon { get; set; }
+    public bool? Flying { get; set; }
+    public bool? OpenDoors { get; set; }
+    public bool? Boss { get; set; }
+    public bool? PrimeEvil { get; set; }
+    public bool? Killable { get; set; }
+    public bool? SwitchAI { get; set; }
+    public bool? NoAura { get; set; }
+    public bool? NoMultiShot { get; set; }
+    public bool? NoPreventMonsterHeal { get; set; }
+    public bool? NeverCount { get; set; }
+    public bool? PetIgnore { get; set; }
+    public bool? DeathDmg { get; set; }
+    public bool? GenericSpawn { get; set; }
+    public bool? Zoo { get; set; }
+    public bool? CannotDesecrate { get; set; }
+    public bool? CannotHerald { get; set; }
     public string? RightArmItemType { get; set; }
     public string? LeftArmItemType { get; set; }
-    public string? CanNotUseTwoHandedItems { get; set; }
-    public string? SendSkills { get; set; }
+    public bool? CanNotUseTwoHandedItems { get; set; }
+    public int? SendSkills { get; set; }
     public string? Skill1 { get; set; }
     public string? Sk1Mode { get; set; }
     public int? Sk1Lvl { get; set; }
@@ -157,7 +157,7 @@ public record MonStat
     public int? ResPoH { get; set; }
     public int? DamageRegen { get; set; }
     public string? SkillDamage { get; set; }
-    public int? NoRatio { get; set; }
+    public bool? NoRatio { get; set; }
     public int? ShieldBlockOverride { get; set; }
     public int? ToBlock { get; set; }
     public int? ToBlockN { get; set; }
@@ -202,7 +202,7 @@ public record MonStat
     public int? S1MinDH { get; set; }
     public int? S1MaxDH { get; set; }
     public int? S1THH { get; set; }
-     public string? El1Mode { get; set; }
+    public string? El1Mode { get; set; }
     public string? El1Type { get; set; }
     public int? El1Pct { get; set; }
     public int? El1MinD { get; set; }
@@ -216,7 +216,6 @@ public record MonStat
     public int? El1MinDH { get; set; }
     public int? El1MaxDH { get; set; }
     public int? El1DurH { get; set; }
-
     public string? El2Mode { get; set; }
     public string? El2Type { get; set; }
     public int? El2Pct { get; set; }
@@ -231,7 +230,6 @@ public record MonStat
     public int? El2MinDH { get; set; }
     public int? El2MaxDH { get; set; }
     public int? El2DurH { get; set; }
-
     public string? El3Mode { get; set; }
     public string? El3Type { get; set; }
     public int? El3Pct { get; set; }

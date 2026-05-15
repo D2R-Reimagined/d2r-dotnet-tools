@@ -51,16 +51,16 @@ public record Missiles
     public string? ClientHitParam3Description { get; init; }
     public string? DamageCalculation1 { get; init; }
     public string? DamageCalculation1Description { get; init; }
-    public string? DamageParam1 { get; init; }
+    public int? DamageParam1 { get; init; }
     public string? DamageParam1Description { get; init; }
-    public string? DamageParam2 { get; init; }
+    public int? DamageParam2 { get; init; }
     public string? DamageParam2Description { get; init; }
     public int? Velocity { get; init; }
     public int? MaxVelocity { get; init; }
     public int? VelocityLevel { get; init; }
     public int? Acceleration { get; init; }
     public string? Range { get; init; }
-    public int? LevelRange { get; init; }
+    public string? LevelRange { get; init; }
     public int? Light { get; init; }
     public int? Flicker { get; init; }
     public int? Red { get; init; }
@@ -80,42 +80,42 @@ public record Missiles
     public int? CollideType { get; init; }
     public int? CollideKill { get; init; }
     public int? CollideFriend { get; init; }
-    public int? LastCollide { get; init; }
+    public bool? LastCollide { get; init; }
     public int? Collision { get; init; }
     public int? ClientCollision { get; init; }
-    public int? CollisionOverlap { get; init; }
-    public int? ClientSend { get; init; }
+    public bool? CollisionOverlap { get; init; }
+    public bool? ClientSend { get; init; }
     public int? NextHit { get; init; }
     public int? NextDelay { get; init; }
     public int? XOffset { get; init; }
     public int? YOffset { get; init; }
     public int? ZOffset { get; init; }
     public int? Size { get; init; }
-    public int? SourceTown { get; init; }
+    public bool? SourceTown { get; init; }
     public int? ClientSourceTown { get; init; }
-    public int? CanDestroy { get; init; }
+    public bool? CanDestroy { get; init; }
     public int? ToHit { get; init; }
     public int? AlwaysExplode { get; init; }
-    public string? Explosion { get; init; }
-    public int? Town { get; init; }
-    public int? NoUniqueMod { get; init; }
-    public int? NoMultiShot { get; init; }
+    public bool? Explosion { get; init; }
+    public bool? Town { get; init; }
+    public bool? NoUniqueMod { get; init; }
+    public bool? NoMultiShot { get; init; }
     public int? Holy { get; init; }
-    public int? CanSlow { get; init; }
-    public int? ReturnFire { get; init; }
-    public int? GetHit { get; init; }
-    public int? SoftHit { get; init; }
+    public bool? CanSlow { get; init; }
+    public bool? ReturnFire { get; init; }
+    public bool? GetHit { get; init; }
+    public bool? SoftHit { get; init; }
     public int? KnockBack { get; init; }
-    public string? Trans { get; init; }
-    public int? Pierce { get; init; }
-    public int? MissileSkill { get; init; }
+    public int? Trans { get; init; }
+    public bool? Pierce { get; init; }
+    public bool? MissileSkill { get; init; }
     public string? Skill { get; init; }
     public int? ResultFlags { get; init; }
     public int? HitFlags { get; init; }
     public int? HitShift { get; init; }
-    public int? ApplyMastery { get; init; }
+    public bool? ApplyMastery { get; init; }
     public int? SourceDamage { get; init; }
-    public int? Half2HSource { get; init; }
+    public bool? Half2HSource { get; init; }
     public int? SourceMissileDamage { get; init; }
     public int? MinDamage { get; init; }
     public int? MinLevelDamage1 { get; init; }
@@ -144,11 +144,11 @@ public record Missiles
     public int? MaxElementalLevel4 { get; init; }
     public int? MaxElementalLevel5 { get; init; }
     public string? ElementalDamageSymPerCalculation { get; init; }
-    public string? ElementalLength { get; init; }
+    public int? ElementalLength { get; init; }
     public int? ElementalLevelLength1 { get; init; }
     public int? ElementalLevelLength2 { get; init; }
     public int? ElementalLevelLength3 { get; init; }
-    public string? HitClass { get; init; }
+    public int? HitClass { get; init; }
     public int? NumberOfDirections { get; init; }
     public int? LocalBlood { get; init; }
     public int? DamageRate { get; init; }
@@ -172,7 +172,7 @@ public record Missiles
     public string? ClientHitSubMissile2 { get; init; }
     public string? ClientHitSubMissile3 { get; init; }
     public string? ClientHitSubMissile4 { get; init; }
-    public string? MissileWeaponVFX { get; init; }
+    public bool? MissileWeaponVFX { get; init; }
     public int? Eol { get; init; }
 }
 
