@@ -201,4 +201,5 @@ public record Level
 
     public string?  LevelGroup { get; init; }
     public int? PreventTownPortal { get; init; }
+    public int? CompletionTotalRoomsOverride { get; init; }
 }

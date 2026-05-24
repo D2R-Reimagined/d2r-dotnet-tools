@@ -45,7 +45,8 @@ public record Property
     public string? Min { get; init; }
     public string? Max { get; init; }
     public string? Notes { get; init; }
+    public int? UiRangeType { get; init; }
     public int Eol { get; init; }
-    
+
     public IList<PropertyFunction>? PropertyFunctions { get; init; }
 }

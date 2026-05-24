@@ -5,6 +5,11 @@ public record MonPet
     public string? Monster { get; init; }
     public int? Index { get; init; }
     public int? HirelingAlternateVoice { get; init; }
+    public string? Calc1 { get; init; }
+    public string? Calc2 { get; init; }
+    public string? Calc3 { get; init; }
+    public string? Calc4 { get; init; }
+    public string? Calc5 { get; init; }
     public string? ConsumeStat1 { get; init; }
     public string? ConsumePar1 { get; init; }
     public string? ConsumeCalc1 { get; init; }
@@ -22,4 +27,14 @@ public record MonPet
     public string? ConsumeCalc5 { get; init; }
     public string? NumUnderlingCalc { get; init; }
     public string? BindChanceCalc { get; init; }
+    public string? BoundStat1 { get; init; }
+    public string? BoundCalc1 { get; init; }
+    public string? BoundStat2 { get; init; }
+    public string? BoundCalc2 { get; init; }
+    public string? BoundStat3 { get; init; }
+    public string? BoundCalc3 { get; init; }
+    public string? BoundStat4 { get; init; }
+    public string? BoundCalc4 { get; init; }
+    public string? BoundStat5 { get; init; }
+    public string? BoundCalc5 { get; init; }
 }
