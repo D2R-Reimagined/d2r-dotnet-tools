@@ -6,9 +6,7 @@ public class ItemTypeParser : HeaderMappedTextFileParser<ItemType, ItemTypeParse
 {
     private static readonly IReadOnlyDictionary<string, string[]> _aliases = new Dictionary<string, string[]>
     {
-        [nameof(ItemType.ItemTypeName)] = ["ItemType"],
-        [nameof(ItemType.MaxSocketsLevelThreshold1)] = ["MaxSocketsLevelThreshold1"], // In case normalization differs
-        [nameof(ItemType.MaxSocketsLevelThreshold2)] = ["MaxSocketsLevelThreshold2"]
+        [nameof(ItemType.ItemTypeName)] = ["ItemType"]
     };
 
     protected override IReadOnlyDictionary<string, string[]> PropertyColumnAliases => _aliases;

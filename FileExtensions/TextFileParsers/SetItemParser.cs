@@ -7,8 +7,12 @@ public class SetItemParser : HeaderMappedTextFileParser<SetItem, SetItemParser>
 {
     private static readonly IReadOnlyDictionary<string, string[]> _aliases = new Dictionary<string, string[]>
     {
+        [nameof(SetItem.Level)] = ["lvl"],
         [nameof(SetItem.LevelRequirement)] = ["lvl req"],
-        [nameof(SetItem.CostMultiplier)] = ["cost mult"]
+        [nameof(SetItem.CostMultiplier)] = ["cost mult"],
+        [nameof(SetItem.CharacterTransform)] = ["chrtransform"],
+        [nameof(SetItem.InventoryTransform)] = ["invtransform"],
+        [nameof(SetItem.InventoryFile)] = ["invfile"]
     };
 
     protected override IReadOnlyDictionary<string, string[]> PropertyColumnAliases => _aliases;

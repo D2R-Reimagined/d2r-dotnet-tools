@@ -85,4 +85,6 @@ public record CharStats
     public string? Item10Location { get; set; }
     public int Item10Count { get; set; }
     public int Item10Quality { get; set; }
+    public string? TwoHandedOffHandRestrictItemType { get; set; }
+    public int? TwoHandedDamageAsOneHanded { get; set; }
 }
